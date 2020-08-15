@@ -11,7 +11,7 @@ try {
 
     $telegram = new Api(BOT_KEY);
     $response = $telegram->sendMessage([
-        'chat_id'   => CHANNEL_KEY_TEST,
+        'chat_id'   => CHANNEL_KEY_AZERI_WORD,
         'text'      => $channelPost,
         'parse_mode'=> 'Markdown'
     ]);
