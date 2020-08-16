@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__DIR__ ). '/config/autoload.php';
+require_once dirname(__DIR__ ). '/vendor/autoload.php';
 
 use Telegram\Bot\Api;
 use Model\Cycle\AzeriVocabulary;
