@@ -6,6 +6,7 @@ require_once __DIR__.'/vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel;
 use Symfony\Component\Routing;
 
 try {
@@ -13,25 +14,17 @@ try {
     $routes = include __DIR__.'/src/app.php';
 
     $context = new Routing\RequestContext();
-    $context->fromRequest($request);
     $matcher = new Routing\Matcher\UrlMatcher($routes, $context);
 
-    try {
-        extract($matcher->match($request->getPathInfo()), EXTR_SKIP);
-        ob_start();
-        include sprintf(__DIR__.'/src/pages/%s.php', $_route);
+    $controllerResolver = new Symfony\Component\HttpKernel\Controller\ControllerResolver();
+    $argumentResolver = new Symfony\Component\HttpKernel\Controller\ArgumentResolver();
 
-        $response = new Response(ob_get_clean());
-    } catch (Routing\Exception\ResourceNotFoundException $exception) {
-        $response = new Response('Not Found', 404);
-    } catch (Exception $exception) {
-        $response = new Response('An error occurred', 500);
-    }
+    $framework = new Simplex\Framework($matcher, $controllerResolver, $argumentResolver);
+    $response = $framework->handle($request);
 
     $response->send();
 }
 catch (Throwable $exception)
 {
-    echo $exception->getMessage();
+    print_r($exception->getMessage());
 }
-
