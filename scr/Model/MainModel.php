@@ -8,8 +8,8 @@ class MainModel
 {
     protected $database;
 
-    public function __construct()
+    public function __construct(Database $database)
     {
-        $this->database = new Database();
+        $this->database = $database;
     }
 }
