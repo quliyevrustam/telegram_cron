@@ -7,8 +7,11 @@ use FastRoute\RouteCollector;
 try {
     $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r) {
         $r->addRoute('GET', '/', [\Controller\IndexController::class, 'index']);
+        $r->addRoute('GET', '/name/{name}/{id}', [\Controller\IndexController::class, 'showName']);
+        $r->addRoute('POST', '/', [\Controller\IndexController::class, 'postIndex']);
     });
 
+    $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     $route = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
 
     switch ($route[0]) {
@@ -25,11 +28,7 @@ try {
             $method = isset($route[1][1]) ? $route[1][1] : 'index';
             $parameters = $route[2];
 
-            \Utilities\Helper::prePrint($route);
-            \Utilities\Helper::prePrint($controller);
-            \Utilities\Helper::prePrint($parameters);
-
-            (new $controller())->$method($parameters);
+            (new $controller())->$method(...array_values($parameters));
 
             break;
     }
