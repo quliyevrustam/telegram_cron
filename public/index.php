@@ -3,6 +3,7 @@
 require_once dirname(__DIR__ ). '/vendor/autoload.php';
 
 use FastRoute\RouteCollector;
+use Symfony\Component\HttpFoundation\Request;
 
 try {
     $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r) {
@@ -11,10 +12,12 @@ try {
         $r->addRoute('POST', '/', [\Controller\IndexController::class, 'postIndex']);
     });
 
-    $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    $route = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
+    $http = Request::createFromGlobals();
 
-    switch ($route[0]) {
+    $route = $dispatcher->dispatch($http->getMethod(), $http->getPathInfo());
+
+    switch ($route[0])
+    {
         case FastRoute\Dispatcher::NOT_FOUND:
             echo '404 Not Found';
             break;
