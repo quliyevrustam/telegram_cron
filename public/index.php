@@ -6,10 +6,17 @@ use FastRoute\RouteCollector;
 use Symfony\Component\HttpFoundation\Request;
 
 try {
-    $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r) {
-        $r->addRoute('GET', '/', [\Controller\IndexController::class, 'index']);
-        $r->addRoute('GET', '/name/{name}/{id}', [\Controller\IndexController::class, 'showName']);
-        $r->addRoute('POST', '/', [\Controller\IndexController::class, 'postIndex']);
+
+    $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__ ).'/scr/View');
+    $twig = new \Twig\Environment($loader, [
+        'cache' => dirname(__DIR__ ).'/cache',
+    ]);
+
+    $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r)
+    {
+        $r->addRoute('GET', '/', [\Controller\Index\IndexController::class, 'index']);
+        $r->addRoute('GET', '/name/{name}/{id}', [\Controller\Index\IndexController::class, 'showName']);
+        $r->addRoute('POST', '/', [\Controller\Index\IndexController::class, 'postIndex']);
     });
 
     $http = Request::createFromGlobals();
@@ -31,7 +38,8 @@ try {
             $method = isset($route[1][1]) ? $route[1][1] : 'index';
             $parameters = $route[2];
 
-            (new $controller())->$method(...array_values($parameters));
+            $html = (new $controller($twig, $http))->$method(...array_values($parameters));
+            echo $html;
 
             break;
     }
