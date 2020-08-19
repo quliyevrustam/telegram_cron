@@ -4,16 +4,22 @@ require_once dirname(__DIR__ ). '/vendor/autoload.php';
 
 use FastRoute\RouteCollector;
 use Symfony\Component\HttpFoundation\Request;
+use Utilities\Database;
 
 try {
+    $db = new Database();
 
     $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__ ).'/scr/View');
     $twig = new \Twig\Environment($loader, [
         'cache' => dirname(__DIR__ ).'/cache',
+        'debug' => true,
+        'auto_reload' => true,
+        'strict_variables' => true
     ]);
 
     $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r)
     {
+        $r->addRoute('GET', '/random/post', [\Controller\Cycle\AzeriVocabularyController::class, 'getRandomPost']);
         $r->addRoute('GET', '/', [\Controller\Index\IndexController::class, 'index']);
         $r->addRoute('GET', '/name/{name}/{id}', [\Controller\Index\IndexController::class, 'showName']);
         $r->addRoute('POST', '/', [\Controller\Index\IndexController::class, 'postIndex']);
@@ -22,7 +28,6 @@ try {
     $http = Request::createFromGlobals();
 
     $route = $dispatcher->dispatch($http->getMethod(), $http->getPathInfo());
-
     switch ($route[0])
     {
         case FastRoute\Dispatcher::NOT_FOUND:
@@ -38,8 +43,9 @@ try {
             $method = isset($route[1][1]) ? $route[1][1] : 'index';
             $parameters = $route[2];
 
-            $html = (new $controller($twig, $http))->$method(...array_values($parameters));
+            $html = (new $controller($twig, $http, $db))->$method(...array_values($parameters));
             echo $html;
+
 
             break;
     }

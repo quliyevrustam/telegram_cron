@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to Test Site!</title>
+    <title>{% block title %}Welcome to Test Site!{% endblock %}</title>
     <style>
         body {
-            width: 35em;
+            width: 600px;
             margin: 0 auto;
             font-family: Tahoma, Verdana, Arial, sans-serif;
         }
     </style>
 </head>
 <body>
-<h1>Hello, {{ name }}! Welcome to Test Site!</h1>
+{% include "Menu/menu.html" %}
+{% block body %}{% endblock %}
 </body>
 </html>
