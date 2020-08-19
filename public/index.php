@@ -5,8 +5,14 @@ require_once dirname(__DIR__ ). '/vendor/autoload.php';
 use FastRoute\RouteCollector;
 
 try {
+
+    $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__ ).'/scr/View');
+    $twig = new \Twig\Environment($loader, [
+        'cache' => dirname(__DIR__ ).'/cache',
+    ]);
+
     $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r) {
-        $r->addRoute('GET', '/', [\Controller\IndexController::class, 'index']);
+        $r->addRoute('GET', '/', [\Controller\Index\IndexController::class, 'index']);
     });
 
     $route = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
@@ -25,11 +31,8 @@ try {
             $method = isset($route[1][1]) ? $route[1][1] : 'index';
             $parameters = $route[2];
 
-            \Utilities\Helper::prePrint($route);
-            \Utilities\Helper::prePrint($controller);
-            \Utilities\Helper::prePrint($parameters);
-
-            (new $controller())->$method($parameters);
+            $html = (new $controller($twig))->$method($parameters);
+            echo $html;
 
             break;
     }
