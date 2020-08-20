@@ -1,2 +1,5 @@
 config/config.php
 vendor
+framework/vendor
+framework/vendor/*
+cache/*
