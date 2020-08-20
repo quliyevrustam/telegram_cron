@@ -4,10 +4,21 @@ require_once dirname(__DIR__ ). '/vendor/autoload.php';
 
 use FastRoute\RouteCollector;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Utilities\Database;
+use Utilities\Auth;
 
 try {
+    $session = new Session();
+    $session->start();
+    //$session->set('name', 'Drak');
+//    echo $session->get('name');
+//    echo $session->getId();
+
     $db = new Database();
+
+    $auth = new Auth($db, $session);
+    $auth->checkLogin();
 
     $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__ ).'/scr/View');
     $twig = new \Twig\Environment($loader, [
@@ -19,6 +30,8 @@ try {
 
     $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r)
     {
+        $r->addRoute('GET', '/login', [\Controller\Index\IndexController::class, 'viewLoginPage']);
+        $r->addRoute('POST', '/login', [\Controller\Index\IndexController::class, 'loginUser']);
         $r->addRoute('GET', '/random/post', [\Controller\Cycle\AzeriVocabularyController::class, 'getRandomPost']);
         $r->addRoute('GET', '/', [\Controller\Index\IndexController::class, 'index']);
         $r->addRoute('GET', '/name/{name}/{id}', [\Controller\Index\IndexController::class, 'showName']);
@@ -43,7 +56,7 @@ try {
             $method = isset($route[1][1]) ? $route[1][1] : 'index';
             $parameters = $route[2];
 
-            $html = (new $controller($twig, $http, $db))->$method(...array_values($parameters));
+            $html = (new $controller($twig, $http, $db, $session))->$method(...array_values($parameters));
             echo $html;
 
 
