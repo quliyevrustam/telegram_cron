@@ -2,30 +2,23 @@
 
 namespace Controller;
 
+use Core\Core;
 use Utilities\Auth;
 use Psr\Container\ContainerInterface;
 
-class MainController
+class MainController extends Core
 {
-    protected $db;
     private $auth;
+
     protected $http;
     protected $template_engine;
-    protected $session;
-    private $container;
 
     public function __construct(ContainerInterface $container)
     {
-        $this->container        = $container;
-        $this->db               = $container->get('db');
-        $this->http             = $container->get('http');
-        $this->session          = $container->get('session');
-        $this->template_engine  = $container->get('tmp');
-    }
+        parent::__construct($container);
 
-    protected function model($className)
-    {
-        return new $className($this->container);
+        $this->http             = $container->get('http');
+        $this->template_engine  = $container->get('tmp');
     }
 
     protected function auth()
