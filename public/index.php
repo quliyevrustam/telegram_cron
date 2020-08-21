@@ -3,44 +3,12 @@
 require_once dirname(__DIR__ ). '/vendor/autoload.php';
 
 use FastRoute\RouteCollector;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Utilities\Database;
 use Utilities\Auth;
-use DI\ContainerBuilder;
 
 try {
 
-    ///////////////////////// DI CONTAINER ///////////////////////
-
-    $containerBuilder = new ContainerBuilder();
-    $containerBuilder->addDefinitions([
-        'db' => function () {
-            return new Database();
-        },
-        'session' => function () {
-            $session = new Session();
-            $session->start();
-            return $session;
-        },
-        'http' => function () {
-            $http = Request::createFromGlobals();
-            return $http;
-        },
-        'tmp' => function () {
-            $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__ ).'/scr/View');
-            $twig = new \Twig\Environment($loader, [
-                'cache' => dirname(__DIR__ ).'/cache',
-                'debug' => true,
-                'auto_reload' => true,
-                'strict_variables' => true
-            ]);
-            return $twig;
-        },
-    ]);
-    $container = $containerBuilder->build();
-
-    /// //////////////////////////////////////////////////
+    // Create DI Container and write it to $container
+    require_once (dirname(__DIR__ ).'/config/di.config.php');
 
     $auth = new Auth($container);
     $auth->checkLogin();
