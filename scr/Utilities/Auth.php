@@ -7,6 +7,7 @@ use Model\User\User;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Psr\Container\ContainerInterface;
 
 class Auth
 {
@@ -15,17 +16,22 @@ class Auth
     private $session;
     private $db;
     private $loginPageUrl = '/login';
+    private $isLoginPage;
+    private $container;
 
-    public function __construct(Database $db, Session $session, Request $http)
+    public function __construct(ContainerInterface $container)
     {
-        $this->db       = $db;
-        $this->http     = $http;
-        $this->session  = $session;
+        $this->container    = $container;
+        $this->db           = $container->get('db');
+        $this->http         = $container->get('http');
+        $this->session      = $container->get('session');
+
+        $this->isLoginPage = ($this->http->getPathInfo() == $this->loginPageUrl);
     }
 
     protected function model($className)
     {
-        return new $className($this->db, $this->session);
+        return new $className($this->container);
     }
 
     public function checkLogin()
@@ -39,8 +45,7 @@ class Auth
                 $this->loginUser($this->http->request->get('username'), $this->http->request->get('password'));
             }
 
-            if($this->http->getPathInfo() != $this->loginPageUrl)
-                (new RedirectResponse($this->loginPageUrl))->send();
+            if(!$this->isLoginPage) (new RedirectResponse($this->loginPageUrl))->send();
         }
     }
     public function getUserId(): int

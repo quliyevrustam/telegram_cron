@@ -3,6 +3,7 @@
 namespace Controller;
 
 use Utilities\Auth;
+use Psr\Container\ContainerInterface;
 
 class MainController
 {
@@ -11,25 +12,27 @@ class MainController
     protected $http;
     protected $template_engine;
     protected $session;
+    private $container;
 
-    public function __construct($templateEngine, $http, $db, $session)
+    public function __construct(ContainerInterface $container)
     {
-        $this->db               = $db;
-        $this->http             = $http;
-        $this->session          = $session;
-        $this->template_engine  = $templateEngine;
+        $this->container        = $container;
+        $this->db               = $container->get('db');
+        $this->http             = $container->get('http');
+        $this->session          = $container->get('session');
+        $this->template_engine  = $container->get('tmp');
     }
 
     protected function model($className)
     {
-        return new $className($this->db, $this->session);
+        return new $className($this->container);
     }
 
     protected function auth()
     {
         if(!$this->auth instanceof Auth)
         {
-            $this->auth = new Auth($this->db, $this->session, $this->http);
+            $this->auth = new Auth($this->container);
         }
 
         return $this->auth;
