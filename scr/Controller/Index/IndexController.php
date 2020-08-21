@@ -21,4 +21,14 @@ class IndexController extends MainController
         $name = $this->http->request->get('name');
         return $this->template_engine->render('Index/start.html', ['name' => $name]);
     }
+
+    public function viewLoginPage()
+    {
+        return $this->template_engine->render('Index/login.html');
+    }
+
+    public function logoutUser()
+    {
+        $this->auth()->logoutUser();
+    }
 }

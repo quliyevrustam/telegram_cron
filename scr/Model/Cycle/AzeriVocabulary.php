@@ -14,7 +14,7 @@ class AzeriVocabulary extends MainModel
 
     private function setRandomWord(): void
     {
-        $row = $this->database->query("
+        $row = $this->db->query("
         SELECT 
             id,
             word,
@@ -34,7 +34,7 @@ class AzeriVocabulary extends MainModel
 
     public function setShowed(int $id): void
     {
-        $request= $this->database->prepare("UPDATE azeri_vocabulary SET showed_at =? WHERE id =?");
+        $request= $this->db->prepare("UPDATE azeri_vocabulary SET showed_at =? WHERE id =?");
         $request->execute([date('Y-m-d H:i:s'), $id]);
     }
 

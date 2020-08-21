@@ -6,7 +6,11 @@ use Telegram\Bot\Api;
 use Model\Cycle\AzeriVocabulary;
 
 try {
-    $vocabulary = new AzeriVocabulary();
+
+    // Create DI Container and write it to $container
+    require_once (dirname(__DIR__ ).'/config/di.config.php');
+
+    $vocabulary = new AzeriVocabulary($container);
     $channelPost = $vocabulary->getRandomPost();
 
     $telegram = new Api(BOT_KEY);
