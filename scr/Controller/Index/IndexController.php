@@ -3,7 +3,6 @@
 namespace Controller\Index;
 
 use Controller\MainController;
-use Utilities\Auth;
 
 class IndexController extends MainController
 {
@@ -28,10 +27,8 @@ class IndexController extends MainController
         return $this->template_engine->render('Index/login.html');
     }
 
-    public function loginUser()
+    public function logoutUser()
     {
-        $username = $this->http->request->get('username');
-        $password = $this->http->request->get('password');
-        $this->auth()->loginUser($username, $password);
+        $this->auth()->logoutUser();
     }
 }

@@ -11,13 +11,12 @@ use Utilities\Auth;
 try {
     $session = new Session();
     $session->start();
-    //$session->set('name', 'Drak');
-//    echo $session->get('name');
-//    echo $session->getId();
 
     $db = new Database();
 
-    $auth = new Auth($db, $session);
+    $http = Request::createFromGlobals();
+
+    $auth = new Auth($db, $session, $http);
     $auth->checkLogin();
 
     $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__ ).'/scr/View');
@@ -31,14 +30,14 @@ try {
     $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r)
     {
         $r->addRoute('GET', '/login', [\Controller\Index\IndexController::class, 'viewLoginPage']);
-        $r->addRoute('POST', '/login', [\Controller\Index\IndexController::class, 'loginUser']);
+        $r->addRoute('GET', '/logout', [\Controller\Index\IndexController::class, 'logoutUser']);
         $r->addRoute('GET', '/random/post', [\Controller\Cycle\AzeriVocabularyController::class, 'getRandomPost']);
         $r->addRoute('GET', '/', [\Controller\Index\IndexController::class, 'index']);
         $r->addRoute('GET', '/name/{name}/{id}', [\Controller\Index\IndexController::class, 'showName']);
         $r->addRoute('POST', '/', [\Controller\Index\IndexController::class, 'postIndex']);
     });
 
-    $http = Request::createFromGlobals();
+
 
     $route = $dispatcher->dispatch($http->getMethod(), $http->getPathInfo());
     switch ($route[0])

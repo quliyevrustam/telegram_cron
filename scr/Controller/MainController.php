@@ -7,10 +7,10 @@ use Utilities\Auth;
 class MainController
 {
     protected $db;
+    private $auth;
     protected $http;
     protected $template_engine;
     protected $session;
-
 
     public function __construct($templateEngine, $http, $db, $session)
     {
@@ -27,6 +27,11 @@ class MainController
 
     protected function auth()
     {
-        return $this->model(Auth::class);
+        if(!$this->auth instanceof Auth)
+        {
+            $this->auth = new Auth($this->db, $this->session, $this->http);
+        }
+
+        return $this->auth;
     }
 }

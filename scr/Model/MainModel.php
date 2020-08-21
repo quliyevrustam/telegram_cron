@@ -7,13 +7,13 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 class MainModel
 {
-    protected $database;
+    protected $db;
     protected $session;
 
-    public function __construct(Database $database, Session $session)
+    public function __construct(Database $db, Session $session)
     {
         $this->session  = $session;
-        $this->database = $database;
+        $this->db = $db;
     }
 
     protected function model($className)

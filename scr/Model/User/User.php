@@ -6,23 +6,20 @@ use Model\MainModel;
 
 class User extends MainModel
 {
-    public function checkUser(string $username, string $password): array
+    const STATUS_BLOCKED = 0;
+    const STATUS_ACTIVE = 1;
+
+    public function checkUser(string $username, string $password)
     {
-        $row = $this->database->query("
-        SELECT 
-            id,
-            word,
-            description
-        FROM 
-            azeri_vocabulary 
-        WHERE showed_at IS NULL 
-        ORDER BY RAND() 
-        LIMIT 1;")->fetch(\PDO::FETCH_OBJ);
-        if($row)
-        {
-            $this->id           = $row->id;
-            $this->word         = $row->word;
-            $this->description  = $row->description;
-        }
+        $userRequest = $this->db->prepare("
+        SELECT * 
+        FROM users
+         WHERE email=:email and password=:password and status = :status");
+        $userRequest->execute([
+            'email' => $username,
+            'password' => $password,
+            'status' => self::STATUS_ACTIVE,
+        ]);
+        return $userRequest->fetch(\PDO::FETCH_OBJ);
     }
 }
