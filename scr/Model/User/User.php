@@ -11,7 +11,7 @@ class User extends MainModel
 
     public function checkUser(string $username, string $password)
     {
-        $userRequest = $this->db->prepare("
+        $userRequest = $this->db()->prepare("
         SELECT * 
         FROM users
          WHERE email=:email and password=:password and status = :status");

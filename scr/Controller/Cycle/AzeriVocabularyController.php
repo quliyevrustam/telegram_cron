@@ -11,6 +11,6 @@ class AzeriVocabularyController extends MainController
     {
         $post = $this->model(AzeriVocabulary::class)->getRandomPost();
 
-        return $this->template_engine->render('Cycle/AzeriVocabulary/view.html', ['post' => $post]);
+        return $this->tmp()->render('Cycle/AzeriVocabulary/view.html', ['post' => $post]);
     }
 }

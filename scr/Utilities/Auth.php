@@ -2,6 +2,7 @@
 
 namespace Utilities;
 
+use Core\Core;
 use Model\MainModel;
 use Model\User\User;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -9,22 +10,18 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Psr\Container\ContainerInterface;
 
-class Auth
+class Auth extends Core
 {
-    private $userIdLifetime = 60 * 30; // 30 minutes
     private $http;
-    private $session;
-    private $db;
+
     private $loginPageUrl = '/login';
     private $isLoginPage;
-    private $container;
 
     public function __construct(ContainerInterface $container)
     {
-        $this->container    = $container;
-        $this->db           = $container->get('db');
+        parent::__construct($container);
+
         $this->http         = $container->get('http');
-        $this->session      = $container->get('session');
 
         $this->isLoginPage = ($this->http->getPathInfo() == $this->loginPageUrl);
     }
@@ -36,7 +33,7 @@ class Auth
 
     public function checkLogin()
     {
-        if(empty($this->session->get('user_id')))
+        if(empty($this->session()->get('user_id')))
         {
             if(!empty($this->http->request->get('username')) &&
                 !empty($this->http->request->get('password'))
@@ -50,12 +47,12 @@ class Auth
     }
     public function getUserId(): int
     {
-        if(!$this->session->get('user_id'))
+        if(!$this->session()->get('user_id'))
         {
             $this->logoutUser();
         }
 
-        return $this->session->get('user_id');
+        return $this->session()->get('user_id');
     }
 
     public function loginUser(string $username, string $password):void
@@ -63,8 +60,8 @@ class Auth
         $user = $this->model(User::class)->checkUser($username, $password);
         if($user)
         {
-            $this->session->set('user_id', $user->id);
-            $this->session->set('user_name', $user->name);
+            $this->session()->set('user_id', $user->id);
+            $this->session()->set('user_name', $user->name);
             (new RedirectResponse('/'))->send();
         }
 
@@ -73,7 +70,7 @@ class Auth
 
     public function logoutUser():void
     {
-        $this->session->invalidate();
+        $this->session()->invalidate();
 
         (new RedirectResponse($this->loginPageUrl))->send();
     }

@@ -9,17 +9,8 @@ use Psr\Container\ContainerInterface;
 class MainController extends Core
 {
     private $auth;
-
-    protected $http;
-    protected $template_engine;
-
-    public function __construct(ContainerInterface $container)
-    {
-        parent::__construct($container);
-
-        $this->http             = $container->get('http');
-        $this->template_engine  = $container->get('tmp');
-    }
+    private $tmp;
+    private $http;
 
     protected function auth()
     {
@@ -29,5 +20,19 @@ class MainController extends Core
         }
 
         return $this->auth;
+    }
+
+    protected function http()
+    {
+        if(is_null($this->http)) $this->http = $this->container->get('http');
+
+        return $this->http;
+    }
+
+    protected function tmp()
+    {
+        if(is_null($this->tmp)) $this->tmp = $this->container->get('tmp');
+
+        return $this->tmp;
     }
 }

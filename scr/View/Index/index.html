@@ -12,7 +12,7 @@
     </style>
 </head>
 <body>
-{% include "Menu/menu.html" %}
+{% block menu %}{% include "Menu/menu.html" %}{% endblock %}
 {% block body %}{% endblock %}
 </body>
 </html>
