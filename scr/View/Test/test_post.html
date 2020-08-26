@@ -1,0 +1,16 @@
+{% extends 'Index/main.html' %}
+
+{% block body %}
+<h1>Hello, {{ name }}!</h1>
+<br/>
+<br/>
+<!-- The Modal -->
+<form action="/test/post" method="post">
+    <div class="container">
+        <label for="name"><b>Name</b></label>
+        <input type="test" placeholder="Enter Name" name="name" required>
+
+        <button type="submit">Set name</button>
+    </div>
+</form>
+{% endblock %}

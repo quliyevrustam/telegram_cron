@@ -3,27 +3,24 @@
 require_once dirname(__DIR__ ). '/vendor/autoload.php';
 
 use FastRoute\RouteCollector;
-use Utilities\Auth;
 
 try {
 
     // Create DI Container and write it to $container
     require_once (dirname(__DIR__ ).'/config/di.config.php');
 
-    $auth = new Auth($container);
-    $auth->checkLogin();
-
+    // Routing
     $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r)
     {
-        $r->addRoute('GET', '/login', [\Controller\Index\IndexController::class, 'viewLoginPage']);
-        $r->addRoute('GET', '/logout', [\Controller\Index\IndexController::class, 'logoutUser']);
-        $r->addRoute('GET', '/random/post', [\Controller\Cycle\AzeriVocabularyController::class, 'getRandomPost']);
         $r->addRoute('GET', '/', [\Controller\Index\IndexController::class, 'index']);
-        $r->addRoute('GET', '/name/{name}/{id}', [\Controller\Index\IndexController::class, 'showName']);
-        $r->addRoute('POST', '/', [\Controller\Index\IndexController::class, 'postIndex']);
+        $r->addRoute('GET', '/test/get/{name}', [\Controller\Test\TestController::class, 'testGet']);
+        $r->addRoute('GET', '/test/post', [\Controller\Test\TestController::class, 'viewTestPost']);
+        $r->addRoute('POST', '/test/post', [\Controller\Test\TestController::class, 'testPost']);
     });
 
-    $route = $dispatcher->dispatch($container->get('http')->getMethod(), $container->get('http')->getPathInfo());
+    // Get current route by HTTP Request
+    $http = $container->get('http');
+    $route = $dispatcher->dispatch($http->getMethod(), $http->getPathInfo());
     switch ($route[0])
     {
         case FastRoute\Dispatcher::NOT_FOUND:
@@ -35,13 +32,14 @@ try {
             break;
 
         case FastRoute\Dispatcher::FOUND:
-            $controller = isset($route[1][0]) ? $route[1][0] : \Controller\IndexController::class;
+
+            // Get Controller, Controller Method and Controller Method Arguments
+            $controller = isset($route[1][0]) ? $route[1][0] : \Controller\Index\IndexController::class;
             $method = isset($route[1][1]) ? $route[1][1] : 'index';
-            $parameters = $route[2];
+            $arguments = $route[2];
 
-            $html = (new $controller($container))->$method(...array_values($parameters));
-            echo $html;
-
+            $page = (new $controller($container))->$method(...array_values($arguments));
+            echo $page;
 
             break;
     }
