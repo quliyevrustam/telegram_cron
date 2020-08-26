@@ -13,6 +13,7 @@ try {
     $auth = new Auth($container);
     $auth->checkLogin();
 
+    // Routing
     $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r)
     {
         $r->addRoute('GET', '/login', [\Controller\Index\IndexController::class, 'viewLoginPage']);
@@ -23,7 +24,9 @@ try {
         $r->addRoute('POST', '/', [\Controller\Index\IndexController::class, 'postIndex']);
     });
 
-    $route = $dispatcher->dispatch($container->get('http')->getMethod(), $container->get('http')->getPathInfo());
+    // Get current route by HTTP Request
+    $http = $container->get('http');
+    $route = $dispatcher->dispatch($http->getMethod(), $http->getPathInfo());
     switch ($route[0])
     {
         case FastRoute\Dispatcher::NOT_FOUND:
@@ -35,18 +38,20 @@ try {
             break;
 
         case FastRoute\Dispatcher::FOUND:
-            $controller = isset($route[1][0]) ? $route[1][0] : \Controller\IndexController::class;
+
+            // Get Controller, Controller Method and Controller Method Arguments
+            $controller = isset($route[1][0]) ? $route[1][0] : \Controller\Index\IndexController::class;
             $method = isset($route[1][1]) ? $route[1][1] : 'index';
-            $parameters = $route[2];
+            $arguments = $route[2];
 
-            $html = (new $controller($container))->$method(...array_values($parameters));
-            echo $html;
-
+            $page = (new $controller($container))->$method(...array_values($arguments));
+            echo $page;
 
             break;
     }
 }
 catch (Throwable $exception)
 {
-    echo $exception->getMessage();
+    \Utilities\Helper::prePrint($exception->getMessage());
+    \Utilities\Helper::prePrint($exception->getTrace());
 }

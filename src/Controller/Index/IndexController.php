@@ -18,7 +18,7 @@ class IndexController extends MainController
 
     public function postIndex()
     {
-        $name = $this->http->request->get('name');
+        $name = $this->http()->request->get('name');
         return $this->tmp()->render('Index/start.html', ['name' => $name]);
     }
 

@@ -3,7 +3,6 @@
 namespace Utilities;
 
 use Core\Core;
-use Model\MainModel;
 use Model\User\User;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,11 +23,6 @@ class Auth extends Core
         $this->http         = $container->get('http');
 
         $this->isLoginPage = ($this->http->getPathInfo() == $this->loginPageUrl);
-    }
-
-    protected function model($className)
-    {
-        return new $className($this->container);
     }
 
     public function checkLogin()
