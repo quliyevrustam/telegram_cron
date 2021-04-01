@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Model\Cycle;
 
 use Exception;
@@ -10,6 +9,8 @@ use Utilities\TextFormat;
 
 class Quran extends MainModel
 {
+    const MIN_AYAH_LENGTH = 81;
+
     public $id = [];
     public $quoteText = '';
 
@@ -88,11 +89,12 @@ class Quran extends MainModel
      */
     private function checkQuoteComplete(): void
     {
-        Helper::prePrint($this->id);
+        //Helper::prePrint($this->id);
 
         // Check Ayah Text Begin
         if (preg_match('/^[а-я]/u', $this->quoteText))
         {
+            //echo "\n".'Not TEXT begin'."\n";
             $prevId             = min($this->id) - 1;
             $ayah               = $this->getAyahById($prevId);
             $this->quoteText    = $ayah['text']  . $this->quoteText;
@@ -102,9 +104,20 @@ class Quran extends MainModel
         // Check Ayah Text End
         if (!in_array(substr($this->quoteText, -1, 1), ['.', '!', '?']))
         {
+            //echo "\n".'Not TEXT end'."\n";
             $nextId             = max($this->id) + 1;
             $ayah               = $this->getAyahById($nextId);
             $this->quoteText    = $this->quoteText . $ayah['text'];
+            $this->checkQuoteComplete();
+        }
+
+        // Check Ayah Text Length
+        if(min($this->id) != 1 && mb_strlen($this->quoteText) <= self::MIN_AYAH_LENGTH)
+        {
+            //echo "\n".'TEXT too short'."\n";
+            $prevId             = min($this->id) - 1;
+            $ayah               = $this->getAyahById($prevId);
+            $this->quoteText    = $ayah['text']  . $this->quoteText;
             $this->checkQuoteComplete();
         }
     }
