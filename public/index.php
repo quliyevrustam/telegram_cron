@@ -2,8 +2,12 @@
 
 require_once dirname(__DIR__ ). '/vendor/autoload.php';
 
+use Controller\Channel\TopController;
+use Controller\Cycle\AzeriVocabularyController;
+use Controller\Index\IndexController;
 use FastRoute\RouteCollector;
 use Utilities\Auth;
+use Utilities\Helper;
 
 try {
 
@@ -16,12 +20,13 @@ try {
     // Routing
     $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r)
     {
-        $r->addRoute('GET', '/login', [\Controller\Index\IndexController::class, 'viewLoginPage']);
-        $r->addRoute('GET', '/logout', [\Controller\Index\IndexController::class, 'logoutUser']);
-        $r->addRoute('GET', '/random/post', [\Controller\Cycle\AzeriVocabularyController::class, 'getRandomPost']);
-        $r->addRoute('GET', '/', [\Controller\Index\IndexController::class, 'index']);
-        $r->addRoute('GET', '/name/{name}/{id}', [\Controller\Index\IndexController::class, 'showName']);
-        $r->addRoute('POST', '/', [\Controller\Index\IndexController::class, 'postIndex']);
+        $r->addRoute('GET', '/login', [IndexController::class, 'viewLoginPage']);
+        $r->addRoute('GET', '/logout', [IndexController::class, 'logoutUser']);
+        $r->addRoute('GET', '/random/post', [AzeriVocabularyController::class, 'getRandomPost']);
+        $r->addRoute('GET', '/', [IndexController::class, 'index']);
+        $r->addRoute('GET', '/name/{name}/{id}', [IndexController::class, 'showName']);
+        $r->addRoute('POST', '/', [IndexController::class, 'postIndex']);
+        $r->addRoute('GET', '/channel/top', [TopController::class, 'showTop']);
     });
 
     // Get current route by HTTP Request
@@ -40,7 +45,7 @@ try {
         case FastRoute\Dispatcher::FOUND:
 
             // Get Controller, Controller Method and Controller Method Arguments
-            $controller = isset($route[1][0]) ? $route[1][0] : \Controller\Index\IndexController::class;
+            $controller = isset($route[1][0]) ? $route[1][0] : IndexController::class;
             $method = isset($route[1][1]) ? $route[1][1] : 'index';
             $arguments = $route[2];
 
@@ -52,6 +57,6 @@ try {
 }
 catch (Throwable $exception)
 {
-    \Utilities\Helper::prePrint($exception->getMessage());
-    \Utilities\Helper::prePrint($exception->getTrace());
+    Helper::prePrint($exception->getMessage());
+    Helper::prePrint($exception->getTrace());
 }
