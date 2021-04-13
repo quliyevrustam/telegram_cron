@@ -3,4 +3,4 @@ vendor
 cache/*
 madeline-72.phar
 madeline-72.phar.version
-cron/madeline/session/*
+cron/madeline/*

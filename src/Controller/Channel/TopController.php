@@ -3,13 +3,13 @@
 namespace Controller\Channel;
 
 use Controller\MainController;
-use Model\Channel\Post;
+use Model\Channel\Message;
 
 class TopController extends MainController
 {
     public function showTop()
     {
-        $top = $this->model(Post::class)->getTop();
+        $top = $this->model(Message::class)->getTop();
 
         return $this->tmp()->render('Channel/Top/view.html', ['top' => $top]);
     }

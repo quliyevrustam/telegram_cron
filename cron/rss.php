@@ -1,5 +1,9 @@
 <?php
 
+use Model\Channel\Channel;
+use Model\Channel\Message;
+
+$container = null;
 require_once dirname(__DIR__ ). '/vendor/autoload.php';
 require_once (dirname(__DIR__ ).'/config/di.config.php');
 
@@ -12,42 +16,44 @@ try {
     $settings['app_info']['api_id'] = APP_API_ID;
     $settings['app_info']['api_hash'] = APP_API_HASH;
     $madelineProto = new \danog\MadelineProto\API('madeline/session/telegram.session.madeline',$settings);
-    $madelineProto->start();
+    //$madelineProto->start();
 
-    $channels = [
-        'azeri_word_by_day',
-        'jurefuck',
-        'zangezuravtonomia',
-        'voice_of_turkey',
-        'nataosmanli',
-        'dayaz',
-        'operativmm',
-    ];
+    $channels = (new Channel($container))->getChannelPeers();
+    $channelMessage = (new Message($container));
+
     $offset_id = 0;
-    $limit = 1;
+    $limit = 100;
 
-    foreach ($channels as $channel)
+    foreach ($channels as $channelId=>$peer)
     {
-        $request = $madelineProto->messages->getHistory(['peer' => $channel, 'offset_id' => $offset_id, 'offset_date' => 0, 'add_offset' => 0, 'limit' => $limit, 'max_id' => 0, 'min_id' => 0, 'hash' => 0 ]);
+        $request = $madelineProto->messages->getHistory(['peer' => $peer, 'offset_id' => $offset_id, 'offset_date' => 0, 'add_offset' => 0, 'limit' => $limit, 'max_id' => 0, 'min_id' => 0, 'hash' => 0 ]);
         if(count($request['messages']) > 0)
         {
             foreach ($request['messages'] as $message)
             {
                 $replyCount = (isset($message['replies']['replies'])) ? $message['replies']['replies'] : 0;
+                $body = (isset($message['message'])) ? mb_substr($message['message'], 0, 100)."..." : '';
+                $date = date('Y-m-d H:i:s', $message['date']);
+                $viewCount = (isset($message['views'])) ? $message['views'] : '';
+                $forwardCount = (isset($message['forwards'])) ? $message['forwards'] : '';
 
-                echo 'channel '.$channel."\n";
-                echo 'id '.$message['id']."\n";
-                echo 'date '.$message['date']."\n";
-                echo 'views '.$message['views']."\n";
-                echo 'forwards '.$message['forwards']."\n";
-                echo 'replies '.$replyCount."\n";
-                echo 'message '.mb_substr($message['message'], 0, 100)."..."."\n";
+                $channelMessageBody = [
+                    'external_id' => $message['id'],
+                    'channel_id' => $channelId,
+                    'view_count' => $viewCount,
+                    'forward_count' => $forwardCount,
+                    'reply_count' => $replyCount,
+                    'body' => $body,
+                    'created_at' => $date,
+                ];
 
-                echo "\n"."\n";
-
-                //print_r($message);
+                $channelMessage->update($channelMessageBody);
             }
         }
+//
+//        $messages_Chats = $madelineProto->channels->getChannels(['id' => ['@'.$peer]]);
+//
+//        \Utilities\Helper::prePrint($messages_Chats);
     }
 }
 catch (\danog\MadelineProto\Exception $e) {
