@@ -50,10 +50,6 @@ try {
                 $channelMessage->update($channelMessageBody);
             }
         }
-//
-//        $messages_Chats = $madelineProto->channels->getChannels(['id' => ['@'.$peer]]);
-//
-//        \Utilities\Helper::prePrint($messages_Chats);
     }
 }
 catch (\danog\MadelineProto\Exception $e) {
