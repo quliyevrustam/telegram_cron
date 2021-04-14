@@ -78,4 +78,11 @@ class Helper
 
         return $clear_string;
     }
+
+    public static function timezoneConverter($date, $timezoneFrom, $timezoneTo, $format = 'Y-m-d H:i:s')
+    {
+        $handler = new \DateTime($date, new \DateTimeZone($timezoneFrom));
+        $handler->setTimezone(new \DateTimeZone($timezoneTo));
+        return $handler->format($format);
+    }
 }
