@@ -18,7 +18,7 @@ try {
         $channelBody = ['id' => $channelId];
 
         // Get Channel Info
-        $result = \Utilities\Helper::curlRequest('getChat', 'get', ['chat_id' => '@'.$peer], false);
+        $result = \Utilities\Helper::curlRequest('getChat', 'get', ['chat_id' => '@'.$peer]);
 
         if($result['ok'] == 1)
         {
@@ -27,7 +27,7 @@ try {
         }
 
         // Get Channel Follower count
-        $result = \Utilities\Helper::curlRequest('getChatMembersCount', 'get', ['chat_id' => '@'.$peer], false);
+        $result = \Utilities\Helper::curlRequest('getChatMembersCount', 'get', ['chat_id' => '@'.$peer]);
 
         if($result['ok'] == 1)
         {
@@ -39,5 +39,5 @@ try {
 }
 catch (Throwable $exception)
 {
-    print_r($exception->getMessage());
+    echo $exception->getMessage()."\n";
 }

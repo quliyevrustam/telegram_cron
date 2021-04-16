@@ -60,7 +60,7 @@ class Channel extends MainModel
         $data['id'] = $id;
         $data['updated_at'] = date('Y-m-d H:i:s');
 
-        if(isset($data['name'])) $data['name'] = trim(addslashes(Helper::removeEmoji($data['name'])));
+        if(isset($data['name'])) $data['name'] = Helper::removeEmoji($data['name']);
 
         $sql = "
             UPDATE ".self::TABLE_NAME." 

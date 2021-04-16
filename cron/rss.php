@@ -36,15 +36,19 @@ try {
                 $date = date('Y-m-d H:i:s', $message['date']);
                 $viewCount = (isset($message['views'])) ? $message['views'] : '';
                 $forwardCount = (isset($message['forwards'])) ? $message['forwards'] : '';
+                $groupedId = (isset($message['grouped_id'])) ? $message['grouped_id'] : 0;
+                $isGrouped = $groupedId == 0 ? Message::MESSAGE_SINGLE : Message::MESSAGE_GROUPED;
 
                 $channelMessageBody = [
-                    'external_id' => $message['id'],
-                    'channel_id' => $channelId,
-                    'view_count' => $viewCount,
+                    'external_id'   => $message['id'],
+                    'channel_id'    => $channelId,
+                    'view_count'    => $viewCount,
                     'forward_count' => $forwardCount,
-                    'reply_count' => $replyCount,
-                    'body' => $body,
-                    'created_at' => $date,
+                    'reply_count'   => $replyCount,
+                    'body'          => $body,
+                    'created_at'    => $date,
+                    'grouped_id'    => $groupedId,
+                    'is_grouped'    => $isGrouped,
                 ];
 
                 $channelMessage->update($channelMessageBody);

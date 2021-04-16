@@ -10,6 +10,17 @@ class Message extends MainModel
 {
     const TABLE_NAME = 'channel_message';
 
+    const ERR_COOFICIENT_VIEW       = 0.5;
+    const ERR_COOFICIENT_REPLY      = 0.2;
+    const ERR_COOFICIENT_FORWARD    = 0.3;
+
+    private $max_view_count     = 0;
+    private $max_reply_count    = 0;
+    private $max_forward_count  = 0;
+
+    const MESSAGE_GROUPED = 1;
+    const MESSAGE_SINGLE = 0;
+
     /**
      * @param array $data
      */
@@ -27,33 +38,58 @@ class Message extends MainModel
         if($row)
         {
             $this->edit($row->id, $data);
+            $id = $row->id;
         }
         else
         {
-            $this->create($data);
+            $id = $this->create($data);
+        }
+
+        if($data['is_grouped'] == self::MESSAGE_GROUPED)
+        {
+            $groupedMessageData['message_id']           = $id;
+            $groupedMessageData['channel_id']           = $data['channel_id'];
+            $groupedMessageData['grouped_id']           = $data['grouped_id'];
+            $groupedMessageData['message_external_id']  = $data['external_id'];
+
+            $groupedMessage = $this->model(MessageGrouped::class);
+            $groupedMessage->update($groupedMessageData);
         }
     }
 
     /**
      * @param array $data
+     * @return int
      */
-    private function create(array $data)
+    private function create(array $data): int
     {
+        $updatedFields = ['external_id', 'channel_id', 'view_count', 'forward_count', 'reply_count', 'body', 'created_at', 'is_grouped'];
+        $updatedFields = array_fill_keys($updatedFields, 0);
+
+        foreach ($data as $key=>$value)
+        {
+            if(!isset($updatedFields[$key])) unset($data[$key]);
+        }
+
+        if(isset($data['body'])) $data['body'] = Helper::removeEmoji($data['body']);
+
         $sql = "
             INSERT INTO 
-                ".self::TABLE_NAME." (external_id, channel_id, view_count, forward_count, reply_count, body, created_at) 
+                ".self::TABLE_NAME." (external_id, channel_id, view_count, forward_count, reply_count, body, created_at, is_grouped) 
             VALUES 
-                (:external_id, :channel_id, :view_count, :forward_count, :reply_count, :body, :created_at)";
+                (:external_id, :channel_id, :view_count, :forward_count, :reply_count, :body, :created_at, :is_grouped)";
         $this->db()->prepare($sql)->execute($data);
+
+        return $this->db()->lastInsertId();
     }
 
     /**
      * @param int $id
      * @param array $data
      */
-    private function edit(int $id, array $data)
+    private function edit(int $id, array $data): int
     {
-        $updatedFields = ['external_id', 'channel_id', 'view_count', 'forward_count', 'reply_count', 'body', 'err'];
+        $updatedFields = ['external_id', 'channel_id', 'view_count', 'forward_count', 'reply_count', 'body', 'err', 'is_grouped'];
         $updatedFields = array_fill_keys($updatedFields, 0);
 
         foreach ($data as $key=>$value)
@@ -63,7 +99,7 @@ class Message extends MainModel
 
         $data['updated_at'] = date('Y-m-d H:i:s');
 
-        if(isset($data['body'])) $data['body'] = trim(addslashes(Helper::removeEmoji($data['body'])));
+        if(isset($data['body'])) $data['body'] = Helper::removeEmoji($data['body']);
 
         $updateSQL = [];
         foreach ($data as $field=>$value)
@@ -79,6 +115,8 @@ class Message extends MainModel
                 ".(implode(',', $updateSQL))."
             WHERE id=:id;";
         $this->db()->prepare($sql)->execute($data);
+
+        return $id;
     }
 
     /**
@@ -86,20 +124,22 @@ class Message extends MainModel
      */
     public function TopMessagePost(): string
     {
-        $todayBegin = Helper::timezoneConverter(date('Y-m-d 00:00:00'), 'Asia/Baku', 'UTC');
-
         $topMessages = [];
         $sql = "
         SELECT 
           c.`peer`, 
           c.`name`, 
           ch.`external_id`, 
-          ch.`body` 
+          IF(
+          ch.`body` LIKE '...' AND ch.`is_grouped` = 1, 
+          (SELECT `body`  FROM `channel_message`  WHERE id IN (SELECT cmg.`message_id` FROM `channel_message_grouped` cmg WHERE cmg.`main_message_id` = ch.`id`) AND `body` NOT LIKE '...' LIMIT 1), 
+          ch.`body`) AS body
         FROM 
           `channel_message` ch 
           LEFT JOIN `channel` c ON ch.`channel_id` = c.`id` 
-        WHERE 
-          ch.`created_at` > '".$todayBegin."'
+        WHERE   
+          ch.`created_at` > '".Helper::getCurrentDayBegin()."' AND 
+          (ch.`is_grouped` = 0 OR (ch.`is_grouped` = 1 AND ch.id IN (SELECT cmg.`main_message_id` FROM `channel_message_grouped` cmg)))
         ORDER BY 
           ch.err DESC, ch.created_at DESC 
         LIMIT 
@@ -143,33 +183,9 @@ class Message extends MainModel
         return $post;
     }
 
-    private $max_view_count     = 0;
-    private $max_reply_count    = 0;
-    private $max_forward_count  = 0;
-
     public function updateErr(): void
     {
-        $todayBegin = Helper::timezoneConverter(date('Y-m-d 00:00:00'), 'Asia/Baku', 'UTC');
-
-        $sql = "
-        SELECT 
-          MAX(c.`view_count`) AS max_view_count,
-          MAX(c.`reply_count`) AS max_reply_count,
-          MAX(c.`forward_count`) AS max_forward_count
-        FROM 
-          `channel_message` c
-        WHERE 
-          c.`status` > 0 AND c.`created_at` > '".$todayBegin."'
-        ORDER BY c.created_at DESC;";
-        $sqlRequest = $this->db()->prepare($sql);
-        $sqlRequest->execute();
-        $row = $sqlRequest->fetch(\PDO::FETCH_OBJ);
-        if($row)
-        {
-            $this->max_view_count = $row->max_view_count;
-            $this->max_reply_count = $row->max_reply_count;
-            $this->max_forward_count = $row->max_forward_count;
-        }
+        $this->fillMaxProperty();
 
         $sql = "
         SELECT 
@@ -180,7 +196,7 @@ class Message extends MainModel
         FROM 
           `channel_message` c
         WHERE 
-          c.`status` > 0 AND c.`created_at` > '".$todayBegin."'
+          c.`status` > 0 AND c.`created_at` > '".Helper::getCurrentDayBegin()."'
         ORDER BY c.created_at DESC;";
         $sqlRequest = $this->db()->prepare($sql);
         $sqlRequest->execute();
@@ -196,10 +212,35 @@ class Message extends MainModel
         }
     }
 
-    const ERR_COOFICIENT_VIEW       = 0.5;
-    const ERR_COOFICIENT_REPLY      = 0.2;
-    const ERR_COOFICIENT_FORWARD    = 0.3;
+    private function fillMaxProperty(): void
+    {
+        $sql = "
+        SELECT 
+          MAX(c.`view_count`) AS max_view_count,
+          MAX(c.`reply_count`) AS max_reply_count,
+          MAX(c.`forward_count`) AS max_forward_count
+        FROM 
+          `channel_message` c
+        WHERE 
+          c.`status` > 0 AND c.`created_at` > '".Helper::getCurrentDayBegin()."'
+        ORDER BY c.created_at DESC;";
+        $sqlRequest = $this->db()->prepare($sql);
+        $sqlRequest->execute();
+        $row = $sqlRequest->fetch(\PDO::FETCH_OBJ);
+        if($row)
+        {
+            $this->max_view_count = $row->max_view_count;
+            $this->max_reply_count = $row->max_reply_count;
+            $this->max_forward_count = $row->max_forward_count;
+        }
+    }
 
+    /**
+     * @param int $viewCount
+     * @param int $replyCount
+     * @param int $forwardCount
+     * @return float
+     */
     private function countErr(int $viewCount, int $replyCount, int $forwardCount): float
     {
         $viewVariable = $replyVariable = $forwardVariable = 0;
