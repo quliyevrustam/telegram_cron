@@ -4,6 +4,7 @@ namespace Model\Channel;
 
 use Model\MainModel;
 use Utilities\Helper;
+use Utilities\HtmlFormat;
 use Utilities\TextFormat;
 
 class Message extends MainModel
@@ -161,21 +162,23 @@ class Message extends MainModel
         }
 
         $i = 1;
-        $post = TextFormat::makeBold(date('d/m/Y'))."\n"."\n";
+        $post = HtmlFormat::makeBold(date('d/m/Y'))."\n"."\n";
         foreach ($topMessages as $message)
         {
-            // Prepare Message Link
-            $linkPeer = str_replace('_', "\_",$message['peer']);
-            $messageLink = 'https://t.me/'.$linkPeer.'/'.$message['external_id'];
+            // Prepare Message Name
+            $message['name'] = str_replace(".", HtmlFormat::makeCode('.'), $message['name']);
 
             // Prepare Message Body
             $message['body'] = str_replace("\n", ' ', $message['body']);
-            $messageBody = TextFormat::makeItalic($message['body']);
+            $messageBody = HtmlFormat::makeItalic($message['body']);
+
+            // Prepare Message Link
+            $messageLink = 'https://t.me/'.$message['peer'].'/'.$message['external_id'];
 
             // Prepare Message Post
-            $post .= TextFormat::makeBold($i.'. '.$message['name'])."\n";
-            if($message['body'] != '...') $post .= TextFormat::makeBold('Текст').': '.$messageBody."\n";
-            $post .= TextFormat::makeBold('Ссылка').': '.$messageLink."\n"."\n";
+            $post .= HtmlFormat::makeBold($i.'. '.$message['name'])."\n";
+            if($message['body'] != '...') $post .= HtmlFormat::makeBold('Текст').': '.$messageBody."\n";
+            $post .= HtmlFormat::makeBold('Ссылка').': '.$messageLink."\n"."\n";
 
             $i++;
         }

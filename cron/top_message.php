@@ -17,7 +17,7 @@ try {
     $response = $telegram->sendMessage([
         'chat_id'   => CHANNEL_TOP_AZERI_POST,
         'text'      => $channelPost,
-        'parse_mode'=> 'Markdown'
+        'parse_mode'=> 'HTML'
     ]);
 
     if($messageId = $response->getMessageId())
