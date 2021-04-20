@@ -12,11 +12,11 @@ try {
     require_once (dirname(__DIR__ ).'/config/di.config.php');
 
     $topPost = new TopMessage($container);
-    $channelPost = $topPost->MessagePost(TopMessage::TYPE_ALL_DAILY);
+    $channelPost = $topPost->MessagePost(TopMessage::TYPE_NOT_NEWS_WEEKLY);
 
     $telegram = new Api(BOT_KEY);
     $response = $telegram->sendMessage([
-        'chat_id'   => CHANNEL_TOP_AZERI_POST,
+        'chat_id'   => CHANNEL_TEST,
         'text'      => $channelPost,
         'parse_mode'=> 'HTML'
     ]);

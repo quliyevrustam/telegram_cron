@@ -4,23 +4,21 @@ namespace Model\Channel;
 
 use Model\MainModel;
 use Utilities\Helper;
-use Utilities\HtmlFormat;
-use Utilities\TextFormat;
 
 class Message extends MainModel
 {
-    const TABLE_NAME = 'channel_message';
+    public const TABLE_NAME = 'channel_message';
 
-    const ERR_COOFICIENT_VIEW       = 0.5;
-    const ERR_COOFICIENT_REPLY      = 0.2;
-    const ERR_COOFICIENT_FORWARD    = 0.3;
+    public const ERR_COOFICIENT_VIEW = 0.5;
+    public const ERR_COOFICIENT_REPLY = 0.2;
+    public const ERR_COOFICIENT_FORWARD = 0.3;
+
+    public const MESSAGE_GROUPED = 1;
+    public const MESSAGE_SINGLE = 0;
 
     private $max_view_count     = 0;
     private $max_reply_count    = 0;
     private $max_forward_count  = 0;
-
-    const MESSAGE_GROUPED = 1;
-    const MESSAGE_SINGLE = 0;
 
     /**
      * @param array $data
@@ -87,6 +85,7 @@ class Message extends MainModel
     /**
      * @param int $id
      * @param array $data
+     * @return int
      */
     private function edit(int $id, array $data): int
     {
@@ -120,72 +119,6 @@ class Message extends MainModel
         return $id;
     }
 
-    /**
-     * @return string
-     */
-    public function TopMessagePost(): string
-    {
-        $topMessages = [];
-        $sql = "
-        SELECT 
-          c.`peer`, 
-          c.`name`, 
-          ch.`external_id`, 
-          IF(
-          ch.`body` LIKE '...' AND ch.`is_grouped` = 1, 
-          (SELECT `body`  FROM `channel_message`  WHERE id IN (SELECT cmg.`message_id` FROM `channel_message_grouped` cmg WHERE cmg.`main_message_id` = ch.`id`) AND `body` NOT LIKE '...' LIMIT 1), 
-          ch.`body`) AS body
-        FROM 
-          `channel_message` ch 
-          LEFT JOIN `channel` c ON ch.`channel_id` = c.`id` 
-        WHERE   
-          ch.`created_at` > '".Helper::getCurrentDayBegin()."' AND 
-          (ch.`is_grouped` = 0 OR (ch.`is_grouped` = 1 AND ch.id IN (SELECT cmg.`main_message_id` FROM `channel_message_grouped` cmg)))
-        ORDER BY 
-          ch.err DESC, ch.created_at DESC 
-        LIMIT 
-          0, 5;";
-        $sqlRequest = $this->db()->prepare($sql);
-        $sqlRequest->execute();
-        $rows = $sqlRequest->fetchAll(\PDO::FETCH_OBJ);
-        if($rows)
-        {
-            foreach ($rows as $row)
-            {
-                $topMessages[] = [
-                    'external_id' => $row->external_id,
-                    'peer'        => $row->peer,
-                    'name'        => $row->name,
-                    'body'        => $row->body,
-                ];
-            }
-        }
-
-        $i = 1;
-        $post = HtmlFormat::makeBold(date('d/m/Y'))."\n"."\n";
-        foreach ($topMessages as $message)
-        {
-            // Prepare Message Name
-            $message['name'] = str_replace(".", HtmlFormat::makeCode('.'), $message['name']);
-
-            // Prepare Message Body
-            $message['body'] = str_replace("\n", ' ', $message['body']);
-            $messageBody = HtmlFormat::makeItalic($message['body']);
-
-            // Prepare Message Link
-            $messageLink = 'https://t.me/'.$message['peer'].'/'.$message['external_id'];
-
-            // Prepare Message Post
-            $post .= HtmlFormat::makeBold($i.'. '.$message['name'])."\n";
-            if($message['body'] != '...') $post .= HtmlFormat::makeBold('Текст').': '.$messageBody."\n";
-            $post .= HtmlFormat::makeBold('Ссылка').': '.$messageLink."\n"."\n";
-
-            $i++;
-        }
-
-        return $post;
-    }
-
     public function updateErr(): void
     {
         $this->fillMaxProperty();
@@ -197,7 +130,7 @@ class Message extends MainModel
           c.`reply_count`, 
           c.`forward_count`
         FROM 
-          `channel_message` c
+          ".Message::TABLE_NAME." c
         WHERE 
           c.`status` > 0 AND c.`created_at` > '".Helper::getCurrentDayBegin()."'
         ORDER BY c.created_at DESC;";
@@ -223,7 +156,7 @@ class Message extends MainModel
           MAX(c.`reply_count`) AS max_reply_count,
           MAX(c.`forward_count`) AS max_forward_count
         FROM 
-          `channel_message` c
+          ".Message::TABLE_NAME." c
         WHERE 
           c.`status` > 0 AND c.`created_at` > '".Helper::getCurrentDayBegin()."'
         ORDER BY c.created_at DESC;";

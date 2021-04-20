@@ -34,8 +34,8 @@ try {
                 $replyCount = (isset($message['replies']['replies'])) ? $message['replies']['replies'] : 0;
                 $body = (isset($message['message'])) ? mb_substr($message['message'], 0, 100)."..." : '';
                 $date = date('Y-m-d H:i:s', $message['date']);
-                $viewCount = (isset($message['views'])) ? $message['views'] : '';
-                $forwardCount = (isset($message['forwards'])) ? $message['forwards'] : '';
+                $viewCount = (isset($message['views'])) ? $message['views'] : 0;
+                $forwardCount = (isset($message['forwards'])) ? $message['forwards'] : 0;
                 $groupedId = (isset($message['grouped_id'])) ? $message['grouped_id'] : 0;
                 $isGrouped = $groupedId == 0 ? Message::MESSAGE_SINGLE : Message::MESSAGE_GROUPED;
 

@@ -112,4 +112,9 @@ class Helper
     {
         return Helper::timezoneConverter(date('Y-m-d 00:00:00'), 'Asia/Baku', 'UTC');
     }
+
+    public static function getWeekBegin(): string
+    {
+        return Helper::timezoneConverter(date('Y-m-d 00:00:00', strtotime('monday -1 week')), 'Asia/Baku', 'UTC');
+    }
 }
