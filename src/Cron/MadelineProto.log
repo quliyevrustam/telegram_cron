@@ -1,0 +1,1667 @@
+[33;1mLogger, xryst:         	Automatically truncated logfile to 1048576[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64, xryst: 	Given message id (6953510152326804481) is bigger than or equal to the current limit (6953510152326745089). Consider syncing your date.[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1252070888[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1252070888[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64, xryst: 	Given message id (6953510159634194433) is bigger than or equal to the current limit (6953510159634156545). Consider syncing your date.[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1270848742[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64, xryst: 	Given message id (6953510161413989377) is bigger than or equal to the current limit (6953510161413956609). Consider syncing your date.[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1270848742[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1270848742[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[33;1mPeerHandler, xryst:    	Only have min peer for 1435678741 in database, trying to fetch full info[0m
+[33;1mMinDatabase, xryst:    	Don't have origin info with min peer 1435678741, this may fail[0m
+[33;1mMsgIdHandler64, xryst: 	Given message id (6953510163350830081) is bigger than or equal to the current limit (6953510163350796289). Consider syncing your date.[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1270848742[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1270848742[0m
+[33;1mMsgIdHandler64, xryst: 	Given message id (6953510167309058049) is bigger than or equal to the current limit (6953510167309022209). Consider syncing your date.[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64, xryst: 	Given message id (6953510181419855873) is bigger than or equal to the current limit (6953510181419826177). Consider syncing your date.[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64, xryst: 	Given message id (6953510191436256257) is bigger than or equal to the current limit (6953510191436223489). Consider syncing your date.[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1270848742[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1270848742[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64, xryst: 	Given message id (6953510196502750209) is bigger than or equal to the current limit (6953510196502706177). Consider syncing your date.[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mFeedLoop, xryst:       	Getdiff fed me message of type message in update feed loop channel 1444017281...[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1444017281[0m
+[33;1mSessionPaths, xryst:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths, xryst:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths, xryst:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths, xryst:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper, xryst:     	Saved session![0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1444017281[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1444017281[0m
+[33;1mMsgIdHandler64, xryst: 	Given message id (6953510204948947969) is bigger than or equal to the current limit (6953510204948904961). Consider syncing your date.[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1270848742[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1270848742[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64, xryst: 	Given message id (6953510213508317185) is bigger than or equal to the current limit (6953510213508276225). Consider syncing your date.[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1270848742[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64, xryst: 	Given message id (6953510217550214145) is bigger than or equal to the current limit (6953510217550163969). Consider syncing your date.[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop, xryst:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop channel 1189656417[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler, xryst:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop, xryst:       	Resumed update feed loop generic[0m
+[31;1;47mMagic, xryst:          	Got sigterm[0m
+[33;1mMTProto, xryst:        	Prompting final serialization (SHUTDOWN)...[0m
+[33;1mSessionPaths, xryst:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths, xryst:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths, xryst:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths, xryst:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper, xryst:     	Saved session![0m
+[33;1mMTProto, xryst:        	Done final serialization (SHUTDOWN)![0m
+[33;1mAPI, xryst:            	Shutting down MadelineProto (danog\MadelineProto\API)[0m
+[33;1mMTProto, xryst:        	Will unreference instance[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop generic due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1010131401 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1054210809 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1072523372 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1100118939 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1129547667 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1134292935 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1159468471 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1189656417 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1252070888 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1270848742 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1340215360 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1357506163 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1365574968 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1377279331 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1397361977 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1419168881 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1444017281 due to signal[0m
+[33;1mUpdateLoop, xryst:     	Exiting getUpdate loop channel 1487132781 due to signal[0m
+[33;1mDataCenterConnection, xryst: 	Disconnecting from shared DC 2[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 2.0[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 2.0[0m
+[33;1mConnection, xryst:     	Disconnected from DC 2.0[0m
+[33;1mDataCenterConnection, xryst: 	Backed up 0, added to 0 existing messages) from DC 2[0m
+[33;1mDataCenterConnection, xryst: 	Disconnecting from shared DC 1[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 1.0[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 1.0[0m
+[33;1mConnection, xryst:     	Disconnected from DC 1.0[0m
+[33;1mDataCenterConnection, xryst: 	Backed up 0, added to 0 existing messages) from DC 1[0m
+[33;1mDataCenterConnection, xryst: 	Disconnecting from shared DC 2_media[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 2_media.0[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 2_media.0[0m
+[33;1mConnection, xryst:     	Disconnected from DC 2_media.0[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 2_media.1[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 2_media.1[0m
+[33;1mConnection, xryst:     	Disconnected from DC 2_media.1[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 2_media.2[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 2_media.2[0m
+[33;1mConnection, xryst:     	Disconnected from DC 2_media.2[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 2_media.3[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 2_media.3[0m
+[33;1mConnection, xryst:     	Disconnected from DC 2_media.3[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 2_media.4[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 2_media.4[0m
+[33;1mConnection, xryst:     	Disconnected from DC 2_media.4[0m
+[33;1mDataCenterConnection, xryst: 	Backed up 0, added to 0 existing messages) from DC 2_media[0m
+[33;1mDataCenterConnection, xryst: 	Disconnecting from shared DC 3[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 3.0[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 3.0[0m
+[33;1mConnection, xryst:     	Disconnected from DC 3.0[0m
+[33;1mDataCenterConnection, xryst: 	Backed up 0, added to 0 existing messages) from DC 3[0m
+[33;1mDataCenterConnection, xryst: 	Disconnecting from shared DC 4[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 4.0[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 4.0[0m
+[33;1mConnection, xryst:     	Disconnected from DC 4.0[0m
+[33;1mDataCenterConnection, xryst: 	Backed up 0, added to 0 existing messages) from DC 4[0m
+[33;1mDataCenterConnection, xryst: 	Disconnecting from shared DC 4_media[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 4_media.0[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 4_media.0[0m
+[33;1mConnection, xryst:     	Disconnected from DC 4_media.0[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 4_media.1[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 4_media.1[0m
+[33;1mConnection, xryst:     	Disconnected from DC 4_media.1[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 4_media.2[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 4_media.2[0m
+[33;1mConnection, xryst:     	Disconnected from DC 4_media.2[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 4_media.3[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 4_media.3[0m
+[33;1mConnection, xryst:     	Disconnected from DC 4_media.3[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 4_media.4[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 4_media.4[0m
+[33;1mConnection, xryst:     	Disconnected from DC 4_media.4[0m
+[33;1mDataCenterConnection, xryst: 	Backed up 0, added to 0 existing messages) from DC 4_media[0m
+[33;1mDataCenterConnection, xryst: 	Disconnecting from shared DC 5[0m
+[33;1mConnection, xryst:     	Disconnecting from DC 5.0[0m
+[33;1mDataCenterConnection, xryst: 	Backed up  from DC 5.0[0m
+[33;1mConnection, xryst:     	Disconnected from DC 5.0[0m
+[33;1mDataCenterConnection, xryst: 	Backed up 0, added to 0 existing messages) from DC 5[0m
+[33;1mMTProto, xryst:        	Unreferenced instance[0m
+[33;1mSerialization, xryst:  	Unlocking exclusive session lock![0m
+[33;1mSerialization, xryst:  	Unlocked exclusive session lock![0m
+[33;1mMTProto, xryst:        	Shutting down MadelineProto (MTProto)[0m
+[33;1mMTProto, xryst:        	Will unreference instance[0m
+[33;1mDataCenterConnection, xryst: 	Disconnecting from shared DC 2[0m
+[33;1mDataCenterConnection, xryst: 	Backed up 0, added to 0 existing messages) from DC 2[0m
+[33;1mDataCenterConnection, xryst: 	Disconnecting from shared DC 1[0m
+[33;1mDataCenterConnection, xryst: 	Backed up 0, added to 0 existing messages) from DC 1[0m
+[33;1mDataCenterConnection, xryst: 	Disconnecting from shared DC 2_media[0m
+[33;1mDataCenterConnection, xryst: 	Backed up 0, added to 0 existing messages) from DC 2_media[0m
+[33;1mDataCenterConnection, xryst: 	Disconnecting from shared DC 3[0m
+[33;1mDataCenterConnection, xryst: 	Backed up 0, added to 0 existing messages) from DC 3[0m
+[33;1mDataCenterConnection, xryst: 	Disconnecting from shared DC 4[0m
+[33;1mDataCenterConnection, xryst: 	Backed up 0, added to 0 existing messages) from DC 4[0m
+[33;1mDataCenterConnection, xryst: 	Disconnecting from shared DC 4_media[0m
+[33;1mDataCenterConnection, xryst: 	Backed up 0, added to 0 existing messages) from DC 4_media[0m
+[33;1mDataCenterConnection, xryst: 	Disconnecting from shared DC 5[0m
+[33;1mDataCenterConnection, xryst: 	Backed up 0, added to 0 existing messages) from DC 5[0m
+[33;1mMTProto, xryst:        	Unreferenced instance[0m
+[33;1mMTProto, xryst:        	Successfully destroyed MadelineProto[0m
+[37;1;44mLogger:         	MadelineProto[0m
+[37;1;44mLogger:         	Copyright (C) 2016-2020 Daniil Gentili[0m
+[37;1;44mLogger:         	Licensed under AGPLv3[0m
+[37;1;44mLogger:         	https://github.com/danog/MadelineProto[0m
+[33;1mSessionPaths:   	Waiting for shared lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got shared lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSerialization:  	Got exclusive session lock![0m
+[33;1mSessionPaths:   	Waiting for shared lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got shared lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[97;2;41mMTProto:        	Serialization is out of date, reconstructing object![0m
+[97;2;41mMTProto:        	Filling database cache. This can take few minutes.[0m
+[97;2;41mMTProto:        	Cache filled.[0m
+[32;1mTL:             	Loading TL schemes...[0m
+[32;1mTL:             	Parsing TL_telegram_v121.tl...[0m
+[32;1mTL:             	Parsing TL_mtproto_v1.tl...[0m
+[97;1;41mTL:             	CRC32 mismatch (29c1636d, 73f1f8dc) for msg_container#73f1f8dc messages:vector<%Message> = MessageContainer;[0m
+[32;1mTL:             	Parsing TL_secret.tl...[0m
+[33;1mDataCenter:     	Disconnecting all before reconnect![0m
+[33;1mDataCenterConnection: 	Disconnecting from shared DC [0m
+[33;1mDataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC [0m
+[33;1mDataCenter:     	Disconnecting all before reconnect![0m
+[33;1mDataCenterConnection: 	Disconnecting from shared DC [0m
+[33;1mDataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC [0m
+[33;1mDataCenter:     	Disconnecting all before reconnect![0m
+[33;1mDataCenterConnection: 	Disconnecting from shared DC [0m
+[33;1mDataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC [0m
+[33;1mDataCenter:     	Disconnecting all before reconnect![0m
+[33;1mDataCenterConnection: 	Disconnecting from shared DC [0m
+[33;1mDataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC [0m
+[33;1mDataCenter:     	Disconnecting all before reconnect![0m
+[33;1mDataCenterConnection: 	Disconnecting from shared DC [0m
+[33;1mDataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC [0m
+[33;1mDataCenter:     	Disconnecting all before reconnect![0m
+[33;1mDataCenterConnection: 	Disconnecting from shared DC [0m
+[33;1mDataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC [0m
+[33;1mDataCenter:     	Disconnecting all before reconnect![0m
+[33;1mDataCenterConnection: 	Disconnecting from shared DC [0m
+[33;1mDataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC [0m
+[97;2;41mDataCenter:     	Reconnecting to DC 2 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.167.51:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mConnection:     	Connecting to DC 2.0[0m
+[97;2;41mSession:        	Resetting session in DC 2.0...[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 1 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.175.53:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mConnection:     	Connecting to DC 1.0[0m
+[97;2;41mSession:        	Resetting session in DC 1.0...[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 2_media (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.167.151:443 main DC 2_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mConnection:     	Connecting to DC 2_media.0[0m
+[97;2;41mSession:        	Resetting session in DC 2_media.0...[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 3 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mConnection:     	Connecting to DC 3.0[0m
+[97;2;41mSession:        	Resetting session in DC 3.0...[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 4 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.167.91:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mConnection:     	Connecting to DC 4.0[0m
+[97;2;41mSession:        	Resetting session in DC 4.0...[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 4_media (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.165.111:443 main DC 4_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mConnection:     	Connecting to DC 4_media.0[0m
+[97;2;41mSession:        	Resetting session in DC 4_media.0...[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 5 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://91.108.56.170:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mConnection:     	Connecting to DC 5.0[0m
+[97;2;41mSession:        	Resetting session in DC 5.0...[0m
+[97;2;41mConnection:     	Connected to DC 2.0![0m
+[33;1mDataCenterConnection: 	Restoring 0 messages to DC 2[0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mConnection:     	Connected to DC 2_media.0![0m
+[97;2;41mConnection:     	Connecting to DC 2_media.1[0m
+[97;2;41mSession:        	Resetting session in DC 2_media.1...[0m
+[97;2;41mConnection:     	Connected to DC 4.0![0m
+[33;1mDataCenterConnection: 	Restoring 0 messages to DC 4[0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mConnection:     	Connected to DC 4_media.0![0m
+[97;2;41mConnection:     	Connecting to DC 4_media.1[0m
+[97;2;41mSession:        	Resetting session in DC 4_media.1...[0m
+[97;2;41mConnection:     	Connected to DC 2_media.1![0m
+[97;2;41mConnection:     	Connecting to DC 2_media.2[0m
+[97;2;41mSession:        	Resetting session in DC 2_media.2...[0m
+[97;2;41mConnection:     	Connected to DC 4_media.1![0m
+[97;2;41mConnection:     	Connecting to DC 4_media.2[0m
+[97;2;41mSession:        	Resetting session in DC 4_media.2...[0m
+[97;2;41mConnection:     	Connected to DC 4_media.2![0m
+[97;2;41mConnection:     	Connecting to DC 4_media.3[0m
+[97;2;41mSession:        	Resetting session in DC 4_media.3...[0m
+[97;2;41mConnection:     	Connected to DC 2_media.2![0m
+[97;2;41mConnection:     	Connecting to DC 2_media.3[0m
+[97;2;41mSession:        	Resetting session in DC 2_media.3...[0m
+[97;2;41mConnection:     	Connected to DC 4_media.3![0m
+[97;2;41mConnection:     	Connecting to DC 4_media.4[0m
+[97;2;41mSession:        	Resetting session in DC 4_media.4...[0m
+[97;2;41mConnection:     	Connected to DC 2_media.3![0m
+[97;2;41mConnection:     	Connecting to DC 2_media.4[0m
+[97;2;41mSession:        	Resetting session in DC 2_media.4...[0m
+[97;2;41mConnection:     	Connected to DC 4_media.4![0m
+[33;1mDataCenterConnection: 	Restoring 0 messages to DC 4_media[0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mConnection:     	Connected to DC 2_media.4![0m
+[33;1mDataCenterConnection: 	Restoring 0 messages to DC 2_media[0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mConnection:     	Connected to DC 3.0![0m
+[33;1mDataCenterConnection: 	Restoring 0 messages to DC 3[0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mConnection:     	Connected to DC 1.0![0m
+[33;1mDataCenterConnection: 	Restoring 0 messages to DC 1[0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mConnection:     	Connected to DC 5.0![0m
+[33;1mDataCenterConnection: 	Restoring 0 messages to DC 5[0m
+[97;2;41mDataCenter:     	OK![0m
+[33;1mMTProto:        	Initing authorization...[0m
+[33;1mMTProto:        	Initing authorization DC 2...[0m
+[33;1mWriteLoop:      	Writing client info (also executing help.getConfig)...[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511360521859073) is bigger than or equal to the current limit (6953511360521837569). Consider syncing your date.[0m
+[33;1mMTProto:        	Done initing authorization DC 2[0m
+[33;1mMTProto:        	Initing authorization DC 1...[0m
+[33;1mWriteLoop:      	Writing client info (also executing help.getConfig)...[0m
+[33;1mMTProto:        	Initing authorization DC 3...[0m
+[33;1mWriteLoop:      	Writing client info (also executing help.getConfig)...[0m
+[33;1mMTProto:        	Initing authorization DC 4...[0m
+[33;1mWriteLoop:      	Writing client info (also executing help.getConfig)...[0m
+[33;1mMTProto:        	Initing authorization DC 5...[0m
+[33;1mWriteLoop:      	Writing client info (also executing help.getConfig)...[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511360703879169) is bigger than or equal to the current limit (6953511360703874049). Consider syncing your date.[0m
+[33;1mMTProto:        	Done initing authorization DC 4[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511361234288641) is bigger than or equal to the current limit (6953511361234214913). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511361253404673) is bigger than or equal to the current limit (6953511361253383169). Consider syncing your date.[0m
+[33;1mMTProto:        	Done initing authorization DC 3[0m
+[33;1mMTProto:        	Done initing authorization DC 1[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511361629651969) is bigger than or equal to the current limit (6953511361629632513). Consider syncing your date.[0m
+[33;1mMTProto:        	Done initing authorization DC 5[0m
+[33;1mMTProto:        	Initing authorization DC 2_media...[0m
+[33;1mWriteLoop:      	Writing client info (also executing help.getConfig)...[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511362056522753) is bigger than or equal to the current limit (6953511362056517633). Consider syncing your date.[0m
+[33;1mMTProto:        	Done initing authorization DC 2_media[0m
+[33;1mMTProto:        	Initing authorization DC 4_media...[0m
+[33;1mWriteLoop:      	Writing client info (also executing help.getConfig)...[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511362351026177) is bigger than or equal to the current limit (6953511362351001601). Consider syncing your date.[0m
+[33;1mMTProto:        	Done initing authorization DC 4_media[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 2 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.167.51:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mDataCenterConnection: 	Already connected![0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mDataCenter:     	Reconnecting to DC 1 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.175.53:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mDataCenterConnection: 	Already connected![0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mDataCenter:     	Reconnecting to DC 2_media (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.167.151:443 main DC 2_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mDataCenterConnection: 	Already connected![0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mDataCenter:     	Reconnecting to DC 3 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mDataCenterConnection: 	Already connected![0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mDataCenter:     	Reconnecting to DC 4 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.167.91:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mDataCenterConnection: 	Already connected![0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mDataCenter:     	Reconnecting to DC 4_media (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.165.111:443 main DC 4_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mDataCenterConnection: 	Already connected![0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mDataCenter:     	Reconnecting to DC 5 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://91.108.56.170:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mDataCenterConnection: 	Already connected![0m
+[97;2;41mDataCenter:     	OK![0m
+[33;1mMTProto:        	Initing authorization...[0m
+[33;1mMTProto:        	Initing authorization DC 2...[0m
+[33;1mMTProto:        	Done initing authorization DC 2[0m
+[33;1mMTProto:        	Initing authorization DC 1...[0m
+[33;1mMTProto:        	Done initing authorization DC 1[0m
+[33;1mMTProto:        	Initing authorization DC 3...[0m
+[33;1mMTProto:        	Done initing authorization DC 3[0m
+[33;1mMTProto:        	Initing authorization DC 4...[0m
+[33;1mMTProto:        	Done initing authorization DC 4[0m
+[33;1mMTProto:        	Initing authorization DC 5...[0m
+[33;1mMTProto:        	Done initing authorization DC 5[0m
+[33;1mMTProto:        	Initing authorization DC 2_media...[0m
+[33;1mMTProto:        	Done initing authorization DC 2_media[0m
+[33;1mMTProto:        	Initing authorization DC 4_media...[0m
+[33;1mMTProto:        	Done initing authorization DC 4_media[0m
+[33;1mMTProto:        	Not fetching phone config[0m
+[33;1mMTProto:        	Not fetching phone config[0m
+[33;1mMTProto:        	We're in DE, nearest DC is 2.[0m
+[33;1mMTProto:        	Starting update system[0m
+[97;2;41mMTProto:        	Filling database cache. This can take few minutes.[0m
+[97;2;41mMTProto:        	Cache filled.[0m
+[33;1mDataCenter:     	Disconnecting all before reconnect![0m
+[33;1mDataCenterConnection: 	Disconnecting from shared DC 2[0m
+[33;1mConnection:     	Disconnecting from DC 2.0[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 2.0[0m
+[33;1mConnection:     	Disconnected from DC 2.0[0m
+[33;1mDataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 2[0m
+[33;1mDataCenter:     	Disconnecting all before reconnect![0m
+[33;1mDataCenterConnection: 	Disconnecting from shared DC 1[0m
+[33;1mConnection:     	Disconnecting from DC 1.0[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 1.0[0m
+[33;1mConnection:     	Disconnected from DC 1.0[0m
+[33;1mDataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 1[0m
+[33;1mDataCenter:     	Disconnecting all before reconnect![0m
+[33;1mDataCenterConnection: 	Disconnecting from shared DC 2_media[0m
+[33;1mConnection:     	Disconnecting from DC 2_media.0[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 2_media.0[0m
+[33;1mConnection:     	Disconnected from DC 2_media.0[0m
+[33;1mConnection:     	Disconnecting from DC 2_media.1[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 2_media.1[0m
+[33;1mConnection:     	Disconnected from DC 2_media.1[0m
+[33;1mConnection:     	Disconnecting from DC 2_media.2[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 2_media.2[0m
+[33;1mConnection:     	Disconnected from DC 2_media.2[0m
+[33;1mConnection:     	Disconnecting from DC 2_media.3[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 2_media.3[0m
+[33;1mConnection:     	Disconnected from DC 2_media.3[0m
+[33;1mConnection:     	Disconnecting from DC 2_media.4[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 2_media.4[0m
+[33;1mConnection:     	Disconnected from DC 2_media.4[0m
+[33;1mDataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 2_media[0m
+[33;1mDataCenter:     	Disconnecting all before reconnect![0m
+[33;1mDataCenterConnection: 	Disconnecting from shared DC 3[0m
+[33;1mConnection:     	Disconnecting from DC 3.0[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 3.0[0m
+[33;1mConnection:     	Disconnected from DC 3.0[0m
+[33;1mDataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 3[0m
+[33;1mDataCenter:     	Disconnecting all before reconnect![0m
+[33;1mDataCenterConnection: 	Disconnecting from shared DC 4[0m
+[33;1mConnection:     	Disconnecting from DC 4.0[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 4.0[0m
+[33;1mConnection:     	Disconnected from DC 4.0[0m
+[33;1mDataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 4[0m
+[33;1mDataCenter:     	Disconnecting all before reconnect![0m
+[33;1mDataCenterConnection: 	Disconnecting from shared DC 4_media[0m
+[33;1mConnection:     	Disconnecting from DC 4_media.0[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 4_media.0[0m
+[33;1mConnection:     	Disconnected from DC 4_media.0[0m
+[33;1mConnection:     	Disconnecting from DC 4_media.1[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 4_media.1[0m
+[33;1mConnection:     	Disconnected from DC 4_media.1[0m
+[33;1mConnection:     	Disconnecting from DC 4_media.2[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 4_media.2[0m
+[33;1mConnection:     	Disconnected from DC 4_media.2[0m
+[33;1mConnection:     	Disconnecting from DC 4_media.3[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 4_media.3[0m
+[33;1mConnection:     	Disconnected from DC 4_media.3[0m
+[33;1mConnection:     	Disconnecting from DC 4_media.4[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 4_media.4[0m
+[33;1mConnection:     	Disconnected from DC 4_media.4[0m
+[33;1mDataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 4_media[0m
+[33;1mDataCenter:     	Disconnecting all before reconnect![0m
+[33;1mDataCenterConnection: 	Disconnecting from shared DC 5[0m
+[33;1mConnection:     	Disconnecting from DC 5.0[0m
+[33;1mDataCenterConnection: 	Backed up  from DC 5.0[0m
+[33;1mConnection:     	Disconnected from DC 5.0[0m
+[33;1mDataCenterConnection: 	Backed up 0, added to 0 existing messages) from DC 5[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 2 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.167.51:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mConnection:     	Connecting to DC 2.0[0m
+[97;2;41mSession:        	Resetting session in DC 2.0...[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 1 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.175.53:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mConnection:     	Connecting to DC 1.0[0m
+[97;2;41mSession:        	Resetting session in DC 1.0...[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 2_media (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.167.151:443 main DC 2_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mConnection:     	Connecting to DC 2_media.0[0m
+[97;2;41mSession:        	Resetting session in DC 2_media.0...[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 3 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mConnection:     	Connecting to DC 3.0[0m
+[97;2;41mSession:        	Resetting session in DC 3.0...[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 4 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.167.91:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mConnection:     	Connecting to DC 4.0[0m
+[97;2;41mSession:        	Resetting session in DC 4.0...[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 4_media (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.165.111:443 main DC 4_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mConnection:     	Connecting to DC 4_media.0[0m
+[97;2;41mSession:        	Resetting session in DC 4_media.0...[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 5 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://91.108.56.170:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mConnection:     	Connecting to DC 5.0[0m
+[97;2;41mSession:        	Resetting session in DC 5.0...[0m
+[97;2;41mConnection:     	Connected to DC 4.0![0m
+[33;1mDataCenterConnection: 	Restoring 0 messages to DC 4[0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mConnection:     	Connected to DC 4_media.0![0m
+[97;2;41mConnection:     	Connecting to DC 4_media.1[0m
+[97;2;41mSession:        	Resetting session in DC 4_media.1...[0m
+[97;2;41mConnection:     	Connected to DC 2.0![0m
+[33;1mDataCenterConnection: 	Restoring 0 messages to DC 2[0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mConnection:     	Connected to DC 2_media.0![0m
+[97;2;41mConnection:     	Connecting to DC 2_media.1[0m
+[97;2;41mSession:        	Resetting session in DC 2_media.1...[0m
+[97;2;41mConnection:     	Connected to DC 4_media.1![0m
+[97;2;41mConnection:     	Connecting to DC 4_media.2[0m
+[97;2;41mSession:        	Resetting session in DC 4_media.2...[0m
+[97;2;41mConnection:     	Connected to DC 2_media.1![0m
+[97;2;41mConnection:     	Connecting to DC 2_media.2[0m
+[97;2;41mSession:        	Resetting session in DC 2_media.2...[0m
+[97;2;41mConnection:     	Connected to DC 4_media.2![0m
+[97;2;41mConnection:     	Connecting to DC 4_media.3[0m
+[97;2;41mSession:        	Resetting session in DC 4_media.3...[0m
+[97;2;41mConnection:     	Connected to DC 4_media.3![0m
+[97;2;41mConnection:     	Connecting to DC 4_media.4[0m
+[97;2;41mSession:        	Resetting session in DC 4_media.4...[0m
+[97;2;41mConnection:     	Connected to DC 2_media.2![0m
+[97;2;41mConnection:     	Connecting to DC 2_media.3[0m
+[97;2;41mSession:        	Resetting session in DC 2_media.3...[0m
+[97;2;41mConnection:     	Connected to DC 4_media.4![0m
+[33;1mDataCenterConnection: 	Restoring 0 messages to DC 4_media[0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mConnection:     	Connected to DC 2_media.3![0m
+[97;2;41mConnection:     	Connecting to DC 2_media.4[0m
+[97;2;41mSession:        	Resetting session in DC 2_media.4...[0m
+[97;2;41mConnection:     	Connected to DC 2_media.4![0m
+[33;1mDataCenterConnection: 	Restoring 0 messages to DC 2_media[0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mConnection:     	Connected to DC 1.0![0m
+[33;1mDataCenterConnection: 	Restoring 0 messages to DC 1[0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mConnection:     	Connected to DC 3.0![0m
+[33;1mDataCenterConnection: 	Restoring 0 messages to DC 3[0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mConnection:     	Connected to DC 5.0![0m
+[33;1mDataCenterConnection: 	Restoring 0 messages to DC 5[0m
+[97;2;41mDataCenter:     	OK![0m
+[33;1mMTProto:        	Initing authorization...[0m
+[33;1mMTProto:        	Initing authorization DC 2...[0m
+[33;1mMTProto:        	Done initing authorization DC 2[0m
+[33;1mMTProto:        	Initing authorization DC 1...[0m
+[33;1mMTProto:        	Done initing authorization DC 1[0m
+[33;1mMTProto:        	Initing authorization DC 3...[0m
+[33;1mMTProto:        	Done initing authorization DC 3[0m
+[33;1mMTProto:        	Initing authorization DC 4...[0m
+[33;1mMTProto:        	Done initing authorization DC 4[0m
+[33;1mMTProto:        	Initing authorization DC 5...[0m
+[33;1mMTProto:        	Done initing authorization DC 5[0m
+[33;1mMTProto:        	Initing authorization DC 2_media...[0m
+[33;1mMTProto:        	Done initing authorization DC 2_media[0m
+[33;1mMTProto:        	Initing authorization DC 4_media...[0m
+[33;1mMTProto:        	Done initing authorization DC 4_media[0m
+[97;2;41mDataCenter:     	Reconnecting to DC 2 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.167.51:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mDataCenterConnection: 	Already connected![0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mDataCenter:     	Reconnecting to DC 1 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.175.53:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mDataCenterConnection: 	Already connected![0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mDataCenter:     	Reconnecting to DC 2_media (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.167.151:443 main DC 2_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mDataCenterConnection: 	Already connected![0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mDataCenter:     	Reconnecting to DC 3 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mDataCenterConnection: 	Already connected![0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mDataCenter:     	Reconnecting to DC 4 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.167.91:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mDataCenterConnection: 	Already connected![0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mDataCenter:     	Reconnecting to DC 4_media (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://149.154.165.111:443 main DC 4_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mDataCenterConnection: 	Already connected![0m
+[97;2;41mDataCenter:     	OK![0m
+[97;2;41mDataCenter:     	Reconnecting to DC 5 (-1) from existing[0m
+[33;1mDataCenterConnection: 	Trying shared connection via tcp://91.108.56.170:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)[0m
+[97;2;41mDataCenterConnection: 	Already connected![0m
+[97;2;41mDataCenter:     	OK![0m
+[33;1mMTProto:        	Initing authorization...[0m
+[33;1mMTProto:        	Initing authorization DC 2...[0m
+[33;1mMTProto:        	Done initing authorization DC 2[0m
+[33;1mMTProto:        	Initing authorization DC 1...[0m
+[33;1mMTProto:        	Done initing authorization DC 1[0m
+[33;1mMTProto:        	Initing authorization DC 3...[0m
+[33;1mMTProto:        	Done initing authorization DC 3[0m
+[33;1mMTProto:        	Initing authorization DC 4...[0m
+[33;1mMTProto:        	Done initing authorization DC 4[0m
+[33;1mMTProto:        	Initing authorization DC 5...[0m
+[33;1mMTProto:        	Done initing authorization DC 5[0m
+[33;1mMTProto:        	Initing authorization DC 2_media...[0m
+[33;1mMTProto:        	Done initing authorization DC 2_media[0m
+[33;1mMTProto:        	Initing authorization DC 4_media...[0m
+[33;1mMTProto:        	Done initing authorization DC 4_media[0m
+[33;1mMTProto:        	Not fetching phone config[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511363587838977) is bigger than or equal to the current limit (6953511363587822593). Consider syncing your date.[0m
+[33;1mMTProto:        	Initing authorization...[0m
+[33;1mMTProto:        	Initing authorization DC 2...[0m
+[33;1mMTProto:        	Done initing authorization DC 2[0m
+[33;1mMTProto:        	Initing authorization DC 1...[0m
+[33;1mMTProto:        	Done initing authorization DC 1[0m
+[33;1mMTProto:        	Initing authorization DC 3...[0m
+[33;1mMTProto:        	Done initing authorization DC 3[0m
+[33;1mMTProto:        	Initing authorization DC 4...[0m
+[33;1mMTProto:        	Done initing authorization DC 4[0m
+[33;1mMTProto:        	Initing authorization DC 5...[0m
+[33;1mMTProto:        	Done initing authorization DC 5[0m
+[33;1mMTProto:        	Initing authorization DC 2_media...[0m
+[33;1mMTProto:        	Done initing authorization DC 2_media[0m
+[33;1mMTProto:        	Initing authorization DC 4_media...[0m
+[33;1mMTProto:        	Done initing authorization DC 4_media[0m
+[31;1;47mAckHandler:     	Could not find users.getUsers with message ID 6953511357408870400 in new_outgoing![0m
+[33;1mMTProto:        	AUTH_KEY_UNREGISTERED[0m
+[33;1mMTProto:        	Starting update system[0m
+[33;1mAPI:            	MadelineProto is ready![0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.ipcState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.ipcState.php.lock...[0m
+[33;1mMTProto:        	Accepted IPC client connection![0m
+[33;1mMTProto:        	Initing authorization...[0m
+[33;1mMTProto:        	Initing authorization DC 2...[0m
+[33;1mMTProto:        	Done initing authorization DC 2[0m
+[33;1mMTProto:        	Initing authorization DC 1...[0m
+[33;1mMTProto:        	Done initing authorization DC 1[0m
+[33;1mMTProto:        	Initing authorization DC 3...[0m
+[33;1mMTProto:        	Done initing authorization DC 3[0m
+[33;1mMTProto:        	Initing authorization DC 4...[0m
+[33;1mMTProto:        	Done initing authorization DC 4[0m
+[33;1mMTProto:        	Initing authorization DC 5...[0m
+[33;1mMTProto:        	Done initing authorization DC 5[0m
+[33;1mMTProto:        	Initing authorization DC 2_media...[0m
+[33;1mMTProto:        	Done initing authorization DC 2_media[0m
+[33;1mMTProto:        	Initing authorization DC 4_media...[0m
+[33;1mMTProto:        	Done initing authorization DC 4_media[0m
+[31;1;47mAckHandler:     	Could not find contacts.resolveUsername with message ID 6953511361703837696 in new_outgoing![0m
+[97;1;41mPeerHandler:    	Username resolution failed with error AUTH_KEY_UNREGISTERED[0m
+[97;1;41mMTProto:        	Got error while calling IPC method: Telegram returned an RPC error: The authorization key has expired (401) (AUTH_KEY_UNREGISTERED), caused by phar:///var/www/html/telegram_cron/src/Cron/madeline-72.phar/vendor/danog/madelineproto/src/danog/MadelineProto/MTProtoSession/ResponseHandler.php:346
+Revision: 1389b24751fa3f06ba783888c4eee7b1c42dea84-72 (AN UPDATE IS REQUIRED)
+
+TL trace:
+['contacts.resolveUsername']
+CallHandler.php(59):	methodCallAsyncRead("contacts.resolveUsername",{"username":"azerbaydjanskiyenovosti"},{"msg_id":null})
+PeerHandler.php(1194):	methodCallAsyncRead("contacts.resolveUsername",{"username":"azerbaydjanskiyenovosti"})
+PeerHandler.php(676):	resolveUsername("azerbaydjanskiyenovosti")
+TL.php(540):        	getInfo("azerbaydjanskiyenovosti",0)
+While serializing:  	messages.getHistory['peer']
+Connection.php(467):	serializeMethod("messages.getHistory",{"peer":"azerbaydjanskiyenovosti","offset_id":0,"offset_date":0,"add_offset":0,"limit":1,"max_id":0,"min_id":0,"hash":0})
+CallHandler.php(183):	sendMessage({},true)
+CallHandler.php(94):	methodCallAsyncWrite("messages.getHistory",{"peer":"azerbaydjanskiyenovosti","offset_id":0,"offset_date":0,"add_offset":0,"limit":1,"max_id":0,"min_id":0,"hash":0},{"apifactory":true,"postpone":false})
+CallHandler.php(59):	methodCallAsyncRead("messages.getHistory",{"peer":"azerbaydjanskiyenovosti","offset_id":0,"offset_date":0,"add_offset":0,"limit":1,"max_id":0,"min_id":0,"hash":0},{"apifactory":true})
+Server.php(214):    	methodCallAsyncRead("messages.getHistory",{"peer":"azerbaydjanskiyenovosti","offset_id":0,"offset_date":0,"add_offset":0,"limit":1,"max_id":0,"min_id":0,"hash":0},{"apifactory":true})
+clientRequest()
+
+Previous TL trace:
+['contacts.resolveUsername']
+danog\MadelineProto\MTProtoSession\{closure}()
+Coroutine.php(115): 	send([null,null,null,null])
+Placeholder.php(40):	danog\MadelineProto\{closure}(null,[null,null,null,null])
+PrivatePromise.php(20):	onResolve({})
+Coroutine.php(154): 	onResolve({})
+Tools.php(492):     	__construct({})
+ResponseHandler.php(347):	callFork({})
+ResponseHandler.php(185):	handleRpcError({},{"_":"rpc_error","error_code":401,"error_message":"AUTH_KEY_UNREGISTERED"})
+ResponseHandler.php(67):	handleResponse({})
+Driver.php(102):    	handleMessages("kg",null)
+Driver.php(61):     	tick()
+Loop.php(87):       	run()
+Tools.php(313):     	run({})
+entry.php(101):     	wait({})
+entry.php(122):     	{closure}()
+autoload_real.php(69):	require("phar:\/\/\/var\/www\/html\/telegram_cron\/src\/Cron\/madeline-72.phar\/vendor\/danog\/madelineproto\/src\/danog\/MadelineProto\/Ipc\/Runner\/entry.php")
+autoload_real.php(59):	composerRequire19644cfca97e49f2e9075642867d5d21("efa978c9bd4884d9c38b8fa99d974f0e","phar:\/\/\/var\/www\/html\/telegram_cron\/src\/Cron\/madeline-72.phar\/vendor\/composer\/..\/danog\/madelineproto\/src\/danog\/MadelineProto\/Ipc\/Runner\/entry.php")
+autoload.php(7):    	getLoader()
+madeline-72.phar(16):	require_once("phar:\/\/\/var\/www\/html\/telegram_cron\/src\/Cron\/madeline-72.phar\/vendor\/autoload.php")
+madeline.php(170):  	require_once("\/var\/www\/html\/telegram_cron\/src\/Cron\/madeline-72.phar")
+[0m
+[32;1mGarbageCollector: 	gc_collect_cycles done. Cleaned memory: 1 Mb[0m
+[33;1mMTProto:        	Accepted IPC client connection![0m
+[33;1mLogin:          	Sending code...[0m
+[33;1mLogin:          	Code sent successfully! Once you receive the code you should use the completePhoneLogin function.[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mLogin:          	Logging in as a normal user...[0m
+[33;1mMTProto:        	Initing authorization...[0m
+[33;1mMTProto:        	Initing authorization DC 2...[0m
+[33;1mMTProto:        	Done initing authorization DC 2[0m
+[33;1mMTProto:        	Initing authorization DC 1...[0m
+[33;1mAuthKeyHandler: 	Trying to copy authorization from DC 2 to DC 1[0m
+[33;1mMTProto:        	Initing authorization DC 3...[0m
+[33;1mAuthKeyHandler: 	Trying to copy authorization from DC 2 to DC 3[0m
+[33;1mMTProto:        	Initing authorization DC 4...[0m
+[33;1mAuthKeyHandler: 	Trying to copy authorization from DC 2 to DC 4[0m
+[33;1mMTProto:        	Initing authorization DC 5...[0m
+[33;1mAuthKeyHandler: 	Trying to copy authorization from DC 2 to DC 5[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511519943376897) is bigger than or equal to the current limit (6953511519943245825). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511520009214977) is bigger than or equal to the current limit (6953511520009191425). Consider syncing your date.[0m
+[33;1mMTProto:        	Done initing authorization DC 4[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511521144205313) is bigger than or equal to the current limit (6953511521144165377). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511521163993089) is bigger than or equal to the current limit (6953511521163884545). Consider syncing your date.[0m
+[33;1mMTProto:        	Done initing authorization DC 1[0m
+[33;1mMTProto:        	Done initing authorization DC 3[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511521711210497) is bigger than or equal to the current limit (6953511521711206401). Consider syncing your date.[0m
+[33;1mMTProto:        	Done initing authorization DC 5[0m
+[33;1mMTProto:        	Initing authorization DC 2_media...[0m
+[33;1mMTProto:        	Done initing authorization DC 2_media[0m
+[33;1mMTProto:        	Initing authorization DC 4_media...[0m
+[33;1mMTProto:        	Done initing authorization DC 4_media[0m
+[33;1mMTProto:        	Not fetching phone config[0m
+[33;1mMTProto:        	Starting update system[0m
+[33;1mLogin:          	Logged in successfully![0m
+[33;1mPeerHandler:    	Only have min peer for 1069209191 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1069209191, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1331945248 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1331945248, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1212285051 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511527561503745) is bigger than or equal to the current limit (6953511527561410561). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 890140729 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 890140729, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 535303693 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 535303693, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 980270464 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511531536307201) is bigger than or equal to the current limit (6953511531536222209). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 770246961 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 770246961, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1777840471 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511532282830849) is bigger than or equal to the current limit (6953511532282741761). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 1501288527 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511537334440961) is bigger than or equal to the current limit (6953511537334321153). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mResponseHandler: 	Flood, waiting 3 seconds before repeating async call of contacts.resolveUsername with message ID 6953511533502529600...[0m
+[31;1;47mAckHandler:     	Could not find contacts.resolveUsername in new_outgoing![0m
+[33;1mPeerHandler:    	Only have min peer for 1371786705 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1371786705, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1385209231 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1385209231, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1217009381 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511553256164353) is bigger than or equal to the current limit (6953511553256033281). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 1353373596 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1353373596, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1427746307 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1427746307, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 719899527 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511554079280129) is bigger than or equal to the current limit (6953511554079206401). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 1095432087 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1095432087, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1784303646 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1784303646, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 959654898 in database, trying to fetch full info[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511555663479809) is bigger than or equal to the current limit (6953511555663356929). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511556133463041) is bigger than or equal to the current limit (6953511556133328897). Consider syncing your date.[0m
+[33;1mPeerHandler:    	Only have min peer for 1571441899 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1571441899, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1518995027 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1518995027, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1068900039 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511556390056961) is bigger than or equal to the current limit (6953511556389959681). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mResponseHandler: 	Flood, waiting 52 seconds before repeating async call of contacts.resolveUsername with message ID 6953511554977366076...[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511562218726401) is bigger than or equal to the current limit (6953511562218648577). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mPeerHandler:    	Only have min peer for -1001107404840 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer -1001107404840, this may fail[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1107404840[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511597718364161) is bigger than or equal to the current limit (6953511597718190081). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[97;2;41mContextConnector: 	OK![0m
+[97;2;41mContextConnector: 	OK![0m
+[32;1mGarbageCollector: 	gc_collect_cycles done. Cleaned memory: 0 Mb[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511698613756929) is bigger than or equal to the current limit (6953511698613648385). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mPeerHandler:    	Only have min peer for -1001057483214 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer -1001057483214, this may fail[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1057483214[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511769424703489) is bigger than or equal to the current limit (6953511769424621569). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[31;1;47mAckHandler:     	Could not find contacts.resolveUsername in new_outgoing![0m
+[33;1mMsgIdHandler64: 	Given message id (6953511784093266945) is bigger than or equal to the current limit (6953511784093177857). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mPeerHandler:    	Only have min peer for 1387468160 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511790668155905) is bigger than or equal to the current limit (6953511790668038145). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 1672207282 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511792523804673) is bigger than or equal to the current limit (6953511792523679745). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 840367067 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 840367067, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1665340217 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511794137037825) is bigger than or equal to the current limit (6953511794136928257). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 1348368882 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1348368882, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1358908696 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1358908696, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 795746641 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511797254102017) is bigger than or equal to the current limit (6953511797253970945). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 1501510536 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511798592321537) is bigger than or equal to the current limit (6953511798592276481). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mResponseHandler: 	Flood, waiting 3 seconds before repeating async call of contacts.resolveUsername with message ID 6953511795495534692...[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[31;1;47mAckHandler:     	Could not find contacts.resolveUsername in new_outgoing![0m
+[33;1mPeerHandler:    	Only have min peer for 500064259 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 500064259, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 766971891 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 766971891, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1001332195 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511816539413505) is bigger than or equal to the current limit (6953511816539354113). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 883555205 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511818818556929) is bigger than or equal to the current limit (6953511818818476033). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 1360500704 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1360500704, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1135202097 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1135202097, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1292616027 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511821103043585) is bigger than or equal to the current limit (6953511821103001601). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 1251729658 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1251729658, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1211976306 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1211976306, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1016598099 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511821805401089) is bigger than or equal to the current limit (6953511821805365249). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 1009796863 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1009796863, this may fail[0m
+[33;1mMsgIdHandler64: 	Given message id (6953511822535310337) is bigger than or equal to the current limit (6953511822535258113). Consider syncing your date.[0m
+[33;1mResponseHandler: 	Flood, waiting 52 seconds before repeating async call of contacts.resolveUsername with message ID 6953511816970371180...[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953511986099896321) is bigger than or equal to the current limit (6953511986099817473). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[31;1;47mAckHandler:     	Could not find contacts.resolveUsername in new_outgoing![0m
+[33;1mPeerHandler:    	Only have min peer for 217206184 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 217206184, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1382466932 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1382466932, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1031498125 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512047919474689) is bigger than or equal to the current limit (6953512047919421441). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 598207438 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 598207438, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1020310121 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1020310121, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1640446536 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512049630790657) is bigger than or equal to the current limit (6953512049630693377). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 397629827 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 397629827, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1302335769 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1302335769, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1312867948 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512051287638017) is bigger than or equal to the current limit (6953512051287519233). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 720326063 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 720326063, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1770022690 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1770022690, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 141833249 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512059637925889) is bigger than or equal to the current limit (6953512059637850113). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mResponseHandler: 	Flood, waiting 3 seconds before repeating async call of contacts.resolveUsername with message ID 6953512057488539696...[0m
+[31;1;47mAckHandler:     	Could not find contacts.resolveUsername in new_outgoing![0m
+[33;1mPeerHandler:    	Only have min peer for 1026467338 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512076845685761) is bigger than or equal to the current limit (6953512076845623297). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 1356854 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1356854, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 114409057 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 114409057, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 373282302 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512077637872641) is bigger than or equal to the current limit (6953512077637840897). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mResponseHandler: 	Flood, waiting 52 seconds before repeating async call of contacts.resolveUsername with message ID 6953512078963376188...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953512139889900545) is bigger than or equal to the current limit (6953512139889785857). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512139889906689) is bigger than or equal to the current limit (6953512139889900545). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[31;1;47mAckHandler:     	Could not find contacts.resolveUsername in new_outgoing![0m
+[33;1mMsgIdHandler64: 	Given message id (6953512307618380801) is bigger than or equal to the current limit (6953512307618335745). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512307618393089) is bigger than or equal to the current limit (6953512307618380801). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mPeerHandler:    	Only have min peer for 1461761219 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512313099146241) is bigger than or equal to the current limit (6953512313099107329). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 878944149 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 878944149, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1149235595 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1149235595, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 972994085 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512313688115201) is bigger than or equal to the current limit (6953512313688067073). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 1176126363 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1176126363, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1064191072 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1064191072, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1452038230 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512314498012161) is bigger than or equal to the current limit (6953512314497981441). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 1031675709 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1031675709, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 658153369 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 658153369, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 910640332 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512315655164929) is bigger than or equal to the current limit (6953512315655056385). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 486540838 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 486540838, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1149947834 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1149947834, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 945964551 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512316384576513) is bigger than or equal to the current limit (6953512316384533505). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 257046772 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 257046772, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1321692417 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1321692417, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1399623030 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512318991894529) is bigger than or equal to the current limit (6953512318991824897). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 957536986 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 957536986, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 971847488 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 971847488, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1374074969 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512320643430401) is bigger than or equal to the current limit (6953512320643390465). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 595870371 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512321434140673) is bigger than or equal to the current limit (6953512321434023937). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 532669975 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 532669975, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 974132434 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512323273763841) is bigger than or equal to the current limit (6953512323273630721). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 611798337 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 611798337, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1149592439 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512325367395329) is bigger than or equal to the current limit (6953512325367277569). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mResponseHandler: 	Flood, waiting 3 seconds before repeating async call of contacts.resolveUsername with message ID 6953512319481544780...[0m
+[31;1;47mAckHandler:     	Could not find contacts.resolveUsername in new_outgoing![0m
+[33;1mPeerHandler:    	Only have min peer for 1282799745 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1282799745, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 227785073 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 227785073, this may fail[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512340768363521) is bigger than or equal to the current limit (6953512340768287745). Consider syncing your date.[0m
+[33;1mPeerHandler:    	Only have min peer for 1093194594 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1093194594, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1731140566 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1731140566, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1108500775 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512341548377089) is bigger than or equal to the current limit (6953512341548332033). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mPeerHandler:    	Only have min peer for 1342141849 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1342141849, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 269700864 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 269700864, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1299123123 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512343092057089) is bigger than or equal to the current limit (6953512343091923969). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMTProto:        	Accepted IPC client connection![0m
+[33;1mPeerHandler:    	Only have min peer for 1277852115 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1277852115, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1752799491 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1752799491, this may fail[0m
+[33;1mPeerHandler:    	Only have min peer for 1432930885 in database, trying to fetch full info[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512407076729857) is bigger than or equal to the current limit (6953512407076619265). Consider syncing your date.[0m
+[97;2;41mPeerHandler:    	MSG_ID_INVALID[0m
+[33;1mResponseHandler: 	Flood, waiting 8 seconds before repeating async call of messages.getHistory with message ID 6953512405380890636...[0m
+[31;1;47mAckHandler:     	Could not find messages.getHistory in new_outgoing![0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mPeerHandler:    	Only have min peer for -1001100118939 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer -1001100118939, this may fail[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1100118939[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512447491855361) is bigger than or equal to the current limit (6953512447491803137). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512447888990209) is bigger than or equal to the current limit (6953512447888910337). Consider syncing your date.[0m
+[33;1mPeerHandler:    	Only have min peer for 464998171 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 464998171, this may fail[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512452868829185) is bigger than or equal to the current limit (6953512452868768769). Consider syncing your date.[0m
+[33;1mPeerHandler:    	Only have min peer for 1719616661 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1719616661, this may fail[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512457067886593) is bigger than or equal to the current limit (6953512457067751425). Consider syncing your date.[0m
+[33;1mResponseHandler: 	Flood, waiting 24 seconds before repeating async call of messages.getHistory with message ID 6953512465510432792...[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512499882910721) is lower than or equal to the current limit (6953512499882950657). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512499882897409) is bigger than or equal to the current limit (6953512499882815489). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1100118939[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[31;1;47mAckHandler:     	Could not find messages.getHistory in new_outgoing![0m
+[33;1mMsgIdHandler64: 	Given message id (6953512574626820097) is bigger than or equal to the current limit (6953512574626819073). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512574626929665) is bigger than or equal to the current limit (6953512574626820097). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mPeerHandler:    	Only have min peer for 1428522930 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1428522930, this may fail[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512582954256385) is bigger than or equal to the current limit (6953512582954118145). Consider syncing your date.[0m
+[33;1mPeerHandler:    	Only have min peer for 1230693293 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer 1230693293, this may fail[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512585928600577) is bigger than or equal to the current limit (6953512585928508417). Consider syncing your date.[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953512864890483713) is lower than or equal to the current limit (6953512864890632193). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1203752326[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512864890515457) is bigger than or equal to the current limit (6953512864890513409). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512864890549249) is bigger than or equal to the current limit (6953512864890515457). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512864890555393) is bigger than or equal to the current limit (6953512864890549249). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512864890558465) is bigger than or equal to the current limit (6953512864890555393). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512864890560513) is bigger than or equal to the current limit (6953512864890558465). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1203752326[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1203752326[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1203752326[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1203752326[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1203752326[0m
+[33;1mMsgIdHandler64: 	Given message id (6953512988900717569) is bigger than or equal to the current limit (6953512988900638721). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953513253229092865) is lower than or equal to the current limit (6953513253229198337). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953513253229118465) is bigger than or equal to the current limit (6953513253229108225). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mPeerHandler:    	Only have min peer for -1001155690258 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer -1001155690258, this may fail[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1155690258[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1100118939[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1155690258[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1155690258[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953513511635089409) is lower than or equal to the current limit (6953513511635198977). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1441623025[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mPeerHandler:    	Only have min peer for -1001072523372 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer -1001072523372, this may fail[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1072523372[0m
+[33;1mMsgIdHandler64: 	Given message id (6953513627761928193) is lower than or equal to the current limit (6953513627761952769). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953513627761900545) is bigger than or equal to the current limit (6953513627761810433). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1072523372[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1072523372[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953513736724070401) is bigger than or equal to the current limit (6953513736724018177). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953513736724044801) is lower than or equal to the current limit (6953513736724070401). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1072523372[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1072523372[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1357506163[0m
+[33;1mMsgIdHandler64: 	Given message id (6953513899101303809) is bigger than or equal to the current limit (6953513899101204481). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953514028422153217) is bigger than or equal to the current limit (6953514028422081537). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514028463058945) is bigger than or equal to the current limit (6953514028462978049). Consider syncing your date.[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1072523372[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514153937004545) is bigger than or equal to the current limit (6953514153936954369). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514157863598081) is bigger than or equal to the current limit (6953514157863480321). Consider syncing your date.[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514286884628481) is bigger than or equal to the current limit (6953514286884529153). Consider syncing your date.[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953514416033326081) is bigger than or equal to the current limit (6953514416033275905). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514416033390593) is bigger than or equal to the current limit (6953514416033326081). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514416033360897) is lower than or equal to the current limit (6953514416033390593). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1072523372[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mPeerHandler:    	Only have min peer for -1001013523094 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer -1001013523094, this may fail[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1013523094[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514416388779009) is bigger than or equal to the current limit (6953514416388720641). Consider syncing your date.[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953514472783432705) is bigger than or equal to the current limit (6953514472783315969). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1155690258[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514545242760193) is lower than or equal to the current limit (6953514545242787841). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1072523372[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953514591544226817) is lower than or equal to the current limit (6953514591544261633). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514591544260609) is bigger than or equal to the current limit (6953514591544192001). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1072523372[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514628725467137) is bigger than or equal to the current limit (6953514628725395457). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514628725507073) is bigger than or equal to the current limit (6953514628725467137). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514674501910529) is bigger than or equal to the current limit (6953514674501800961). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514789256389633) is bigger than or equal to the current limit (6953514789256359937). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514789256418305) is bigger than or equal to the current limit (6953514789256389633). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514789256462337) is bigger than or equal to the current limit (6953514789256418305). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1397361977[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mGarbageCollector: 	gc_collect_cycles done. Cleaned memory: 1 Mb[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514800827126785) is bigger than or equal to the current limit (6953514800827080705). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514803820907521) is bigger than or equal to the current limit (6953514803820786689). Consider syncing your date.[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953514850014416897) is bigger than or equal to the current limit (6953514850014315521). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953514932976599041) is bigger than or equal to the current limit (6953514932976503809). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1397361977[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953514975735759873) is bigger than or equal to the current limit (6953514975735638017). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953515062277083137) is bigger than or equal to the current limit (6953515062277042177). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953515191474452481) is bigger than or equal to the current limit (6953515191474392065). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953515237816217601) is bigger than or equal to the current limit (6953515237816171521). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953515320638759937) is bigger than or equal to the current limit (6953515320638728193). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953515320638782465) is bigger than or equal to the current limit (6953515320638759937). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mPeerHandler:    	Only have min peer for -1001059580754 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer -1001059580754, this may fail[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1059580754[0m
+[33;1mMsgIdHandler64: 	Given message id (6953515321097232385) is bigger than or equal to the current limit (6953515321097099265). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953515342503799809) is bigger than or equal to the current limit (6953515342503717889). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953515442857990145) is bigger than or equal to the current limit (6953515442857943041). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953515450318136321) is bigger than or equal to the current limit (6953515450317991937). Consider syncing your date.[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953515496233818113) is lower than or equal to the current limit (6953515496233903105). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mPeerHandler:    	Only have min peer for -1001304505424 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer -1001304505424, this may fail[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1304505424[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1072523372[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953515579518696449) is bigger than or equal to the current limit (6953515579518651393). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953515689787250689) is lower than or equal to the current limit (6953515689787353089). Consider syncing your date.[0m
+[33;1mMsgIdHandler64: 	Given message id (6953515689787249665) is bigger than or equal to the current limit (6953515689787206657). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1296581571[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1296581571[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1296581571[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1296581571[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1296581571[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1296581571[0m
+[33;1mFeedLoop:       	MSGID duplicate (419) in update feed loop channel 1296581571[0m
+[33;1mFeedLoop:       	MSGID duplicate (420) in update feed loop channel 1296581571[0m
+[33;1mFeedLoop:       	MSGID duplicate (421) in update feed loop channel 1296581571[0m
+[33;1mFeedLoop:       	MSGID duplicate (422) in update feed loop channel 1296581571[0m
+[33;1mFeedLoop:       	MSGID duplicate (423) in update feed loop channel 1296581571[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953515705098715137) is bigger than or equal to the current limit (6953515705098535937). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[33;1mMsgIdHandler64: 	Given message id (6953515708773957633) is bigger than or equal to the current limit (6953515708773825537). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updates) received via the socket...[0m
+[32;1mSeqLoop:        	Was fed updates of type updates...[0m
+[33;1mPeerHandler:    	Only have min peer for -1001002209029 in database, trying to fetch full info[0m
+[33;1mMinDatabase:    	Don't have origin info with min peer -1001002209029, this may fail[0m
+[33;1mFeedLoop:       	Resumed update feed loop channel 1002209029[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.safe.php.lock...[0m
+[33;1mSessionPaths:   	Waiting for exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mSessionPaths:   	Got exclusive lock of /var/www/html/telegram_cron/public/madeline/session/cron.telegram.session.madeline.lightState.php.lock...[0m
+[33;1mAPIWrapper:     	Saved session![0m
+[33;1mMsgIdHandler64: 	Given message id (6953515751952541697) is bigger than or equal to the current limit (6953515751952463873). Consider syncing your date.[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m
+[32;1mUpdateHandler:  	Parsing updates (updateShort) received via the socket...[0m
+[33;1mFeedLoop:       	Resumed update feed loop generic[0m

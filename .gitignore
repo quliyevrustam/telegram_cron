@@ -3,7 +3,7 @@ vendor
 cache/*
 madeline-72.phar
 madeline-72.phar.version
-cron/madeline/*
-cron/MadelineProto.log
+public/madeline/*
+public/MadelineProto.log
 cron/test_rss.php
 cron/test_top_message.php
