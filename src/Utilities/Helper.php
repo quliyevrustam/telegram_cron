@@ -19,8 +19,7 @@ class Helper
      * @param $method
      * @param $type
      * @param array $data
-     * @param bool $returnJson
-     * @return mixed|bool|string
+     * @return false|mixed
      * @throws Exception
      */
     public static function curlRequest ($method, $type, $data = [])
@@ -116,5 +115,10 @@ class Helper
     public static function getWeekBegin(): string
     {
         return Helper::timezoneConverter(date('Y-m-d 00:00:00', strtotime('monday -1 week')), 'Asia/Baku', 'UTC');
+    }
+
+    public static function logError(string $errorMessage): void
+    {
+        error_log('['.date('Y-m-d H:i:s').'] '.$errorMessage."\n\n", 3, ERROR_LOG_PATH);
     }
 }

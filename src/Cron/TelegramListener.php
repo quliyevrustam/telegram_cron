@@ -2,13 +2,16 @@
 
 namespace Cron;
 
+
 use Utilities\Cron;
 use Utilities\Helper;
 
-if (!file_exists( 'public/madeline/session/madeline.php')) {
-    copy('https://phar.madelineproto.xyz/madeline.php', 'public/madeline/session/madeline.php');
+if (!file_exists( APP_PATH.'/public/madeline/session/madeline.php')) {
+    copy('https://phar.madelineproto.xyz/madeline.php', APP_PATH.'/public/madeline/session/madeline.php');
 }
-include 'public/madeline/session/madeline.php';
+include APP_PATH.'/public/madeline/session/madeline.php';
+
+use danog\MadelineProto\API;
 
 class TelegramListener extends Cron
 {
@@ -17,14 +20,14 @@ class TelegramListener extends Cron
         try {
             $settings['app_info']['api_id'] = APP_API_ID;
             $settings['app_info']['api_hash'] = APP_API_HASH;
-            $madelineProto = new \danog\MadelineProto\API(APP_PATH.'/public/madeline/session/cron.telegram.session.madeline',$settings);
+            $madelineProto = new API(APP_PATH.'/public/madeline/session/cron.telegram.session.madeline',$settings);
             //$madelineProto->start();
 
             $channels = $this->model(\Model\Channel\Channel::class)->getChannelPeers();
             $channelMessage = $this->model(\Model\Channel\Message::class);
 
             $offset_id = 0;
-            $limit = 1;
+            $limit = 100;
 
             foreach ($channels as $channelId=>$peer)
             {
@@ -58,8 +61,9 @@ class TelegramListener extends Cron
                 }
             }
         }
-        catch (\danog\MadelineProto\Exception $e) {
-            echo $e->getMessage();
+        catch (\Throwable $exception) {
+            Helper::logError($exception->getMessage());
+            echo $exception->getMessage();
         }
     }
 }
