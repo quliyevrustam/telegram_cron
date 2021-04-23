@@ -6,10 +6,10 @@ namespace Cron;
 use Utilities\Cron;
 use Utilities\Helper;
 
-if (!file_exists( APP_PATH.'/public/madeline/session/madeline.php')) {
-    copy('https://phar.madelineproto.xyz/madeline.php', APP_PATH.'/public/madeline/session/madeline.php');
+if (!file_exists( MADELINE_PATH)) {
+    copy('https://phar.madelineproto.xyz/madeline.php', MADELINE_PATH);
 }
-include APP_PATH.'/public/madeline/session/madeline.php';
+include MADELINE_PATH;
 
 use danog\MadelineProto\API;
 
@@ -20,7 +20,7 @@ class TelegramListener extends Cron
         try {
             $settings['app_info']['api_id'] = APP_API_ID;
             $settings['app_info']['api_hash'] = APP_API_HASH;
-            $madelineProto = new API(APP_PATH.'/public/madeline/session/cron.telegram.session.madeline',$settings);
+            $madelineProto = new API(MADELINE_SESSION_PATH,$settings);
             //$madelineProto->start();
 
             $channels = $this->model(\Model\Channel\Channel::class)->getChannelPeers();
