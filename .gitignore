@@ -8,3 +8,4 @@ public/MadelineProto.log
 cron/test_rss.php
 cron/test_top_message.php
 errors.log
+src/Cron/MadelineProto.log

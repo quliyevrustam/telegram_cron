@@ -16,11 +16,11 @@ class Auth extends Core
     private $loginPageUrl = '/login';
     private $isLoginPage;
 
-    public function __construct(ContainerInterface $container)
+    public function __construct()
     {
-        parent::__construct($container);
+        parent::__construct();
 
-        $this->http         = $container->get('http');
+        $this->http         = $this->getDI()->get('http');
 
         $this->isLoginPage = ($this->http->getPathInfo() == $this->loginPageUrl);
     }

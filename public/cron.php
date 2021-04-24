@@ -1,6 +1,5 @@
 <?php
 
-$container = null;
 require_once dirname(__DIR__ ). '/vendor/autoload.php';
 require_once (dirname(__DIR__ ).'/config/di.config.php');
 
@@ -30,11 +29,11 @@ try {
         'cron_class_name'        => $cronClassName,
         'cron_class_method_name' => $cronClassMethodName,
     ];
-    $cron = (new Cron($container));
+    $cron = (new Cron());
 
     $cron->beginWork($cronData);
 
-    (new $cronClassName($container))->$cronClassMethodName();
+    (new $cronClassName())->$cronClassMethodName();
 
     $cron->endWork();
 

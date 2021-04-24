@@ -11,9 +11,9 @@ class Core
     private $db;
     private $session;
 
-    public function __construct(ContainerInterface $container)
+    public function __construct()
     {
-        $this->container        = $container;
+        $this->container = \ZorgeDI::getContainer();
     }
 
     protected function model($className)
