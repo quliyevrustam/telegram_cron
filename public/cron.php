@@ -46,4 +46,5 @@ catch (Throwable $exception)
     \Utilities\Helper::logError($exception->getMessage());
     print_r($exception->getTraceAsString());
     print_r($exception->getMessage());
+    echo "\n";
 }

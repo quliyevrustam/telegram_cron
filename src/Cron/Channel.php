@@ -19,7 +19,7 @@ class Channel extends Cron
             $channelBody = ['id' => $channelId];
 
             // Get Channel Info
-            $result = Helper::curlRequest('getChat', 'get', ['chat_id' => '@'.$peer]);
+            $result = Helper::curlTelegramBotRequest('getChat', 'get', ['chat_id' => '@'.$peer]);
 
             if($result['ok'] == 1)
             {
@@ -28,7 +28,7 @@ class Channel extends Cron
             }
 
             // Get Channel Follower count
-            $result = Helper::curlRequest('getChatMembersCount', 'get', ['chat_id' => '@'.$peer]);
+            $result = Helper::curlTelegramBotRequest('getChatMembersCount', 'get', ['chat_id' => '@'.$peer]);
 
             if($result['ok'] == 1)
             {
