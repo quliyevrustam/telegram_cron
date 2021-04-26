@@ -22,7 +22,7 @@ class Helper
      * @return false|mixed
      * @throws Exception
      */
-    public static function curlRequest ($method, $type, $data = [])
+    public static function curlTelegramBotRequest ($method, $type, $data = [])
     {
         // api.telegram speed is 1 request in 5 seconds
         sleep(5);
@@ -120,5 +120,43 @@ class Helper
     public static function logError(string $errorMessage): void
     {
         error_log('['.date('Y-m-d H:i:s').'] '.$errorMessage."\n\n", 3, ERROR_LOG_PATH);
+    }
+
+    public static function curlRequest ($url, $type = 'get', $data = [])
+    {
+        $curl = curl_init();
+
+        if($curl)
+        {
+            curl_setopt($curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS);
+            curl_setopt($curl, CURLOPT_HEADER, false);
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_TIMEOUT, 5);
+
+            if ($type == 'post')
+            {
+                curl_setopt($curl, CURLOPT_POST, true);
+                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+            }
+
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+            $out = curl_exec($curl);
+
+            if (curl_errno($curl)) $errorMsg = curl_error($curl);
+
+            curl_close($curl);
+
+            $out = json_decode($out, true);
+
+            if(empty ($out) || !$out) return false;
+
+            if (isset($errorMsg)) throw new Exception($errorMsg);
+
+            return $out;
+        }
+        else
+            return false;
     }
 }
