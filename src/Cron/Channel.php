@@ -2,6 +2,7 @@
 
 namespace Cron;
 
+use Model\Channel\ChannelFound;
 use Utilities\Cron;
 use Utilities\Helper;
 
@@ -36,6 +37,60 @@ class Channel extends Cron
             }
 
             $channelHandler->update($channelBody);
+        }
+    }
+
+    public function actionAnalyzeFoundNewChannel(): void
+    {
+        $foundChannels = new ChannelFound();
+        $peers = $foundChannels->getFoundChannels();
+
+        foreach ($peers as $channelId=>$peer)
+        {
+            $channelInfo = [];
+            echo $peer."\n";
+
+            try
+            {
+                $result = Helper::curlTelegramBotRequest('getChat', 'get', ['chat_id' => '@'.$peer]);
+                Helper::prePrint($result);
+
+                if($result['ok'] == 1)
+                {
+                    if(isset($result['result']['type']) && $result['result']['type'] == 'channel')
+                    {
+                        $channelInfo['checked_at'] = date('Y-m-d H:i:s');
+                        if(isset($result['result']['id'])) $channelInfo['external_id'] = $result['result']['id'];
+                        if(isset($result['result']['title'])) $channelInfo['name'] = $result['result']['title'];
+                        if(isset($result['result']['description'])) $channelInfo['description'] = $result['result']['description'];
+
+                        $foundChannels->edit($channelId, $channelInfo);
+
+                        $result = Helper::curlTelegramBotRequest('getChatMembersCount', 'get', ['chat_id' => '@'.$peer]);
+
+                        if($result['ok'] == 1)
+                        {
+                            $channelInfo = ['follower_count' => $result['result']];
+
+                            $foundChannels->edit($channelId, $channelInfo);
+                        }
+                    }
+
+                }
+            }
+            catch (\Throwable $exception)
+            {
+                \Utilities\Helper::logError($exception->getMessage());
+
+                if($exception->getMessage() == 'Bad Request: chat not found')
+                {
+                    $channelInfo['checked_at'] = date('Y-m-d H:i:s');
+                    $channelInfo['status'] = ChannelFound::STATUS_NOT_CHANNEL;
+
+                    $foundChannels->edit($channelId, $channelInfo);
+                }
+                continue;
+            }
         }
     }
 }
