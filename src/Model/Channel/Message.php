@@ -4,6 +4,7 @@ namespace Model\Channel;
 
 use Model\MainModel;
 use Utilities\Helper;
+use Utilities\Pagination;
 
 class Message extends MainModel
 {
@@ -200,5 +201,64 @@ class Message extends MainModel
         }
 
         return round(($viewVariable + $replyVariable + $forwardVariable), 4);
+    }
+
+    public function getMessageList(Pagination $pagination): array
+    {
+        $messages = [];
+        $sql = "
+        SELECT 
+          c.`peer`, 
+          c.`name` as channel_name, 
+          ch.`view_count`, 
+          ch.`forward_count`, 
+          ch.`reply_count`, 
+          ch.`err`, 
+          ch.`created_at`,
+          ch.external_id,
+          IF(
+          ch.`body` LIKE '...' AND ch.`is_grouped` = 1,
+          (SELECT `body`  FROM ".Message::TABLE_NAME." ch  WHERE id IN (SELECT cmg.`message_id` FROM ".MessageGrouped::TABLE_NAME." cmg WHERE cmg.`main_message_id` = ch.`id`) AND `body` NOT LIKE '...' LIMIT 1), 
+          ch.`body`) AS body
+        FROM 
+          ".Message::TABLE_NAME." ch 
+          LEFT JOIN ".Channel::TABLE_NAME." c ON ch.`channel_id` = c.`id` 
+        WHERE 
+          ch.`status` > 0 
+          AND c.`status` > 0 
+          AND (
+            ch.`is_grouped` = 0 
+            OR 
+            (ch.`is_grouped` = 1 AND ch.id IN (SELECT cmg.`main_message_id` FROM ".MessageGrouped::TABLE_NAME." cmg)
+            )
+          ) 
+          AND ch.`created_at` > '".Helper::getCurrentDayBegin()."' 
+        ORDER BY ch.".$pagination->orderField." ".$pagination->orderDestination.", ch.created_at DESC 
+        LIMIT ".$pagination->offset.", ".$pagination->limit.";
+        ";
+        $sqlRequest = $this->db()->prepare($sql);
+        $sqlRequest->execute();
+        $rows = $sqlRequest->fetchAll(\PDO::FETCH_OBJ);
+        if($rows)
+        {
+            foreach ($rows as $row)
+            {
+                $createDate = Helper::timezoneConverter($row->created_at, 'UTC', 'Asia/Baku');
+
+                $messages[] = [
+                    'peer'          => $row->peer,
+                    'channel_name'  => $row->channel_name,
+                    'view_count'    => $row->view_count,
+                    'forward_count' => $row->forward_count,
+                    'reply_count'   => $row->reply_count,
+                    'err'           => $row->err,
+                    'created_at'    => $createDate,
+                    'body'          => $row->body,
+                    'external_id'   => $row->external_id,
+                ];
+            }
+        }
+
+        return $messages;
     }
 }
