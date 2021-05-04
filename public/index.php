@@ -2,16 +2,17 @@
 
 require_once dirname(__DIR__ ). '/vendor/autoload.php';
 
-use Controller\Channel\TopController;
+use Controller\Channel\ChannelController;
 use Controller\Cycle\AzeriVocabularyController;
 use Controller\Index\IndexController;
+use Controller\Message\MessageController;
 use FastRoute\RouteCollector;
 use Utilities\Auth;
 use Utilities\Helper;
 
 try {
 
-    // Create DI Container and write it to $container
+    // Create DI Container and write it to ZorgeDI
     require_once (dirname(__DIR__ ).'/config/di.config.php');
 
     $auth = new Auth();
@@ -26,7 +27,8 @@ try {
         $r->addRoute('GET', '/', [IndexController::class, 'index']);
         $r->addRoute('GET', '/name/{name}/{id}', [IndexController::class, 'showName']);
         $r->addRoute('POST', '/', [IndexController::class, 'postIndex']);
-        $r->addRoute('GET', '/channel/top', [TopController::class, 'showTop']);
+        $r->addRoute('GET', '/message/list', [MessageController::class, 'showMessageList']);
+        $r->addRoute('GET', '/channel/{id}', [ChannelController::class, 'showChannel']);
     });
 
     // Get current route by HTTP Request

@@ -1,0 +1,94 @@
+{% extends 'Index/index.html' %}
+
+{% block body %}
+<style>
+    table {
+        font: normal medium/1.4 sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        padding: 0.25rem;
+        text-align: left;
+        border: 1px solid #ccc;
+    }
+    tbody tr:hover {
+        background: yellow;
+    }
+
+    .message_table_form_button {
+        font: bold 13px Tahoma;
+        text-decoration: none;
+        background-color: #EEEEEE;
+        color: #333333;
+        padding: 2px 6px 2px 6px;
+        border-top: 1px solid #CCCCCC;
+        border-right: 1px solid #333333;
+        border-bottom: 1px solid #333333;
+        border-left: 1px solid #CCCCCC;
+    }
+</style>
+<h1>Messages</h1>
+<form method="get" action="?" id="message_table_form">
+    <div>
+        <label>Begin Date</label>
+        <input type="text" name="begin_date" value="{{ message_table.meta.begin_date }}" required>
+        <label>End Date</label>
+        <input type="text" name="end_date" value="{{ message_table.meta.end_date }}" required>
+        <br/>
+        <br/>
+        <label>Channel Type</label>
+        <select name="channel_type">
+            <option value="0" {% if message_table.meta.channel_type == 0 %} selected {% endif %}>All</option>
+            <option value="1" {% if message_table.meta.channel_type == 1 %} selected {% endif %}>Not News</option>
+        </select>
+        <label>Channels</label>
+        <select name="channel_id">
+            <option value="0">All</option>
+            {% for channel in message_table.meta.channel_names %}
+            <option value="{{ channel.id }}" {% if message_table.meta.channel_id == channel.id %} selected {% endif %}>{{ channel.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <br/>
+        <button type="submit" class="message_table_form_button">Filter</button>
+        <a href="?" class="message_table_form_button">Reset</a>
+    </div>
+</form>
+<br/>
+<table cellspacing="0" width="100%" border="1" id="t01">
+    <thead>
+    <tr>
+        <th>Channel Name</th>
+        <th><a href="?order_field=view_count&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">View Count</a></th>
+        <th><a href="?order_field=forward_count&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">Share Count</a></th>
+        <th><a href="?order_field=reply_count&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">Comment Count</a></th>
+        <th><a href="?order_field=err&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">ERR</a></th>
+        <th>Text</th>
+        <th ><a href="?order_field=created_at&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">Create Date</a></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for message in message_table.records %}
+    <tr>
+        <td><strong><a href="/channel/{{ message.channel_id }}">{{ message.channel_name }}</a></strong></td>
+        <td>{{ message.view_count }}</td>
+        <td>{{ message.forward_count }}</td>
+        <td>{{ message.reply_count }}</td>
+        <td>{{ message.err }}</td>
+        <td><a href="https://t.me/{{ message.peer }}/{{ message.external_id }}" target="_blank"><i>{{ message.body }}</i></a></td>
+        <td>{{ message.created_at }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+<p>Total Count: <strong>{{ message_table.meta.total }}</strong></p>
+<br>
+<a href="?order_field={{ message_table.meta.order_field }}&limit=5&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">5</a>,
+<a href="?order_field={{ message_table.meta.order_field }}&limit=10&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">10</a>,
+<a href="?order_field={{ message_table.meta.order_field }}&limit=20&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">20</a>,
+<a href="?order_field={{ message_table.meta.order_field }}&limit=50&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">50</a>,
+<a href="?order_field={{ message_table.meta.order_field }}&limit=100&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">100</a>
+{% endblock %}

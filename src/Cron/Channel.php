@@ -10,7 +10,7 @@ class Channel extends Cron
 {
     public function actionUpdateInfo(): void
     {
-        $channelHandler = $this->model(\Model\Channel\Channel::class);
+        $channelHandler = new \Model\Channel\Channel();
         $channels = $channelHandler->getChannelPeers();
 
         foreach ($channels as $channelId=>$peer)
@@ -26,6 +26,9 @@ class Channel extends Cron
             {
                 $channelBody['external_id'] = $result['result']['id'];
                 $channelBody['name']        = $result['result']['title'];
+
+                if(isset($result['result']['description']))
+                    $channelBody['description'] = $result['result']['description'];
             }
 
             // Get Channel Follower count
@@ -80,7 +83,7 @@ class Channel extends Cron
             }
             catch (\Throwable $exception)
             {
-                \Utilities\Helper::logError($exception->getMessage());
+                Helper::logError($exception->getMessage());
 
                 if($exception->getMessage() == 'Bad Request: chat not found')
                 {
