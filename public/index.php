@@ -2,6 +2,7 @@
 
 require_once dirname(__DIR__ ). '/vendor/autoload.php';
 
+use Controller\Channel\ChannelController;
 use Controller\Cycle\AzeriVocabularyController;
 use Controller\Index\IndexController;
 use Controller\Message\MessageController;
@@ -27,6 +28,7 @@ try {
         $r->addRoute('GET', '/name/{name}/{id}', [IndexController::class, 'showName']);
         $r->addRoute('POST', '/', [IndexController::class, 'postIndex']);
         $r->addRoute('GET', '/message/list', [MessageController::class, 'showMessageList']);
+        $r->addRoute('GET', '/channel/{id}', [ChannelController::class, 'showChannel']);
     });
 
     // Get current route by HTTP Request

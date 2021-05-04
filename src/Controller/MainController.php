@@ -57,7 +57,7 @@ class MainController extends Core
         return $this->pagination;
     }
 
-    protected function getMeta(): array
+    protected function getPaginationMeta(): array
     {
         return [
             'offset'            => $this->pagination->offset,

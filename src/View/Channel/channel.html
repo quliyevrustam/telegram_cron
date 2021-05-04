@@ -1,0 +1,12 @@
+{% extends 'Index/index.html' %}
+
+{% block body %}
+<p><strong>Name</strong>: <a href="https://t.me/{{ channel.peer }}">{{ channel.name }}</a> </p>
+<p><strong>Add Date</strong>: {{ channel.add_date }}</p>
+<p><strong>Follower Count</strong>: {{ channel.follower_count }}</p>
+<p><strong>Description</strong>: {{ channel.description }}</p>
+<p><strong>Last Message</strong>: {{ channel.last_message.date }}<br/>
+    <i><a href="https://t.me/{{ channel.peer }}/{{ channel.last_message.external_id }}" target="_blank">{{ channel.last_message.text }}</a></i></p>
+<p><strong>Most Popular Message</strong>: {{ channel.most_popular_message.date }}<br/>
+    <i><a href="https://t.me/{{ channel.peer }}/{{ channel.most_popular_message.external_id }}" target="_blank">{{ channel.most_popular_message.text }}</a></i></p>
+{% endblock %}
