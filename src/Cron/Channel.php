@@ -88,7 +88,7 @@ class Channel extends Cron
                 if($exception->getMessage() == 'Bad Request: chat not found')
                 {
                     $channelInfo['checked_at'] = date('Y-m-d H:i:s');
-                    $channelInfo['status'] = ChannelFound::STATUS_NOT_CHANNEL;
+                    $channelInfo['condition'] = ChannelFound::CONDITION_NOT_CHANNEL;
 
                     $foundChannels->edit($channelId, $channelInfo);
                 }

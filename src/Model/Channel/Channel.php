@@ -44,11 +44,18 @@ class Channel extends MainModel
         return $peers;
     }
 
+    /**
+     * @param array $data
+     */
     public function update(array $data)
     {
         $this->edit($data['id'], $data);
     }
 
+    /**
+     * @param int $id
+     * @param array $data
+     */
     private function edit(int $id, array $data)
     {
         $updatedFields = ['external_id', 'name', 'follower_count', 'description'];
@@ -82,6 +89,11 @@ class Channel extends MainModel
         $this->db()->prepare($sql)->execute($data);
     }
 
+    /**
+     * @param int $channelId
+     * @return array
+     * @throws Exception
+     */
     public function getChannel(int $channelId): array
     {
         $channel = [];
@@ -137,6 +149,10 @@ class Channel extends MainModel
         return $channel;
     }
 
+    /**
+     * @return array
+     * @throws Exception
+     */
     public function getChannelNames(): array
     {
         $channels = [];

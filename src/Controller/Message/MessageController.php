@@ -6,7 +6,6 @@ use Controller\MainController;
 use Exception;
 use Model\Channel\Channel;
 use Model\Channel\Message;
-use Utilities\Helper;
 
 class MessageController extends MainController
 {
