@@ -17,8 +17,12 @@ class Channel extends MainModel
      * @return array
      * @throws Exception
      */
-    public function getChannelPeers(): array
+    public function getChannelPeers(?string $type = null): array
     {
+        $sqlPart = '';
+        if($type == 'check_message')
+            $sqlPart = ' AND c.external_id IS NOT NULL';
+
         $peers = [];
         $sql = "
         SELECT 
@@ -26,8 +30,8 @@ class Channel extends MainModel
             c.`peer`
         FROM 
             `".self::TABLE_NAME."` c
-        WHERE `status` > 0
-        ORDER BY id DESC";
+        WHERE c.`status` > 0 $sqlPart
+        ORDER BY c.id DESC";
         $sqlRequest = $this->db()->prepare($sql);
         $sqlRequest->execute();
         $rows = $sqlRequest->fetchAll(\PDO::FETCH_OBJ);
@@ -181,5 +185,30 @@ class Channel extends MainModel
             throw new Exception('Error!');
 
         return $channels;
+    }
+
+    public function create(array $data): int
+    {
+        $updatedFields = ['peer', 'external_id', 'name', 'follower_count', 'description'];
+        $updatedFields = array_fill_keys($updatedFields, 0);
+
+        foreach ($data as $key=>$value)
+        {
+            if(!isset($updatedFields[$key])) unset($data[$key]);
+        }
+
+        if(isset($data['name'])) $data['name'] = Helper::removeEmoji($data['name']);
+        if(isset($data['description'])) $data['description'] = Helper::removeEmoji($data['description']);
+
+        $data['created_at'] = date('Y-m-d H:i:s');
+
+        $sql = "
+            INSERT INTO 
+                ".self::TABLE_NAME." (peer, external_id, name, follower_count, description, created_at) 
+            VALUES 
+                (:peer, :external_id, :name, :follower_count, :description, :created_at)";
+        $this->db()->prepare($sql)->execute($data);
+
+        return $this->db()->lastInsertId();
     }
 }

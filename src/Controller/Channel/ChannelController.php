@@ -3,6 +3,7 @@
 namespace Controller\Channel;
 
 use Controller\MainController;
+use Exception;
 use Model\Channel\Channel;
 use Model\Channel\ChannelFound;
 use Model\Channel\Message;
@@ -35,6 +36,11 @@ class ChannelController extends MainController
         return $this->tmp()->render('Channel/found_channel_table.html', ['found_channel_table' => $foundChannelTable]);
     }
 
+    /**
+     * @param int $id
+     * @return mixed
+     * @throws Exception
+     */
     public function showFoundChannel(int $id)
     {
         $makeCondition = $this->http()->query->get('make_condition');
@@ -43,7 +49,7 @@ class ChannelController extends MainController
             (new ChannelFound())->edit($id, ['condition' => $makeCondition]);
         }
 
-        $channel = (new ChannelFound())->getChannel($id);
+        $channel = (new ChannelFound())->getFoundChannelById($id);
 
         return $this->tmp()->render('Channel/found_channel.html', ['channel' => $channel]);
     }

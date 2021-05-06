@@ -13,6 +13,7 @@ class ChannelFound extends MainModel
     const TABLE_NAME = 'channel_found';
 
     const CONDITION_NOT_CHECKED = 0;
+    const CONDITION_AZERI_CHANNEL = 1;
     const CONDITION_NOT_CHANNEL = -4;
 
     /**
@@ -111,6 +112,12 @@ class ChannelFound extends MainModel
         return $foundChannels;
     }
 
+    /**
+     * @param int $id
+     * @param array $data
+     * @return int
+     * @throws Exception
+     */
     public function edit(int $id, array $data): int
     {
         $updatedFields = ['external_id', 'name', 'follower_count', 'description', 'checked_at', 'condition', 'status'];
@@ -123,6 +130,18 @@ class ChannelFound extends MainModel
 
         if(isset($data['name'])) $data['name'] = Helper::removeEmoji($data['name']);
         if(isset($data['description'])) $data['description'] = Helper::removeEmoji($data['description']);
+
+        if(isset($data['condition']) && $data['condition'] == self::CONDITION_AZERI_CHANNEL)
+        {
+            $foundChannel = $this->getFoundChannelById($id);
+            (new Channel())->create([
+                'peer'              => $foundChannel['peer'],
+                'external_id'       => $foundChannel['external_id'],
+                'name'              => $foundChannel['name'],
+                'follower_count'    => $foundChannel['follower_count'],
+                'description'       => $foundChannel['description']
+            ]);
+        }
 
         $updateSQL = [];
         foreach ($data as $field=>$value)
@@ -210,7 +229,7 @@ class ChannelFound extends MainModel
         return $sql;
     }
 
-    public function getChannel(int $channelId): array
+    public function getFoundChannelById(int $channelId): array
     {
         $sql = "
         SELECT 
@@ -220,7 +239,8 @@ class ChannelFound extends MainModel
             c.`description`,
             c.`created_at`,
             c.`checked_at`,
-            c.`condition`
+            c.`condition`,
+            c.`external_id`
         FROM 
             `".self::TABLE_NAME."` c
         WHERE `status` > 0 and id = :id
@@ -235,6 +255,7 @@ class ChannelFound extends MainModel
 
             $channel = [
                 'peer'           => $row->peer,
+                'external_id'    => $row->external_id,
                 'name'           => !empty($row->name) ? $row->name : 'None',
                 'condition'      => $row->condition,
                 'follower_count' => $row->follower_count,

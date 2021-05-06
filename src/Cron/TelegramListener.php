@@ -26,11 +26,11 @@ class TelegramListener extends Cron
         $madelineProto = new API(MADELINE_SESSION_PATH, $settings);
         //$madelineProto->start();
 
-        $channels = $this->model(\Model\Channel\Channel::class)->getChannelPeers();
+        $channels = (new \Model\Channel\Channel())->getChannelPeers('check_message');
         $channelMessage = $this->model(\Model\Channel\Message::class);
 
         $offset_id = 0;
-        $limit = 100;
+        $limit = 50;
 
         foreach ($channels as $channelId => $peer)
         {
@@ -84,10 +84,10 @@ class TelegramListener extends Cron
         $madelineProto = new API(MADELINE_SESSION_PATH, $settings);
         //$madelineProto->start();
 
-        $channels = (new \Model\Channel\Channel())->getChannelPeers();
+        $channels = (new \Model\Channel\Channel())->getChannelPeers('check_message');
 
         $offset_id = 0;
-        $limit = 100;
+        $limit = 10;
 
         //$channels = [4 => 'nataosmanli'];
         foreach ($channels as $channelId=>$peer)
