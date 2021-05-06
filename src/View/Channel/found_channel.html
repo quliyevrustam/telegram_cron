@@ -1,0 +1,26 @@
+{% extends 'Index/index.html' %}
+
+{% block body %}
+<p><strong>Name</strong>: <a href="https://t.me/{{ channel.peer }}" target="_blank">{{ channel.name }}</a> </p>
+<p><strong>Peer</strong>: {{ channel.peer }} </p>
+<p><strong>Condition</strong>:
+    {% if channel.condition == 1 %}Added to Azeri Channel
+    {% elseif channel.condition == 0 %}Not Selected
+    {% elseif channel.condition == -1 %}Not Azeri Channel
+    {% elseif channel.condition == -3 %}Blocked Azeri Channel
+    {% elseif channel.condition == -4 %}Not a channel
+    {% else %} None
+    {% endif %}
+</p>
+<p><strong>Add Date</strong>: {{ channel.add_date }}</p>
+<p><strong>Check Date</strong>: {{ channel.check_date }}</p>
+<p><strong>Follower Count</strong>: {{ channel.follower_count }}</p>
+<p><strong>Description</strong>: {{ channel.description }}</p>
+<br>
+| {% if channel.condition != 1 %} <a href="?make_condition=1">Make "Added to Azeri Channel"</a> |{% endif %}
+{% if channel.condition != 0 %} <a href="?make_condition=0">Make "Not Selected"</a> |{% endif %}
+{% if channel.condition != -1 %} <a href="?make_condition=-1">Make "Not Azeri Channel"</a> |{% endif %}
+{% if channel.condition != -3 %} <a href="?make_condition=-3">Make "Blocked Azeri Channel"</a> |{% endif %}
+{% if channel.condition != -4 %} <a href="?make_condition=-4">Make "Not a channel"</a> |{% endif %}
+
+{% endblock %}

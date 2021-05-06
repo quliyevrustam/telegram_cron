@@ -72,7 +72,7 @@
     <tbody>
     {% for message in message_table.records %}
     <tr>
-        <td><strong><a href="/channel/{{ message.channel_id }}">{{ message.channel_name }}</a></strong></td>
+        <td><strong><a href="/channel/{{ message.channel_id }}" target="_blank">{{ message.channel_name }}</a></strong></td>
         <td>{{ message.view_count }}</td>
         <td>{{ message.forward_count }}</td>
         <td>{{ message.reply_count }}</td>

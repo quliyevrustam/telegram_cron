@@ -28,7 +28,9 @@ try {
         $r->addRoute('GET', '/name/{name}/{id}', [IndexController::class, 'showName']);
         $r->addRoute('POST', '/', [IndexController::class, 'postIndex']);
         $r->addRoute('GET', '/message/list', [MessageController::class, 'showMessageList']);
-        $r->addRoute('GET', '/channel/{id}', [ChannelController::class, 'showChannel']);
+        $r->addRoute('GET', '/channel/{id:\d+}', [ChannelController::class, 'showChannel']);
+        $r->addRoute('GET', '/channel/found', [ChannelController::class, 'showFoundChannelList']);
+        $r->addRoute('GET', '/channel/found/{id:\d+}', [ChannelController::class, 'showFoundChannel']);
     });
 
     // Get current route by HTTP Request

@@ -2,6 +2,7 @@
 
 namespace Model\Channel;
 
+use Exception;
 use Model\MainModel;
 use Utilities\Helper;
 use Utilities\Pagination;
@@ -120,6 +121,9 @@ class Message extends MainModel
         return $id;
     }
 
+    /**
+     *
+     */
     public function updateErr(): void
     {
         $this->fillMaxProperty();
@@ -149,6 +153,9 @@ class Message extends MainModel
         }
     }
 
+    /**
+     *
+     */
     private function fillMaxProperty(): void
     {
         $sql = "
@@ -203,6 +210,11 @@ class Message extends MainModel
         return round(($viewVariable + $replyVariable + $forwardVariable), 4);
     }
 
+    /**
+     * @param Pagination $pagination
+     * @param array $filter
+     * @return array
+     */
     public function getMessageList(Pagination $pagination, array $filter): array
     {
         $sql = $this->getMessageListSql($pagination, $filter);
@@ -240,6 +252,11 @@ class Message extends MainModel
         return ['records' => $messages, 'total' => $total];
     }
 
+    /**
+     * @param Pagination $pagination
+     * @param array $filter
+     * @return array
+     */
     private function getMessageListSql(Pagination $pagination, array $filter): array
     {
         $beginDate = Helper::timezoneConverter($filter['begin_date'].' 00:00:00', 'Asia/Baku', 'UTC');
@@ -300,6 +317,11 @@ class Message extends MainModel
         return $sql;
     }
 
+    /**
+     * @param int $messageId
+     * @return array
+     * @throws Exception
+     */
     public function getMessageById(int $messageId): array
     {
         $sql = "
@@ -345,7 +367,7 @@ class Message extends MainModel
             ];
         }
         else
-            throw new \Exception('Error! Message Does not exist!');
+            throw new Exception('Error! Message Does not exist!');
 
         return $message;
     }

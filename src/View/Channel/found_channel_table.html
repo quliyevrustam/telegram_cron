@@ -1,0 +1,96 @@
+{% extends 'Index/index.html' %}
+
+{% block body %}
+<style>
+    table {
+        font: normal medium/1.4 sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        padding: 0.25rem;
+        text-align: left;
+        border: 1px solid #ccc;
+    }
+    thead th {
+        background: cornsilk;
+        text-align: center;
+    }
+    tbody tr:hover {
+        background: yellow;
+    }
+
+    .found_channel_table_form_button {
+        font: bold 13px Tahoma;
+        text-decoration: none;
+        background-color: #EEEEEE;
+        color: #333333;
+        padding: 2px 6px 2px 6px;
+        border-top: 1px solid #CCCCCC;
+        border-right: 1px solid #333333;
+        border-bottom: 1px solid #333333;
+        border-left: 1px solid #CCCCCC;
+    }
+</style>
+<h1>Found Channel's</h1>
+<form method="get" action="?">
+    <div>
+        <label>Condition</label>
+        <select name="condition">
+            <option value="">All</option>
+            <option value="1" {% if found_channel_table.meta.condition == 1 %} selected {% endif %}>Add to Azeri Channel</option>
+            <option value="0" {% if found_channel_table.meta.condition == 0 %} selected {% endif %}>Not Selected</option>
+            <option value="-1" {% if found_channel_table.meta.condition == -1 %} selected {% endif %}>Not Azeri Channel</option>
+            <option value="-2" {% if found_channel_table.meta.condition == -2 %} selected {% endif %}>Bad Azeri Channel</option>
+            <option value="-3" {% if found_channel_table.meta.condition == -3 %} selected {% endif %}>Blocked Azeri Channel</option>
+            <option value="-4" {% if found_channel_table.meta.condition == -4 %} selected {% endif %}>Not a channel</option>
+        </select>
+    </div>
+    <div>
+        <br/>
+        <button type="submit" class="found_channel_table_form_button">Filter</button>
+        <a href="?" class="found_channel_table_form_button">Reset</a>
+    </div>
+</form>
+<br/>
+<table cellspacing="0" width="100%" border="1" id="t01">
+    <thead>
+    <tr>
+        <th><a href="?order_field=name&limit={{ found_channel_table.meta.limit }}&condition={{ found_channel_table.meta.condition }}">Channel Name</a></th>
+        <th><a href="?order_field=follower_count&limit={{ found_channel_table.meta.limit }}&condition={{ found_channel_table.meta.condition }}">Follower Count</a></th>
+        <th><a href="?order_field=created_at&limit={{ found_channel_table.meta.limit }}&condition={{ found_channel_table.meta.condition }}">Add Date</a></th>
+        <th><a href="?order_field=checked_at&limit={{ found_channel_table.meta.limit }}&condition={{ found_channel_table.meta.condition }}">Check Date</a></th>
+        <th><a href="?order_field=condition&limit={{ found_channel_table.meta.limit }}&condition={{ found_channel_table.meta.condition }}">Condition</a></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for found_channel in found_channel_table.records %}
+    <tr>
+        <td><strong><a href="/channel/found/{{ found_channel.id }}" target="_blank">{{ found_channel.name }}</a></strong></td>
+        <td>{{ found_channel.follower_count }}</td>
+        <td>{{ found_channel.add_date }}</td>
+        <td>{{ found_channel.check_date }}</td>
+        <td>
+            {% if found_channel.condition == 1 %}Add to Azeri Channel
+            {% elseif found_channel.condition == 0 %}Not Selected
+            {% elseif found_channel.condition == -1 %}Not Azeri Channel
+            {% elseif found_channel.condition == -2 %}Bad Azeri Channel
+            {% elseif found_channel.condition == -3 %}Blocked Azeri Channel
+            {% elseif found_channel.condition == -4 %}Not a channel
+            {% else %} None
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+<p>Total Count: <strong>{{ found_channel_table.meta.total }}</strong></p>
+<br>
+<a href="?limit=5&order_field={{ found_channel_table.meta.order_field }}&condition={{ found_channel_table.meta.condition }}">5</a>,
+<a href="?limit=10&order_field={{ found_channel_table.meta.order_field }}&condition={{ found_channel_table.meta.condition }}">10</a>,
+<a href="?limit=20&order_field={{ found_channel_table.meta.order_field }}&condition={{ found_channel_table.meta.condition }}">20</a>,
+<a href="?limit=50&order_field={{ found_channel_table.meta.order_field }}&condition={{ found_channel_table.meta.condition }}">50</a>,
+<a href="?limit=100&order_field={{ found_channel_table.meta.order_field }}&condition={{ found_channel_table.meta.condition }}">100</a>
+
+{% endblock %}
