@@ -15,9 +15,6 @@ try {
     // Create DI Container and write it to ZorgeDI
     require_once (dirname(__DIR__ ).'/config/di.config.php');
 
-    $auth = new Auth();
-    $auth->checkLogin();
-
     // Routing
     $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r)
     {
