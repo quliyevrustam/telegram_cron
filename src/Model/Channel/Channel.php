@@ -5,6 +5,7 @@ namespace Model\Channel;
 use Exception;
 use Model\MainModel;
 use Utilities\Helper;
+use Utilities\Pagination;
 
 class Channel extends MainModel
 {
@@ -210,5 +211,72 @@ class Channel extends MainModel
         $this->db()->prepare($sql)->execute($data);
 
         return $this->db()->lastInsertId();
+    }
+
+    /**
+     * @param Pagination $pagination
+     * @param array $filter
+     * @return array
+     */
+    public function getChannelList(Pagination $pagination, array $filter): array
+    {
+        $total = 0;
+        $channels = [];
+
+        $sql = $this->getChannelListSql($pagination, $filter);
+
+        $sqlRequest = $this->db()->prepare($sql['records']);
+        $sqlRequest->execute($sql['bind']);
+        $rows = $sqlRequest->fetchAll(\PDO::FETCH_OBJ);
+        if($rows)
+        {
+            foreach ($rows as $row)
+            {
+                $addDate = Helper::timezoneConverter($row->created_at, 'UTC', 'Asia/Baku');
+
+                $channels[] = [
+                    'id'             => $row->id,
+                    'peer'           => $row->peer,
+                    'name'           => !empty($row->name) ? $row->name : $row->peer,
+                    'follower_count' => $row->follower_count,
+                    'add_date'       => $addDate,
+                ];
+            }
+
+            $totalRequest = $this->db()->prepare($sql['total']);
+            $totalRequest->execute($sql['bind']);
+            $total = $totalRequest->rowCount();
+        }
+
+        return ['records' => $channels, 'total' => $total];
+    }
+
+    /**
+     * @param Pagination $pagination
+     * @param array $filter
+     * @return array
+     */
+    private function getChannelListSql(Pagination $pagination, array $filter): array
+    {
+        $sqlPart = '';
+
+        $sql['total'] = "
+        SELECT 
+            `id`,
+            `peer`,
+            `name`,
+            `follower_count`,
+            `created_at`
+        FROM 
+          ".Channel::TABLE_NAME."
+        WHERE 
+          `status` > 0".$sqlPart;
+
+        $sql['records'] = $sql['total']."
+        ORDER BY ".$pagination->orderField." ".$pagination->orderDestination.", created_at DESC 
+        LIMIT ".$pagination->offset.", ".$pagination->limit.";
+        ";
+
+        return $sql;
     }
 }
