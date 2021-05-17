@@ -2,7 +2,6 @@
 
 namespace Model\Channel;
 
-use danog\MadelineProto\help;
 use Exception;
 use Model\MainModel;
 use Utilities\Helper;
@@ -45,6 +44,9 @@ class ChannelFound extends MainModel
         return $peers;
     }
 
+    /**
+     * @param array $peers
+     */
     public function add(array $peers)
     {
         if(count($peers) == 0) return;
@@ -67,6 +69,10 @@ class ChannelFound extends MainModel
         }
     }
 
+    /**
+     * @param string $peer
+     * @return int
+     */
     private function create(string $peer): int
     {
         $peer = Helper::removeEmoji($peer);
@@ -82,6 +88,10 @@ class ChannelFound extends MainModel
         return $this->db()->lastInsertId();
     }
 
+    /**
+     * @return array
+     * @throws Exception
+     */
     public function getFoundChannels(): array
     {
         $foundChannels = [];
@@ -161,6 +171,11 @@ class ChannelFound extends MainModel
         return $id;
     }
 
+    /**
+     * @param Pagination $pagination
+     * @param array $filter
+     * @return array
+     */
     public function getChannelFoundList(Pagination $pagination, array $filter): array
     {
         $total = 0;
@@ -182,7 +197,7 @@ class ChannelFound extends MainModel
                 $foundChannels[] = [
                     'id'             => $row->id,
                     'peer'           => $row->peer,
-                    'name'           => !empty($row->name) ? $row->name : 'None',
+                    'name'           => !empty($row->name) ? $row->name : $row->peer,
                     'follower_count' => $row->follower_count,
                     'add_date'       => $addDate,
                     'check_date'     => $checkDate,
@@ -198,6 +213,11 @@ class ChannelFound extends MainModel
         return ['records' => $foundChannels, 'total' => $total];
     }
 
+    /**
+     * @param Pagination $pagination
+     * @param array $filter
+     * @return array
+     */
     private function getChannelFoundListSql(Pagination $pagination, array $filter): array
     {
         $sqlPart = '';
@@ -229,6 +249,11 @@ class ChannelFound extends MainModel
         return $sql;
     }
 
+    /**
+     * @param int $channelId
+     * @return array
+     * @throws Exception
+     */
     public function getFoundChannelById(int $channelId): array
     {
         $sql = "
@@ -256,7 +281,7 @@ class ChannelFound extends MainModel
             $channel = [
                 'peer'           => $row->peer,
                 'external_id'    => $row->external_id,
-                'name'           => !empty($row->name) ? $row->name : 'None',
+                'name'           => !empty($row->name) ? $row->name : $row->peer,
                 'condition'      => $row->condition,
                 'follower_count' => $row->follower_count,
                 'description'    => $row->description,
