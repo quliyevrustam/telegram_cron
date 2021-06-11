@@ -1,5 +1,7 @@
 {% extends 'Index/index.html' %}
 
+{% block title %}{{ channel.name }}{% endblock %}
+
 {% block body %}
 <p><strong>Name</strong>: <a href="https://t.me/{{ channel.peer }}" target="_blank">{{ channel.name }}</a> </p>
 <p><strong>Peer</strong>: {{ channel.peer }} </p>

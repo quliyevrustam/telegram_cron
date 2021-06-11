@@ -32,7 +32,7 @@ class Channel extends MainModel
         FROM 
             `".self::TABLE_NAME."` c
         WHERE c.`status` > 0 $sqlPart
-        ORDER BY c.id DESC";
+        ORDER BY c.follower_count DESC";
         $sqlRequest = $this->db()->prepare($sql);
         $sqlRequest->execute();
         $rows = $sqlRequest->fetchAll(\PDO::FETCH_OBJ);
@@ -164,11 +164,11 @@ class Channel extends MainModel
         $sql = "
         SELECT 
             c.`id`,
-            c.`name`
+            IF(c.`name` = '' OR c.`name` IS NULL, c.`peer`, c.`name`) AS name
         FROM 
             `".self::TABLE_NAME."` c
         WHERE `status` > 0 and c.`name` IS NOT NULL
-        ORDER BY c.`name` ASC";
+        ORDER BY name ASC";
         $sqlRequest = $this->db()->prepare($sql);
         $sqlRequest->execute();
         $rows = $sqlRequest->fetchAll(\PDO::FETCH_OBJ);
@@ -188,6 +188,10 @@ class Channel extends MainModel
         return $channels;
     }
 
+    /**
+     * @param array $data
+     * @return int
+     */
     public function create(array $data): int
     {
         $updatedFields = ['peer', 'external_id', 'name', 'follower_count', 'description'];
@@ -278,5 +282,17 @@ class Channel extends MainModel
         ";
 
         return $sql;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function delete(int $id): void
+    {
+        $sql = "
+            UPDATE ".self::TABLE_NAME." 
+            SET status = -1
+            WHERE id=:id;";
+        $this->db()->prepare($sql)->execute(['id' => $id]);
     }
 }

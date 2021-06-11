@@ -12,7 +12,7 @@ class Channel extends Cron
     {
         $channelHandler = new \Model\Channel\Channel();
         $channels = $channelHandler->getChannelPeers();
-
+        
         foreach ($channels as $channelId=>$peer)
         {
             echo $peer."\n";
@@ -29,17 +29,21 @@ class Channel extends Cron
 
                 if(isset($result['result']['description']))
                     $channelBody['description'] = $result['result']['description'];
+
+                // Get Channel Follower count
+                $result = Helper::curlTelegramBotRequest('getChatMembersCount', 'get', ['chat_id' => '@'.$peer]);
+
+                if($result['ok'] == 1)
+                {
+                    $channelBody['follower_count'] = $result['result'];
+                }
+
+                $channelHandler->update($channelBody);
             }
-
-            // Get Channel Follower count
-            $result = Helper::curlTelegramBotRequest('getChatMembersCount', 'get', ['chat_id' => '@'.$peer]);
-
-            if($result['ok'] == 1)
+            elseif($result['ok'] == Helper::API_RESULT_CHAT_NOT_FOUND)
             {
-                $channelBody['follower_count'] = $result['result'];
+                $channelHandler->delete($channelId);
             }
-
-            $channelHandler->update($channelBody);
         }
     }
 
@@ -56,7 +60,6 @@ class Channel extends Cron
             try
             {
                 $result = Helper::curlTelegramBotRequest('getChat', 'get', ['chat_id' => '@'.$peer]);
-                Helper::prePrint($result);
 
                 if($result['ok'] == 1)
                 {

@@ -25,6 +25,18 @@ class IndexController extends MainController
 
         $mainPage['daily_top_five_table'] = $messageRecords['records'];
 
+        // Last 5 Message
+        $filter = [
+            'begin_date'   => date('Y-m-d'),
+            'end_date'     => date('Y-m-d'),
+            'channel_type' => Channel::TYPE_ALL,
+            'channel_id'   => Channel::TYPE_ALL,
+        ];
+
+        $messageRecords = (new Message())->getMessageList((new Pagination(0, 5, 'created_at', 'desc')), $filter);
+
+        $mainPage['last_five_message_table'] = $messageRecords['records'];
+
         // Weekly Not News Top 5
         $filter = [
             'begin_date'   => date('Y-m-d', strtotime('sunday -1 week')),

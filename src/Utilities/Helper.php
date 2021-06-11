@@ -6,6 +6,8 @@ use Exception;
 
 class Helper
 {
+    const API_RESULT_CHAT_NOT_FOUND = 2;
+
     public static function prePrint($expression): void
     {
         echo '--------------------';
@@ -57,8 +59,9 @@ class Helper
 
             if(empty ($out) || !$out) return false;
 
-            if(isset($out['ok']) && $out['ok'] == false && isset($out['description'])) $errorMsg = $out['description'];
+            if(isset($out['error_code']) && $out['error_code'] == 400) $out['ok'] = self::API_RESULT_CHAT_NOT_FOUND;
 
+            if(isset($out['ok']) && $out['ok'] == false && isset($out['description'])) $errorMsg = $out['description'];
             if (isset($errorMsg)) throw new Exception($errorMsg);
 
             return $out;

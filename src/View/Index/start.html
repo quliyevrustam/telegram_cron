@@ -47,6 +47,33 @@
     {% endfor %}
     </tbody>
 </table>
+<h1>Last 5 Message</h1>
+<table cellspacing="0" width="100%" border="1">
+    <thead>
+    <tr>
+        <th>Channel Name</th>
+        <th>View Count</th>
+        <th>Share Count</th>
+        <th>Comment Count</th>
+        <th>ERR</th>
+        <th>Text</th>
+        <th>Create Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for message in main_page.last_five_message_table %}
+    <tr>
+        <td><strong><a href="/channel/{{ message.channel_id }}" target="_blank">{{ message.channel_name }}</a></strong></td>
+        <td>{{ message.view_count }}</td>
+        <td>{{ message.forward_count }}</td>
+        <td>{{ message.reply_count }}</td>
+        <td>{{ message.err }}</td>
+        <td><a href="https://t.me/{{ message.peer }}/{{ message.external_id }}" target="_blank"><i>{{ message.body }}</i></a></td>
+        <td>{{ message.created_at }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
 <h1>Weekly Top 5 (Not News)</h1>
 <table cellspacing="0" width="100%" border="1">
     <thead>

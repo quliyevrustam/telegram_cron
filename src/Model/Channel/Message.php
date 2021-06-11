@@ -282,7 +282,7 @@ class Message extends MainModel
         $sql['total'] = "
         SELECT 
           c.`peer`, 
-          c.`name` as channel_name, 
+          IF(c.`name` = '' OR c.`name` IS NULL, c.`peer`, c.`name`) AS channel_name,
           ch.`view_count`, 
           ch.`forward_count`, 
           ch.`reply_count`, 

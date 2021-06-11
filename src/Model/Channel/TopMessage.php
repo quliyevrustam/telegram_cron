@@ -89,7 +89,7 @@ class TopMessage extends MainModel
             $message['name'] = str_replace(".", HtmlFormat::makeCode('.'), $message['name']);
 
             // Prepare Message Body
-            $message['body'] = str_replace("\n", ' ', $message['body']);
+            $message['body'] = str_replace("\n", '.', $message['body']);
             $messageBody = HtmlFormat::makeItalic($message['body']);
 
             // Prepare Message Link

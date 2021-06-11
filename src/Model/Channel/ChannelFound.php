@@ -231,7 +231,7 @@ class ChannelFound extends MainModel
         SELECT 
             `id`,
             `peer`,
-            `name`,
+            IF(`name` = '' OR `name` IS NULL, `peer`, `name`) AS name,
             `follower_count`,
             `created_at`,
             `checked_at`,
@@ -259,7 +259,7 @@ class ChannelFound extends MainModel
         $sql = "
         SELECT 
             c.`peer`,
-            c.`name`,
+            IF(c.`name` = '' OR c.`name` IS NULL, c.`peer`, c.`name`) AS name,
             c.`follower_count`,
             c.`description`,
             c.`created_at`,
