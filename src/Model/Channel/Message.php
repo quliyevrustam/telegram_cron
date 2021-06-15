@@ -18,6 +18,8 @@ class Message extends MainModel
     public const MESSAGE_GROUPED = 1;
     public const MESSAGE_SINGLE = 0;
 
+    private const BODY_WEIGHT = 25;
+
     private $max_view_count     = 0;
     private $max_reply_count    = 0;
     private $max_forward_count  = 0;
@@ -228,7 +230,7 @@ class Message extends MainModel
         {
             foreach ($rows as $row)
             {
-                $createDate = Helper::timezoneConverter($row->created_at, 'UTC', 'Asia/Baku');
+                $createDate = Helper::timezoneConverter($row->created_at, 'UTC', 'Asia/Baku', Helper::TABLE_FIELD_DATE_FORMAT);
 
                 $messages[] = [
                     'peer'          => $row->peer,
@@ -238,7 +240,7 @@ class Message extends MainModel
                     'reply_count'   => $row->reply_count,
                     'err'           => $row->err,
                     'created_at'    => $createDate,
-                    'body'          => $row->body,
+                    'body'          => Helper::textPublicFormat($row->body),
                     'external_id'   => $row->external_id,
                     'channel_id'    => $row->channel_id,
                 ];

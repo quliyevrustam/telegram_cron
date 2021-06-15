@@ -3,55 +3,38 @@
 {% block title %}Channel's Table{% endblock %}
 
 {% block body %}
-<style>
-    table {
-        font: normal medium/1.4 sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-    th, td {
-        padding: 0.25rem;
-        text-align: left;
-        border: 1px solid #ccc;
-    }
-    thead th {
-        background: cornsilk;
-        text-align: center;
-    }
-    tbody tr:hover {
-        background: yellow;
-    }
-</style>
-<h1>Channel's</h1>
-<br/>
-<table cellspacing="0" width="100%" border="1" id="t01">
-    <thead>
-    <tr>
-        <th><a href="?order_field=name&limit={{ channel_table.meta.limit }}">Channel Name</a></th>
-        <th><a href="?order_field=follower_count&limit={{ channel_table.meta.limit }}">Follower Count</a></th>
-        <th><a href="?order_field=created_at&limit={{ channel_table.meta.limit }}">Add Date</a></th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for channel in channel_table.records %}
-    <tr>
-        <td><strong><a href="/channel/{{ channel.id }}" target="_blank">{{ channel.name }}</a></strong></td>
-        <td>{{ channel.follower_count }}</td>
-        <td>{{ channel.add_date }}</td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
-<br>
-<p>Total Count: <strong>{{ channel_table.meta.total }}</strong></p>
-<br>
-<a href="?limit=5&order_field={{ channel_table.meta.order_field }}">5</a>,
-<a href="?limit=10&order_field={{ channel_table.meta.order_field }}">10</a>,
-<a href="?limit=20&order_field={{ channel_table.meta.order_field }}">20</a>,
-<a href="?limit=50&order_field={{ channel_table.meta.order_field }}">50</a>,
-<a href="?limit=100&order_field={{ channel_table.meta.order_field }}">100</a>,
-<a href="?limit=200&order_field={{ channel_table.meta.order_field }}">200</a>,
-<a href="?limit=500&order_field={{ channel_table.meta.order_field }}">500</a>,
-<a href="?limit=1000&order_field={{ channel_table.meta.order_field }}">1000</a>
+<div class="container-md pt-3">
+    <h1>Channel's</h1>
+    <table class="table table-bordered table-hover table-responsive-md small">
+        <thead>
+        <tr>
+            <th class="table_channel_name_field"><a href="?order_field=name&limit={{ channel_table.meta.limit }}">{{ translation.channel_name }}</a></th>
+            <th><a href="?order_field=follower_count&limit={{ channel_table.meta.limit }}">{{ translation.channel_follower_count }}</a></th>
+            <th><a href="?order_field=created_at&limit={{ channel_table.meta.limit }}">{{ translation.channel_add_date }}</a></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for channel in channel_table.records %}
+            <tr>
+                <td><strong><a href="/channel/{{ channel.id }}" target="_blank">{{ channel.name }}</a></strong></td>
+                <td>{{ channel.follower_count }}</td>
+                <td>{{ channel.add_date }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <p>Total Count: <strong>{{ channel_table.meta.total }}</strong></p>
+    <br>
+    <a href="?limit=5&order_field={{ channel_table.meta.order_field }}">5</a>,
+    <a href="?limit=10&order_field={{ channel_table.meta.order_field }}">10</a>,
+    <a href="?limit=20&order_field={{ channel_table.meta.order_field }}">20</a>,
+    <a href="?limit=50&order_field={{ channel_table.meta.order_field }}">50</a>,
+    <a href="?limit=100&order_field={{ channel_table.meta.order_field }}">100</a>,
+    <a href="?limit=200&order_field={{ channel_table.meta.order_field }}">200</a>,
+    <a href="?limit=500&order_field={{ channel_table.meta.order_field }}">500</a>,
+    <a href="?limit=1000&order_field={{ channel_table.meta.order_field }}">1000</a>
+</div>
+
 
 {% endblock %}

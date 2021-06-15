@@ -1,36 +1,17 @@
 {% extends 'Index/index.html' %}
-
 {% block body %}
-<style>
-    table {
-        font: normal medium/1.4 sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-    th, td {
-        padding: 0.25rem;
-        text-align: left;
-        border: 1px solid #ccc;
-    }
-    thead th {
-        background: cornsilk;
-        text-align: center;
-    }
-    tbody tr:hover {
-        background: yellow;
-    }
-</style>
+<div class="container-md pt-3">
 <h1>Daily Top 5</h1>
-<table cellspacing="0" width="100%" border="1">
+<table class="table table-bordered table-hover table-responsive-md small">
     <thead>
     <tr>
-        <th>Channel Name</th>
-        <th>View Count</th>
-        <th>Share Count</th>
-        <th>Comment Count</th>
-        <th>ERR</th>
-        <th>Text</th>
-        <th>Create Date</th>
+        <th class="table_channel_name_field">{{ translation.channel_name }}</th>
+        <th>{{ translation.message_view_count }}</th>
+        <th>{{ translation.message_share_count }}</th>
+        <th>{{ translation.message_comment_count }}</th>
+        <th>{{ translation.message_err }}</th>
+        <th>{{ translation.message_body }}</th>
+        <th>{{ translation.message_create_date }}</th>
     </tr>
     </thead>
     <tbody>
@@ -48,16 +29,16 @@
     </tbody>
 </table>
 <h1>Last 5 Message</h1>
-<table cellspacing="0" width="100%" border="1">
+<table class="table table-bordered table-hover table-responsive-md small">
     <thead>
     <tr>
-        <th>Channel Name</th>
-        <th>View Count</th>
-        <th>Share Count</th>
-        <th>Comment Count</th>
-        <th>ERR</th>
-        <th>Text</th>
-        <th>Create Date</th>
+        <th class="table_channel_name_field">{{ translation.channel_name }}</th>
+        <th>{{ translation.message_view_count }}</th>
+        <th>{{ translation.message_share_count }}</th>
+        <th>{{ translation.message_comment_count }}</th>
+        <th>{{ translation.message_err }}</th>
+        <th>{{ translation.message_body }}</th>
+        <th>{{ translation.message_create_date }}</th>
     </tr>
     </thead>
     <tbody>
@@ -75,16 +56,16 @@
     </tbody>
 </table>
 <h1>Weekly Top 5 (Not News)</h1>
-<table cellspacing="0" width="100%" border="1">
+<table class="table table-bordered table-hover table-responsive-md small">
     <thead>
     <tr>
-        <th>Channel Name</th>
-        <th>View Count</th>
-        <th>Share Count</th>
-        <th>Comment Count</th>
-        <th>ERR</th>
-        <th>Text</th>
-        <th>Create Date</th>
+        <th class="table_channel_name_field">{{ translation.channel_name }}</th>
+        <th>{{ translation.message_view_count }}</th>
+        <th>{{ translation.message_share_count }}</th>
+        <th>{{ translation.message_comment_count }}</th>
+        <th>{{ translation.message_err }}</th>
+        <th>{{ translation.message_body }}</th>
+        <th>{{ translation.message_create_date }}</th>
     </tr>
     </thead>
     <tbody>
@@ -102,14 +83,14 @@
     </tbody>
 </table>
 <h1>Top 5 Found Channel's</h1>
-<table cellspacing="0" width="100%" border="1" id="t01">
+<table class="table table-bordered table-hover table-responsive-md small">
     <thead>
     <tr>
-        <th>Channel Name</th>
-        <th>Follower Count</th>
-        <th>Add Date</th>
-        <th>Check Date</th>
-        <th>Condition</th>
+        <th class="table_channel_name_field">{{ translation.channel_name }}</th>
+        <th>{{ translation.channel_follower_count }}</th>
+        <th>{{ translation.channel_add_date }}</th>
+        <th>{{ translation.channel_check_date }}</th>
+        <th>{{ translation.channel_condition }}</th>
     </tr>
     </thead>
     <tbody>
@@ -133,4 +114,5 @@
     {% endfor %}
     </tbody>
 </table>
+</div>
 {% endblock %}

@@ -8,6 +8,12 @@ class Helper
 {
     const API_RESULT_CHAT_NOT_FOUND = 2;
 
+    const TABLE_FIELD_SYMBOL_LIMIT = 50;
+    const TABLE_FIELD_DATE_FORMAT = 'H:i d/m/Y';
+
+    /**
+     * @param $expression
+     */
     public static function prePrint($expression): void
     {
         echo '--------------------';
@@ -70,6 +76,10 @@ class Helper
             return false;
     }
 
+    /**
+     * @param string|null $string
+     * @return string
+     */
     public static function removeEmoji(?string $string = null) : string
     {
         if (empty ($string)) return '';
@@ -103,6 +113,14 @@ class Helper
         return trim($clear_string);
     }
 
+    /**
+     * @param $date
+     * @param $timezoneFrom
+     * @param $timezoneTo
+     * @param string $format
+     * @return string
+     * @throws Exception
+     */
     public static function timezoneConverter($date, $timezoneFrom, $timezoneTo, $format = 'Y-m-d H:i:s')
     {
         $handler = new \DateTime($date, new \DateTimeZone($timezoneFrom));
@@ -110,21 +128,39 @@ class Helper
         return $handler->format($format);
     }
 
+    /**
+     * @return string
+     * @throws Exception
+     */
     public static function getCurrentDayBegin(): string
     {
         return Helper::timezoneConverter(date('Y-m-d 00:00:00'), 'Asia/Baku', 'UTC');
     }
 
+    /**
+     * @return string
+     * @throws Exception
+     */
     public static function getWeekBegin(): string
     {
         return Helper::timezoneConverter(date('Y-m-d 00:00:00', strtotime('sunday -1 week')), 'Asia/Baku', 'UTC');
     }
 
+    /**
+     * @param string $errorMessage
+     */
     public static function logError(string $errorMessage): void
     {
         error_log('['.date('Y-m-d H:i:s').'] '.$errorMessage."\n\n", 3, ERROR_LOG_PATH);
     }
 
+    /**
+     * @param $url
+     * @param string $type
+     * @param array $data
+     * @return false|mixed
+     * @throws Exception
+     */
     public static function curlRequest ($url, $type = 'get', $data = [])
     {
         $curl = curl_init();
@@ -161,5 +197,22 @@ class Helper
         }
         else
             return false;
+    }
+
+    /**
+     * @param string $text
+     * @return string
+     */
+    public static function textPublicFormat(string $text): string
+    {
+        $text = mb_substr($text, 0, self::TABLE_FIELD_SYMBOL_LIMIT);
+        if(!empty($text) && $text <> '...') $text .= '...';
+
+        return $text;
+    }
+
+    public static function DateTimePublicFormat(string $datetime): string
+    {
+        return (new DateTime($datetime))->format(self::TABLE_FIELD_DATE_FORMAT);
     }
 }

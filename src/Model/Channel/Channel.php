@@ -123,10 +123,10 @@ class Channel extends MainModel
             $addDate = Helper::timezoneConverter($row->created_at, 'UTC', 'Asia/Baku');
 
             $lastMessage = (new Message())->getMessageById($row->last_message_id);
-            $lastMessage['created_at'] = Helper::timezoneConverter($lastMessage['created_at'], 'UTC', 'Asia/Baku');
+            $lastMessage['created_at'] = Helper::timezoneConverter($lastMessage['created_at'], 'UTC', 'Asia/Baku', Helper::TABLE_FIELD_DATE_FORMAT);
 
             $mostPopularMessage = (new Message())->getMessageById($row->most_popular_message_id);
-            $mostPopularMessage['created_at'] = Helper::timezoneConverter($mostPopularMessage['created_at'], 'UTC', 'Asia/Baku');
+            $mostPopularMessage['created_at'] = Helper::timezoneConverter($mostPopularMessage['created_at'], 'UTC', 'Asia/Baku', Helper::TABLE_FIELD_DATE_FORMAT);
 
             $channel = [
                 'peer'           => $row->peer,

@@ -1,7 +1,22 @@
-<h1>
-    <a href="/">Main Page</a> |
-<!--    <a href="/random/post">Random Post</a>-->
-    <a href="/channel/list">Azeri Telegram Channel's</a> |
-    <a href="/message/list">Telegram Message's</a> |
-    <a href="/channel/found/list">Found Telegram Channel's</a>
-</h1>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+    <ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link active" href="/">Main Page</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/channel/list">Azeri Telegram Channel's</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/message/list">Telegram Message's</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/channel/found/list">Found Telegram Channel's</a>
+    </li>
+    </ul>
+</nav>
+<script>
+    $('.navbar-nav .nav-link').click(function(){
+        $('.navbar-nav .nav-link').removeClass('active');
+        $(this).addClass('active');
+    })
+</script>

@@ -3,12 +3,39 @@
 {% block title %}{{ channel.name }}{% endblock %}
 
 {% block body %}
-<p><strong>Name</strong>: <a href="https://t.me/{{ channel.peer }}">{{ channel.name }}</a> </p>
-<p><strong>Add Date</strong>: {{ channel.add_date }}</p>
-<p><strong>Follower Count</strong>: {{ channel.follower_count }}</p>
-<p><strong>Description</strong>: {{ channel.description }}</p>
-<p><strong>Last Message</strong>: {{ channel.last_message.date }}<br/>
-    <i><a href="https://t.me/{{ channel.peer }}/{{ channel.last_message.external_id }}" target="_blank">{{ channel.last_message.text }}</a></i></p>
-<p><strong>Most Popular Message</strong>: {{ channel.most_popular_message.date }}<br/>
-    <i><a href="https://t.me/{{ channel.peer }}/{{ channel.most_popular_message.external_id }}" target="_blank">{{ channel.most_popular_message.text }}</a></i></p>
+<div class="container-md pt-3">
+    <h1>{{ channel.name }}</h1>
+    <table class="table table-borderless table-responsive-md">
+        <tr>
+            <td class="table_channel_name_field"><strong>{{ translation.channel_name }}</strong></td>
+            <td><a href="https://t.me/{{ channel.peer }}">{{ channel.name }}</a></td>
+        </tr>
+        <tr>
+            <td><strong>{{ translation.channel_add_date }}</strong></td>
+            <td>{{ channel.add_date }}</td>
+        </tr>
+        <tr>
+            <td><strong>{{ translation.channel_follower_count }}</strong></td>
+            <td>{{ channel.follower_count }}</td>
+        </tr>
+        <tr>
+            <td><strong>Description</strong></td>
+            <td>{{ channel.description }}</td>
+        </tr>
+        <tr>
+            <td><strong>Last Message</strong></td>
+            <td>
+                {{ channel.last_message.date }}<br/>
+                <i><a href="https://t.me/{{ channel.peer }}/{{ channel.last_message.external_id }}" target="_blank">{{ channel.last_message.text }}</a></i>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Most Popular Message</strong></td>
+            <td>
+                {{ channel.most_popular_message.date }}<br/>
+                <i><a href="https://t.me/{{ channel.peer }}/{{ channel.most_popular_message.external_id }}" target="_blank">{{ channel.most_popular_message.text }}</a></i>
+            </td>
+        </tr>
+    </table>
+</div>
 {% endblock %}

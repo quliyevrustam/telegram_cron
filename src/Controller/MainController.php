@@ -3,6 +3,7 @@
 namespace Controller;
 
 use Core\Core;
+use Model\SiteVocabulary;
 use Utilities\Auth;
 use Psr\Container\ContainerInterface;
 use Utilities\Pagination;
@@ -33,7 +34,13 @@ class MainController extends Core
 
     protected function tmp()
     {
-        if(is_null($this->tmp)) $this->tmp = $this->getDI()->get('tmp');
+        if(is_null($this->tmp))
+        {
+            $this->tmp = $this->getDI()->get('tmp');
+
+            $languageVariables = (new SiteVocabulary())->getAllLanguageVariables();
+            $this->tmp->addGlobal('translation', $languageVariables['en']);
+        }
 
         return $this->tmp;
     }

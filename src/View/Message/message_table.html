@@ -3,42 +3,11 @@
 {% block title %}Message's Table{% endblock %}
 
 {% block body %}
-<style>
-    table {
-        font: normal medium/1.4 sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-    th, td {
-        padding: 0.25rem;
-        text-align: left;
-        border: 1px solid #ccc;
-    }
-    thead th {
-        background: cornsilk;
-        text-align: center;
-    }
-    tbody tr:hover {
-        background: yellow;
-    }
-
-    .message_table_form_button {
-        font: bold 13px Tahoma;
-        text-decoration: none;
-        background-color: #EEEEEE;
-        color: #333333;
-        padding: 2px 6px 2px 6px;
-        border-top: 1px solid #CCCCCC;
-        border-right: 1px solid #333333;
-        border-bottom: 1px solid #333333;
-        border-left: 1px solid #CCCCCC;
-    }
-</style>
 <h1>Messages</h1>
 <form method="get" action="?" id="message_table_form">
     <div>
         <label>Begin Date</label>
-        <input type="text" name="begin_date" value="{{ message_table.meta.begin_date }}" required>
+        <input type="text" name="begin_date" value="{{ message_table.meta.begin_date }}" required>ш
         <label>End Date</label>
         <input type="text" name="end_date" value="{{ message_table.meta.end_date }}" required>
         <br/>
@@ -66,13 +35,13 @@
 <table cellspacing="0" width="100%" border="1" id="t01">
     <thead>
     <tr>
-        <th>Channel Name</th>
-        <th><a href="?order_field=view_count&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">View Count</a></th>
-        <th><a href="?order_field=forward_count&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">Share Count</a></th>
-        <th><a href="?order_field=reply_count&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">Comment Count</a></th>
-        <th><a href="?order_field=err&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">ERR</a></th>
-        <th>Text</th>
-        <th ><a href="?order_field=created_at&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">Create Date</a></th>
+        <th>{{ translation.channel_name }}</th>
+        <th><a href="?order_field=view_count&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">{{ translation.message_view_count }}</a></th>
+        <th><a href="?order_field=forward_count&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">{{ translation.message_share_count }}</a></th>
+        <th><a href="?order_field=reply_count&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">{{ translation.message_comment_count }}</a></th>
+        <th><a href="?order_field=err&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">{{ translation.message_err }}</a></th>
+        <th>{{ translation.message_body }}</th>
+        <th ><a href="?order_field=created_at&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">{{ translation.message_create_date }}</a></th>
     </tr>
     </thead>
     <tbody>
