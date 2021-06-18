@@ -29,6 +29,9 @@ try {
         $r->addRoute('GET', '/channel/found/list', [ChannelController::class, 'showFoundChannelList']);
         $r->addRoute('GET', '/channel/found/{id:\d+}', [ChannelController::class, 'showFoundChannel']);
         $r->addRoute('GET', '/channel/list', [ChannelController::class, 'showChannelList']);
+
+        // Rest API
+        $r->addRoute('GET', '/api/channel/list', [ChannelController::class, 'showChannelListAPI']);
     });
 
     // Get current route by HTTP Request

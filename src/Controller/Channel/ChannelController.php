@@ -66,4 +66,16 @@ class ChannelController extends MainController
 
         return $this->tmp()->render('Channel/channel_table.html', ['channel_table' => $channelTable]);
     }
+
+    public function showChannelListAPI()
+    {
+        $filter = [];
+
+        $channels = (new Channel())->getChannelList($this->getPagination(), $filter);
+
+        $meta = $this->getPaginationMeta();
+        $meta['total'] = $channels['total'];
+
+        return $this->responseAPI($channels['records'], $meta);
+    }
 }
