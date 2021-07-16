@@ -56,15 +56,7 @@ class ChannelController extends MainController
 
     public function showChannelList()
     {
-        $filter = [];
-
-        $channels = (new Channel())->getChannelList($this->getPagination(), $filter);
-
-        $channelTable['records'] = $channels['records'];
-        $channelTable['meta'] = $this->getPaginationMeta();
-        $channelTable['meta']['total'] = $channels['total'];
-
-        return $this->tmp()->render('Channel/channel_table.html', ['channel_table' => $channelTable]);
+        return $this->tmp()->render('Channel/channel_table.html', []);
     }
 
     public function showChannelListAPI()

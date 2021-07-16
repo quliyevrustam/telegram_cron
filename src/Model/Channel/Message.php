@@ -216,6 +216,7 @@ class Message extends MainModel
      * @param Pagination $pagination
      * @param array $filter
      * @return array
+     * @throws Exception
      */
     public function getMessageList(Pagination $pagination, array $filter): array
     {
@@ -234,7 +235,7 @@ class Message extends MainModel
 
                 $messages[] = [
                     'peer'          => $row->peer,
-                    'channel_name'  => $row->channel_name,
+                    'channel_name'  => Helper::textPublicFormat($row->channel_name),
                     'view_count'    => $row->view_count,
                     'forward_count' => $row->forward_count,
                     'reply_count'   => $row->reply_count,
@@ -293,7 +294,7 @@ class Message extends MainModel
           ch.external_id,
           IF(
           ch.`body` LIKE '...' AND ch.`is_grouped` = 1,
-          (SELECT `body`  FROM ".Message::TABLE_NAME." ch  WHERE id IN (SELECT cmg.`message_id` FROM ".MessageGrouped::TABLE_NAME." cmg WHERE cmg.`main_message_id` = ch.`id`) AND `body` NOT LIKE '...' LIMIT 1), 
+          (SELECT ch2.`body`  FROM ".Message::TABLE_NAME." ch2  WHERE ch2.id IN (SELECT cmg.`message_id` FROM ".MessageGrouped::TABLE_NAME." cmg WHERE cmg.`main_message_id` = ch.`id`) AND ch2.`body` NOT LIKE '...' LIMIT 1), 
           ch.`body`) AS body,
           ch.channel_id
         FROM 
@@ -312,7 +313,7 @@ class Message extends MainModel
           $sqlPart";
 
         $sql['records'] = $sql['total']."
-        ORDER BY ch.".$pagination->orderField." ".$pagination->orderDestination.", ch.created_at DESC 
+        ORDER BY ".$pagination->orderField." ".$pagination->orderDestination."
         LIMIT ".$pagination->offset.", ".$pagination->limit.";
         ";
 
@@ -338,7 +339,7 @@ class Message extends MainModel
               ch.external_id,
               IF(
               ch.`body` LIKE '...' AND ch.`is_grouped` = 1,
-              (SELECT `body`  FROM ".Message::TABLE_NAME." ch  WHERE id IN (SELECT cmg.`message_id` FROM ".MessageGrouped::TABLE_NAME." cmg WHERE cmg.`main_message_id` = ch.`id`) AND `body` NOT LIKE '...' LIMIT 1), 
+              (SELECT ch2.`body`  FROM ".Message::TABLE_NAME." ch2 WHERE ch2.id IN (SELECT cmg.`message_id` FROM ".MessageGrouped::TABLE_NAME." cmg WHERE cmg.`main_message_id` = ch.`id`) AND ch2.`body` NOT LIKE '...' LIMIT 1), 
               ch.`body`) AS body,
               ch.channel_id
             FROM 

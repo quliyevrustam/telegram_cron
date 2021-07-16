@@ -39,7 +39,7 @@ class TopMessage extends MainModel
           ch.`external_id`, 
           IF(
           ch.`body` LIKE '...' AND ch.`is_grouped` = 1, 
-          (SELECT `body`  FROM ".Message::TABLE_NAME."  WHERE id IN (SELECT cmg.`message_id` FROM `channel_message_grouped` cmg WHERE cmg.`main_message_id` = ch.`id`) AND `body` NOT LIKE '...' LIMIT 1), 
+          (SELECT ch2.`body`  FROM ".Message::TABLE_NAME." ch2 WHERE ch2.id IN (SELECT cmg.`message_id` FROM `channel_message_grouped` cmg WHERE cmg.`main_message_id` = ch.`id`) AND ch2.`body` NOT LIKE '...' LIMIT 1), 
           ch.`body`) AS body
         FROM 
           ".Message::TABLE_NAME." ch 

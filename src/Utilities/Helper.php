@@ -201,18 +201,27 @@ class Helper
 
     /**
      * @param string $text
+     * @param int $limit
      * @return string
      */
-    public static function textPublicFormat(string $text): string
+    public static function textPublicFormat(string $text, $limit = self::TABLE_FIELD_SYMBOL_LIMIT): string
     {
-        $text = mb_substr($text, 0, self::TABLE_FIELD_SYMBOL_LIMIT);
-        if(!empty($text) && $text <> '...') $text .= '...';
+        if(mb_strlen($text) > $limit)
+        {
+            $text = mb_substr($text, 0, $limit);
+            if(!empty($text) && $text <> '...') $text .= '...';
+        }
 
         return $text;
     }
 
+    /**
+     * @param string $datetime
+     * @return string
+     * @throws Exception
+     */
     public static function DateTimePublicFormat(string $datetime): string
     {
-        return (new DateTime($datetime))->format(self::TABLE_FIELD_DATE_FORMAT);
+        return (new \DateTime($datetime))->format(self::TABLE_FIELD_DATE_FORMAT);
     }
 }

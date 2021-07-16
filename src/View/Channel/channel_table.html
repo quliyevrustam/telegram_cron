@@ -5,36 +5,66 @@
 {% block body %}
 <div class="container-md pt-3">
     <h1>Channel's</h1>
-    <table class="table table-bordered table-hover table-responsive-md small">
+    <table id="channel_table" class="table table-striped table-bordered" style="width:100%">
         <thead>
         <tr>
-            <th class="table_channel_name_field"><a href="?order_field=name&limit={{ channel_table.meta.limit }}">{{ translation.channel_name }}</a></th>
-            <th><a href="?order_field=follower_count&limit={{ channel_table.meta.limit }}">{{ translation.channel_follower_count }}</a></th>
-            <th><a href="?order_field=created_at&limit={{ channel_table.meta.limit }}">{{ translation.channel_add_date }}</a></th>
+            <th style="width:60%">{{ translation.channel_name }}</th>
+            <th style="width:20%">{{ translation.channel_follower_count }}</th>
+            <th style="width:20%">{{ translation.channel_add_date }}</th>
         </tr>
         </thead>
-        <tbody>
-        {% for channel in channel_table.records %}
-            <tr>
-                <td><strong><a href="/channel/{{ channel.id }}" target="_blank">{{ channel.name }}</a></strong></td>
-                <td>{{ channel.follower_count }}</td>
-                <td>{{ channel.add_date }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
     </table>
-    <br>
-    <p>Total Count: <strong>{{ channel_table.meta.total }}</strong></p>
-    <br>
-    <a href="?limit=5&order_field={{ channel_table.meta.order_field }}">5</a>,
-    <a href="?limit=10&order_field={{ channel_table.meta.order_field }}">10</a>,
-    <a href="?limit=20&order_field={{ channel_table.meta.order_field }}">20</a>,
-    <a href="?limit=50&order_field={{ channel_table.meta.order_field }}">50</a>,
-    <a href="?limit=100&order_field={{ channel_table.meta.order_field }}">100</a>,
-    <a href="?limit=200&order_field={{ channel_table.meta.order_field }}">200</a>,
-    <a href="?limit=500&order_field={{ channel_table.meta.order_field }}">500</a>,
-    <a href="?limit=1000&order_field={{ channel_table.meta.order_field }}">1000</a>
 </div>
 
+<script>
+    $(document).ready(function() {
+        var dataTable = $('#channel_table').DataTable({
+            "processing" : true,
+            "serverSide" : true,
+            'serverMethod': 'get',
+            "dom": '<"top"f>rt<"bottom"i<"table_length_select"l><p>><"clear">',
+            'searching': false,
+            "ajax": {
+                "url": "http://{{ DB_HOST }}/api/channel/list",
+                "dataSrc": "data",
+                "dataFilter": function(data)
+                {
+                    var json = jQuery.parseJSON( data );
+                    json.recordsTotal = json.meta.total;
+                    json.recordsFiltered = json.meta.total;
+
+                    return JSON.stringify( json ); // return JSON string
+                },
+                'data': function(data)
+                {
+                    var info = $('#channel_table').DataTable().page.info();
+                    data.offset = info.page*10;
+                    data.limit = info.length;
+
+                    var orderIndex = $('#channel_table').DataTable().order()[0][0];
+                    data.order_field = data.columns[parseInt(orderIndex)].name;
+
+                    data.order_destination = $('#channel_table').DataTable().order()[0][1];
+                }
+            },
+            "columns": [
+                {
+                    "name": "name",
+                    "data": "name",
+                    "render": function(data, type, row, meta){
+                        data = '<a href="' + row.id + '" target="_blank">' + data + '</a>';
+                        return data;
+                    }
+                },
+                { "name": "follower_count", "data": "follower_count" },
+                { "name": "created_at", "data": "add_date" }
+            ]
+        } );
+
+        $('#channel_table').change( 'page.dt', function () {
+            dataTable.draw();
+        } );
+    });
+</script>
 
 {% endblock %}

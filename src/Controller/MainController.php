@@ -58,6 +58,7 @@ class MainController extends Core
 
             $languageVariables = (new SiteVocabulary())->getAllLanguageVariables();
             $this->tmp->addGlobal('translation', $languageVariables['en']);
+            $this->tmp->addGlobal('DB_HOST', DB_HOST);
         }
 
         return $this->tmp;
@@ -104,12 +105,13 @@ class MainController extends Core
             {
                 if (is_array($data) && count($data) === 0) {
                     $this->result['message'] = self::HTTP_MESSAGE_EMPTY;
-                    $this->result['code']    = self::HTTP_CODE_EMPTY;
+                    //$this->result['code']    = self::HTTP_CODE_EMPTY;
                 }
                 break;
             }
             case self::HTTP_CODE_EMPTY:
             {
+                $this->result['code']    = self::HTTP_CODE_OK;
                 $this->result['message'] = self::HTTP_MESSAGE_EMPTY;
                 break;
             }

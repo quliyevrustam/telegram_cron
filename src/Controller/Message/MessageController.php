@@ -15,6 +15,15 @@ class MessageController extends MainController
      */
     public function showMessageList()
     {
+        $messageTable['meta']['begin_date']     = date('Y-m-d');
+        $messageTable['meta']['end_date']       = date('Y-m-d');
+        $messageTable['meta']['channel_names']  = (new Channel())->getChannelNames();
+
+        return $this->tmp()->render('Message/message_table.html', ['message_table' => $messageTable]);
+    }
+
+    public function showMessageListAPI()
+    {
         $beginDate      = $this->http()->query->get('begin_date', date('Y-m-d'));
         $endDate        = $this->http()->query->get('end_date', date('Y-m-d'));
         $channelType    = $this->http()->query->get('channel_type', Channel::TYPE_ALL);
@@ -30,14 +39,9 @@ class MessageController extends MainController
         $messageRecords = (new Message())->getMessageList($this->getPagination(), $filter);
 
         $messageTable['records'] = $messageRecords['records'];
-        $messageTable['meta'] = $this->getPaginationMeta();
-        $messageTable['meta']['begin_date'] = $beginDate;
-        $messageTable['meta']['end_date'] = $endDate;
-        $messageTable['meta']['channel_type'] = $channelType;
-        $messageTable['meta']['total'] = $messageRecords['total'];
-        $messageTable['meta']['channel_names'] = (new Channel())->getChannelNames();
-        $messageTable['meta']['channel_id'] = $channelId;
+        $meta = $this->getPaginationMeta();
+        $meta['total'] = $messageRecords['total'];
 
-        return $this->tmp()->render('Message/message_table.html', ['message_table' => $messageTable]);
+        return $this->responseAPI($messageRecords['records'], $meta);
     }
 }

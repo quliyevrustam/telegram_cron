@@ -120,10 +120,10 @@ class Channel extends MainModel
         $row = $sqlRequest->fetch(\PDO::FETCH_OBJ);
         if($row)
         {
-            $addDate = Helper::timezoneConverter($row->created_at, 'UTC', 'Asia/Baku');
+            $addDate = Helper::timezoneConverter($row->created_at, 'UTC', 'Asia/Baku', Helper::TABLE_FIELD_DATE_FORMAT);
 
             $lastMessage = (new Message())->getMessageById($row->last_message_id);
-            $lastMessage['created_at'] = Helper::timezoneConverter($lastMessage['created_at'], 'UTC', 'Asia/Baku', Helper::TABLE_FIELD_DATE_FORMAT);
+            $lastMessage['created_at'] = Helper::DateTimePublicFormat($lastMessage['created_at']);
 
             $mostPopularMessage = (new Message())->getMessageById($row->most_popular_message_id);
             $mostPopularMessage['created_at'] = Helper::timezoneConverter($mostPopularMessage['created_at'], 'UTC', 'Asia/Baku', Helper::TABLE_FIELD_DATE_FORMAT);
@@ -221,6 +221,7 @@ class Channel extends MainModel
      * @param Pagination $pagination
      * @param array $filter
      * @return array
+     * @throws Exception
      */
     public function getChannelList(Pagination $pagination, array $filter): array
     {
@@ -236,12 +237,15 @@ class Channel extends MainModel
         {
             foreach ($rows as $row)
             {
-                $addDate = Helper::timezoneConverter($row->created_at, 'UTC', 'Asia/Baku');
+                $addDate = Helper::timezoneConverter($row->created_at, 'UTC', 'Asia/Baku', Helper::TABLE_FIELD_DATE_FORMAT);
+
+                $channelName = !empty($row->name) ? $row->name : $row->peer;
+                $channelName = Helper::textPublicFormat($channelName);
 
                 $channels[] = [
                     'id'             => $row->id,
                     'peer'           => $row->peer,
-                    'name'           => !empty($row->name) ? $row->name : $row->peer,
+                    'name'           => $channelName,
                     'follower_count' => $row->follower_count,
                     'add_date'       => $addDate,
                 ];
@@ -277,7 +281,7 @@ class Channel extends MainModel
           `status` > 0".$sqlPart;
 
         $sql['records'] = $sql['total']."
-        ORDER BY ".$pagination->orderField." ".$pagination->orderDestination.", created_at DESC 
+        ORDER BY ".$pagination->orderField." ".$pagination->orderDestination."
         LIMIT ".$pagination->offset.", ".$pagination->limit.";
         ";
 

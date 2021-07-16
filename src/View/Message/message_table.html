@@ -3,67 +3,129 @@
 {% block title %}Message's Table{% endblock %}
 
 {% block body %}
-<h1>Messages</h1>
-<form method="get" action="?" id="message_table_form">
-    <div>
-        <label>Begin Date</label>
-        <input type="text" name="begin_date" value="{{ message_table.meta.begin_date }}" required>ш
-        <label>End Date</label>
-        <input type="text" name="end_date" value="{{ message_table.meta.end_date }}" required>
-        <br/>
-        <br/>
-        <label>Channel Type</label>
-        <select name="channel_type">
-            <option value="0" {% if message_table.meta.channel_type == 0 %} selected {% endif %}>All</option>
-            <option value="1" {% if message_table.meta.channel_type == 1 %} selected {% endif %}>Not News</option>
-        </select>
-        <label>Channels</label>
-        <select name="channel_id">
-            <option value="0">All</option>
-            {% for channel in message_table.meta.channel_names %}
-            <option value="{{ channel.id }}" {% if message_table.meta.channel_id == channel.id %} selected {% endif %}>{{ channel.name }}</option>
-            {% endfor %}
-        </select>
-    </div>
-    <div>
-        <br/>
-        <button type="submit" class="message_table_form_button">Filter</button>
-        <a href="?" class="message_table_form_button">Reset</a>
-    </div>
-</form>
-<br/>
-<table cellspacing="0" width="100%" border="1" id="t01">
-    <thead>
-    <tr>
-        <th>{{ translation.channel_name }}</th>
-        <th><a href="?order_field=view_count&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">{{ translation.message_view_count }}</a></th>
-        <th><a href="?order_field=forward_count&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">{{ translation.message_share_count }}</a></th>
-        <th><a href="?order_field=reply_count&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">{{ translation.message_comment_count }}</a></th>
-        <th><a href="?order_field=err&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">{{ translation.message_err }}</a></th>
-        <th>{{ translation.message_body }}</th>
-        <th ><a href="?order_field=created_at&limit={{ message_table.meta.limit }}&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">{{ translation.message_create_date }}</a></th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for message in message_table.records %}
-    <tr>
-        <td><strong><a href="/channel/{{ message.channel_id }}" target="_blank">{{ message.channel_name }}</a></strong></td>
-        <td>{{ message.view_count }}</td>
-        <td>{{ message.forward_count }}</td>
-        <td>{{ message.reply_count }}</td>
-        <td>{{ message.err }}</td>
-        <td><a href="https://t.me/{{ message.peer }}/{{ message.external_id }}" target="_blank"><i>{{ message.body }}</i></a></td>
-        <td>{{ message.created_at }}</td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
-<br>
-<p>Total Count: <strong>{{ message_table.meta.total }}</strong></p>
-<br>
-<a href="?order_field={{ message_table.meta.order_field }}&limit=5&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">5</a>,
-<a href="?order_field={{ message_table.meta.order_field }}&limit=10&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">10</a>,
-<a href="?order_field={{ message_table.meta.order_field }}&limit=20&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">20</a>,
-<a href="?order_field={{ message_table.meta.order_field }}&limit=50&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">50</a>,
-<a href="?order_field={{ message_table.meta.order_field }}&limit=100&begin_date={{ message_table.meta.begin_date }}&end_date={{ message_table.meta.end_date }}&channel_type={{ message_table.meta.channel_type }}&channel_id={{ message_table.meta.channel_id }}">100</a>
+<div class="container-md pt-3">
+    <h1>Channel's</h1>
+<!--    <form method="get" action="?" id="message_table_form">-->
+    <form id="message_table_form">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="begin_date">Begin Date</label>
+                <input type="date" class="form-control" data-date-format="yyyy-mm-dd" id="begin_date" name="begin_date" value="{{ message_table.meta.begin_date }}" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="end_date">End Date</label>
+                <input type="date" class="form-control" data-date-format="yyyy-mm-dd" id="end_date" name="end_date" value="{{ message_table.meta.end_date }}" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="channel_type">Channel Type</label>
+                <select class="form-control" id="channel_type" name="channel_type">
+                    <option value="0">All</option>
+                    <option value="1">Not News</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="channel_id">Channels</label>
+                <select class="form-control" id="channel_id" name="channel_id">
+                    <option value="0">All</option>
+                    {% for channel in message_table.meta.channel_names %}
+                    <option value="{{ channel.id }}">{{ channel.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Filter</button>
+        <button type="button" onclick="location.href='?';" class="btn btn-primary">Reset</button>
+    </form>
+    <br/>
+    <table id="message_table" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+        <tr>
+            <th style="width:30%">{{ translation.channel_name }}</th>
+            <th>{{ translation.message_view_count }}</th>
+            <th>{{ translation.message_share_count }}</th>
+            <th>{{ translation.message_comment_count }}</th>
+            <th>{{ translation.message_err }}</th>
+            <th>{{ translation.message_body }}</th>
+            <th style="width:15%">{{ translation.message_create_date }}</a></th>
+        </tr>
+        </thead>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function() {
+        var dataTable = $('#message_table').DataTable({
+            "processing" : true,
+            "serverSide" : true,
+            'serverMethod': 'get',
+            "dom": '<"top"f>rt<"bottom"i<"table_length_select"l><p>><"clear">',
+            'searching': false,
+            "ajax": {
+                "url": "http://{{ DB_HOST }}/api/message/list",
+                "dataSrc": "data",
+                "dataFilter": function(data)
+                {
+                    var json = jQuery.parseJSON( data );
+                    json.recordsTotal = json.meta.total;
+                    json.recordsFiltered = json.meta.total;
+
+                    return JSON.stringify( json ); // return JSON string
+                },
+                'data': function(data)
+                {
+                    var info = $('#message_table').DataTable().page.info();
+                    data.offset = info.page*10;
+                    data.limit = info.length;
+
+                    var orderIndex = $('#message_table').DataTable().order()[0][0];
+                    data.order_field = data.columns[parseInt(orderIndex)].name;
+
+                    data.order_destination = $('#message_table').DataTable().order()[0][1];
+
+                    var formValue = jQuery('form#message_table_form').serializeArray();
+                    jQuery.each(formValue, function (i, field) {
+                        data[field.name] = field.value;
+                    });
+                }
+            },
+            "columns": [
+                {
+                    "name": "channel_name",
+                    "data": "channel_name",
+                    "render": function(data, type, row, meta){
+                        data = '<a href="/channel/' + row.channel_id + '" target="_blank">' + data + '</a>';
+                        return data;
+                    },
+                    "orderable": false
+                },
+                { "name": "view_count", "data": "view_count" },
+                { "name": "forward_count", "data": "forward_count" },
+                { "name": "reply_count", "data": "reply_count" },
+                { "name": "err", "data": "err" },
+                {
+                    "name": "body",
+                    "data": "body",
+                    "render": function(data, type, row, meta){
+                        data = '<a href="https://t.me/' + row.peer + '/' + row.external_id + '" target="_blank">' + data + '</a>';
+                        return data;
+                    },
+                    "orderable": false
+                },
+                { "name": "created_at", "data": "created_at" }
+            ],
+            "order": [[ 6, "desc" ]]
+        } );
+
+        $('#message_table').change( 'page.dt', function () {
+            dataTable.draw();
+        } );
+
+        $('#message_table_form').submit( function() {
+            $('#message_table').DataTable().draw();
+            return false;
+        } );
+    });
+</script>
 {% endblock %}
