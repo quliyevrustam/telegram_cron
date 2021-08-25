@@ -290,13 +290,17 @@ class Channel extends MainModel
 
     /**
      * @param int $id
+     * @param string $comment
      */
-    public function delete(int $id): void
+    public function delete(int $id, string $comment = ''): void
     {
+        $deleteDate = date('Y-m-d H:i:s');
+        $comment    = Helper::removeEmoji($comment);
+
         $sql = "
             UPDATE ".self::TABLE_NAME." 
-            SET status = -1
+            SET status = -1, deleted_at = :deleted_at, delete_comment = :delete_comment
             WHERE id=:id;";
-        $this->db()->prepare($sql)->execute(['id' => $id]);
+        $this->db()->prepare($sql)->execute(['id' => $id, 'deleted_at' => $deleteDate, 'delete_comment' => $comment]);
     }
 }

@@ -1,67 +1,75 @@
 {% extends 'Index/index.html' %}
 
-{% block title %}Found Channel's{% endblock %}
+{% block title %}Channel's Table{% endblock %}
 
 {% block body %}
-<h1>Found Channel's</h1>
-<form method="get" action="?">
-    <div>
-        <label>{{ message.channel_condition }}</label>
-        <select name="condition">
-            <option value="">All</option>
-            <option value="1" {% if found_channel_table.meta.condition == 1 %} selected {% endif %}>Add to Azeri Channel</option>
-            <option value="0" {% if found_channel_table.meta.condition == 0 %} selected {% endif %}>Not Selected</option>
-            <option value="-1" {% if found_channel_table.meta.condition == -1 %} selected {% endif %}>Not Azeri Channel</option>
-            <option value="-2" {% if found_channel_table.meta.condition == -2 %} selected {% endif %}>Bad Azeri Channel</option>
-            <option value="-3" {% if found_channel_table.meta.condition == -3 %} selected {% endif %}>Blocked Azeri Channel</option>
-            <option value="-4" {% if found_channel_table.meta.condition == -4 %} selected {% endif %}>Not a channel</option>
-        </select>
-    </div>
-    <div>
-        <br/>
-        <button type="submit" class="found_channel_table_form_button">Filter</button>
-        <a href="?" class="found_channel_table_form_button">Reset</a>
-    </div>
-</form>
-<br/>
-<table cellspacing="0" width="100%" border="1" id="t01">
-    <thead>
-    <tr>
-        <th><a href="?order_field=name&limit={{ found_channel_table.meta.limit }}&condition={{ found_channel_table.meta.condition }}">{{ translation.channel_name }}</a></th>
-        <th><a href="?order_field=follower_count&limit={{ found_channel_table.meta.limit }}&condition={{ found_channel_table.meta.condition }}">{{ message.channel_follower_count }}</a></th>
-        <th><a href="?order_field=created_at&limit={{ found_channel_table.meta.limit }}&condition={{ found_channel_table.meta.condition }}">{{ message.channel_add_date }}</a></th>
-        <th><a href="?order_field=checked_at&limit={{ found_channel_table.meta.limit }}&condition={{ found_channel_table.meta.condition }}">{{ message.channel_check_date }}</a></th>
-        <th><a href="?order_field=condition&limit={{ found_channel_table.meta.limit }}&condition={{ found_channel_table.meta.condition }}">{{ message.channel_condition }}</a></th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for found_channel in found_channel_table.records %}
-    <tr>
-        <td><strong><a href="/channel/found/{{ found_channel.id }}" target="_blank">{{ found_channel.name }}</a></strong></td>
-        <td>{{ found_channel.follower_count }}</td>
-        <td>{{ found_channel.add_date }}</td>
-        <td>{{ found_channel.check_date }}</td>
-        <td>
-            {% if found_channel.condition == 1 %}Add to Azeri Channel
-            {% elseif found_channel.condition == 0 %}Not Selected
-            {% elseif found_channel.condition == -1 %}Not Azeri Channel
-            {% elseif found_channel.condition == -2 %}Bad Azeri Channel
-            {% elseif found_channel.condition == -3 %}Blocked Azeri Channel
-            {% elseif found_channel.condition == -4 %}Not a channel
-            {% else %} None
-            {% endif %}
-        </td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
-<br>
-<p>Total Count: <strong>{{ found_channel_table.meta.total }}</strong></p>
-<br>
-<a href="?limit=5&order_field={{ found_channel_table.meta.order_field }}&condition={{ found_channel_table.meta.condition }}">5</a>,
-<a href="?limit=10&order_field={{ found_channel_table.meta.order_field }}&condition={{ found_channel_table.meta.condition }}">10</a>,
-<a href="?limit=20&order_field={{ found_channel_table.meta.order_field }}&condition={{ found_channel_table.meta.condition }}">20</a>,
-<a href="?limit=50&order_field={{ found_channel_table.meta.order_field }}&condition={{ found_channel_table.meta.condition }}">50</a>,
-<a href="?limit=100&order_field={{ found_channel_table.meta.order_field }}&condition={{ found_channel_table.meta.condition }}">100</a>
+<div class="container-md pt-3">
+    <h1>Found Channel's</h1>
+    <table id="channel_table" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+        <tr>
+            <th>{{ translation.channel_name }}</a></th>
+            <th>{{ translation.channel_follower_count }}</a></th>
+            <th>{{ translation.channel_add_date }}</a></th>
+            <th>{{ translation.channel_check_date }}</a></th>
+            <th>{{ translation.channel_condition }}</a></th>
+        </tr>
+        </thead>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function() {
+        var dataTable = $('#channel_table').DataTable({
+            "processing" : true,
+            "serverSide" : true,
+            'serverMethod': 'get',
+            "dom": '<"top"f>rt<"bottom"i<"table_length_select"l><p>><"clear">',
+            'searching': false,
+            "ajax": {
+                "url": "http://{{ DB_HOST }}/api/channel/found/list",
+                "dataSrc": "data",
+                "dataFilter": function(data)
+                {
+                    var json = jQuery.parseJSON( data );
+                    json.recordsTotal = json.meta.total;
+                    json.recordsFiltered = json.meta.total;
+
+                    return JSON.stringify( json ); // return JSON string
+                },
+                'data': function(data)
+                {
+                    var info = $('#channel_table').DataTable().page.info();
+                    data.offset = info.page*10;
+                    data.limit = info.length;
+
+                    var orderIndex = $('#channel_table').DataTable().order()[0][0];
+                    data.order_field = data.columns[parseInt(orderIndex)].name;
+
+                    data.order_destination = $('#channel_table').DataTable().order()[0][1];
+                }
+            },
+            "columns": [
+                {
+                    "name": "name",
+                    "data": "name",
+                    "render": function(data, type, row, meta){
+                        data = '<a href="/channel/found/' + row.id + '" target="_blank">' + data + '</a>';
+                        return data;
+                    }
+                },
+                { "name": "follower_count", "data": "follower_count" },
+                { "name": "created_at", "data": "add_date" },
+                { "name": "check_date", "data": "check_date" },
+                { "name": "condition", "data": "condition" }
+            ],
+            "order": [[ 1, "desc" ]]
+        } );
+
+        $('#channel_table').change( 'page.dt', function () {
+            dataTable.draw();
+        } );
+    });
+</script>
 
 {% endblock %}

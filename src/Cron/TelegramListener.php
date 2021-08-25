@@ -2,11 +2,10 @@
 
 namespace Cron;
 
-
+use danog\MadelineProto\RPCErrorException;
 use Exception;
 use Model\Channel\ChannelFound;
 use Utilities\Cron;
-use Utilities\Helper;
 
 if (!file_exists( MADELINE_PATH)) {
     copy('https://phar.madelineproto.xyz/madeline.php', MADELINE_PATH);
@@ -14,6 +13,7 @@ if (!file_exists( MADELINE_PATH)) {
 include MADELINE_PATH;
 
 use danog\MadelineProto\API;
+use Utilities\CronExceptionTreatment;
 
 class TelegramListener extends Cron
 {
@@ -31,22 +31,28 @@ class TelegramListener extends Cron
 
         $limit = 25;
 
+        //$channels = [4 => 'nataosmanli'];
         foreach ($channels as $channelId => $peer)
         {
-            echo $peer."\n";
-            $request = $madelineProto->messages->getHistory([
-                    'peer'        => $peer,
-                    'offset_id'   => 0,
-                    'offset_date' => 0,
-                    'add_offset'  => 0,
-                    'limit'       => $limit,
-                    'max_id'      => 0,
-                    'min_id'      => 0,
-                    'hash'        => 0
-            ]);
-            if (count($request['messages']) > 0)
+            echo $channelId.' => '.$peer."\n";
+            try {
+                $request = $madelineProto->messages->getHistory([
+                        'peer'        => $peer,
+                        'offset_id'   => 0,
+                        'offset_date' => 0,
+                        'add_offset'  => 0,
+                        'limit'       => $limit,
+                        'max_id'      => 0,
+                        'min_id'      => 0,
+                        'hash'        => 0
+                ]);
+                if (count($request['messages']) > 0)
+                {
+                    $this->ImportMessage($channelMessage, $channelId, $request['messages']);
+                }
+            } catch (\Throwable $e)
             {
-                $this->ImportMessage($channelMessage, $channelId, $request['messages']);
+                (new CronExceptionTreatment($e))->execution(['channel_id' => $channelId]);
             }
         }
     }
