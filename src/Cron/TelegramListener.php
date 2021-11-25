@@ -14,6 +14,7 @@ include MADELINE_PATH;
 
 use danog\MadelineProto\API;
 use Utilities\CronExceptionTreatment;
+use Utilities\Helper;
 
 class TelegramListener extends Cron
 {
@@ -29,7 +30,7 @@ class TelegramListener extends Cron
         $channels = (new \Model\Channel\Channel())->getChannelPeers('check_message');
         $channelMessage = $this->model(\Model\Channel\Message::class);
 
-        $limit = 25;
+        $limit = 5;
 
         //$channels = [4 => 'nataosmanli'];
         foreach ($channels as $channelId => $peer)
@@ -96,38 +97,53 @@ class TelegramListener extends Cron
         //$madelineProto->start();
 
         $channels = (new \Model\Channel\Channel())->getChannelPeers('check_message');
+        $randomChannelIds = array_rand($channels, 10);
 
-        $limit = 10;
+        $limit = 1;
 
-        //$channels = [4 => 'nataosmanli'];
-        foreach ($channels as $channelId=>$peer)
+        foreach ($randomChannelIds as $channelId)
         {
-            $request = $madelineProto->messages->getHistory(['peer' => $peer, 'offset_id' => 0, 'offset_date' => 0, 'add_offset' => 0, 'limit' => $limit, 'max_id' => 0, 'min_id' => 0, 'hash' => 0 ]);
-            if(count($request['messages']) > 0)
-            {
-                foreach ($request['messages'] as $message)
+            $peer = $channels[$channelId];
+            try {
+                echo $channelId.' => '.$peer."\n";
+                $request = $madelineProto->messages->getHistory(
+                    [
+                        'peer'        => $peer,
+                        'offset_id'   => 0,
+                        'offset_date' => 0,
+                        'add_offset'  => 0,
+                        'limit'       => $limit,
+                        'max_id'      => 0,
+                        'min_id'      => 0,
+                        'hash'        => 0
+                    ]
+                );
+                if (count($request['messages']) > 0)
                 {
-                    if (isset($message['message'])) $this->findTelegramChannelFromMessage($message['message']);
+                    foreach ($request['messages'] as $message)
+                    {
+                        if (isset($message['message']))
+                        {
+                            $this->findTelegramChannelFromMessage($message['message']);
+                        }
+                    }
                 }
+            } catch (\Throwable $e)
+            {
+                (new CronExceptionTreatment($e))->execution(['channel_id' => $channelId]);
             }
         }
 
         $channelFound = new ChannelFound();
         $channelFoundPeers = $channelFound->getPeers();
 
-        //Helper::prePrint($channelFoundPeers);
-
-        //Helper::prePrint($this->foundChannels);
-        //Helper::prePrint($channels);
-
         $newChannels = array_udiff($this->foundChannels, $channels, $channelFoundPeers, "strcasecmp");
 
         if(count($newChannels) > 0)
         {
             $channelFound->add($newChannels);
+            Helper::prePrint($newChannels);
         }
-
-        //Helper::prePrint($newChannels);
     }
 
     /**

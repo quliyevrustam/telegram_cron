@@ -2,6 +2,7 @@
 
 namespace Model\Channel;
 
+use Exception;
 use Model\MainModel;
 use Utilities\Helper;
 use Utilities\HtmlFormat;
@@ -17,8 +18,9 @@ class TopMessage extends MainModel
      * @param int $type
      * @param int $limit
      * @return string
+     * @throws Exception
      */
-    public function MessagePost(int $type, int $limit = 5): string
+    public function getMessagePost(int $type, int $limit = 5): string
     {
         $sqlPart = '';
         if($type == self::TYPE_ALL_DAILY)
@@ -93,7 +95,7 @@ class TopMessage extends MainModel
             $messageBody = HtmlFormat::makeItalic($message['body']);
 
             // Prepare Message Link
-            $messageLink = 'https://t.me/'.$message['peer'].'/'.$message['external_id'];
+            $messageLink = 'tg://resolve?domain='.$message['peer'].'&post='.$message['external_id'].'';
 
             // Prepare Message Post
             $postBody .= HtmlFormat::makeBold($i.'. '.$message['name'])."\n";
@@ -105,7 +107,11 @@ class TopMessage extends MainModel
 
         return $postBody;
     }
-    
+
+    /**
+     * @param int $type
+     * @return string
+     */
     private static function generateTopMessageHeader(int $type): string
     {
         $postHeader = '';

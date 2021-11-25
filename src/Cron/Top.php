@@ -10,12 +10,12 @@ class Top extends Cron
 {
     public function actionPostDailyMessage(): void
     {
-        $topPost = $this->model(TopMessage::class);
-        $channelPost = $topPost->MessagePost(TopMessage::TYPE_ALL_DAILY);
+        $topPost = new TopMessage();
+        $channelPost = $topPost->getMessagePost(TopMessage::TYPE_ALL_DAILY);
 
         $telegram = new Api(BOT_KEY);
         $response = $telegram->sendMessage([
-            'chat_id'   => CHANNEL_TOP_AZERI_POST,
+            'chat_id'   => CHANNEL_TEST,
             'text'      => $channelPost,
             'parse_mode'=> 'HTML'
         ]);
@@ -28,12 +28,12 @@ class Top extends Cron
 
     public function actionPostNotNewsWeeklyMessage(): void
     {
-        $topPost = $this->model(TopMessage::class);
-        $channelPost = $topPost->MessagePost(TopMessage::TYPE_NOT_NEWS_WEEKLY);
+        $topPost = new TopMessage();
+        $channelPost = $topPost->getMessagePost(TopMessage::TYPE_NOT_NEWS_WEEKLY);
 
         $telegram = new Api(BOT_KEY);
         $response = $telegram->sendMessage([
-            'chat_id'   => CHANNEL_TOP_AZERI_POST,
+            'chat_id'   => CHANNEL_TEST,
             'text'      => $channelPost,
             'parse_mode'=> 'HTML'
         ]);

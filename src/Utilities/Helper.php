@@ -204,7 +204,7 @@ class Helper
      * @param int $limit
      * @return string
      */
-    public static function textPublicFormat(string $text, $limit = self::TABLE_FIELD_SYMBOL_LIMIT): string
+    public static function textPublicFormat(?string $text, $limit = self::TABLE_FIELD_SYMBOL_LIMIT): ?string
     {
         if(mb_strlen($text) > $limit)
         {
