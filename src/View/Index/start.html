@@ -114,5 +114,37 @@
     {% endfor %}
     </tbody>
 </table>
+    <h1>Last 5 Found Channel's</h1>
+    <table class="table table-bordered table-hover table-responsive-md small">
+        <thead>
+        <tr>
+            <th class="table_channel_name_field">{{ translation.channel_name }}</th>
+            <th>{{ translation.channel_follower_count }}</th>
+            <th>{{ translation.channel_add_date }}</th>
+            <th>{{ translation.channel_check_date }}</th>
+            <th>{{ translation.channel_condition }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for found_channel in main_page.last_found_channel_table %}
+        <tr>
+            <td><strong><a href="/channel/found/{{ found_channel.id }}" target="_blank">{{ found_channel.name }}</a></strong></td>
+            <td>{{ found_channel.follower_count }}</td>
+            <td>{{ found_channel.add_date }}</td>
+            <td>{{ found_channel.check_date }}</td>
+            <td>
+                {% if found_channel.condition == 1 %}Add to Azeri Channel
+                {% elseif found_channel.condition == 0 %}Not Selected
+                {% elseif found_channel.condition == -1 %}Not Azeri Channel
+                {% elseif found_channel.condition == -2 %}Bad Azeri Channel
+                {% elseif found_channel.condition == -3 %}Blocked Azeri Channel
+                {% elseif found_channel.condition == -4 %}Not a channel
+                {% else %} None
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock %}

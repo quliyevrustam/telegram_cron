@@ -58,6 +58,15 @@ class IndexController extends MainController
 
         $mainPage['found_channel_table'] = $foundChannels['records'];
 
+        // Last Found Channel
+        $filter = [
+            'condition'   => ChannelFound::CONDITION_NOT_CHECKED,
+        ];
+
+        $foundChannels = (new ChannelFound())->getChannelFoundList((new Pagination(0, 5, 'created_at', 'desc')), $filter);
+
+        $mainPage['last_found_channel_table'] = $foundChannels['records'];
+
         return $this->tmp()->render('Index/start.html', ['main_page' => $mainPage]);
     }
 

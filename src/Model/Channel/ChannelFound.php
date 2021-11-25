@@ -175,6 +175,7 @@ class ChannelFound extends MainModel
      * @param Pagination $pagination
      * @param array $filter
      * @return array
+     * @throws Exception
      */
     public function getChannelFoundList(Pagination $pagination, array $filter): array
     {
@@ -182,7 +183,6 @@ class ChannelFound extends MainModel
         $foundChannels = [];
 
         $sql = $this->getChannelFoundListSql($pagination, $filter);
-        //Helper::prePrint($sql);
 
         $sqlRequest = $this->db()->prepare($sql['records']);
         $sqlRequest->execute($sql['bind']);
