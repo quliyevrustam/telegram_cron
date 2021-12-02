@@ -95,7 +95,8 @@ class TopMessage extends MainModel
             $messageBody = HtmlFormat::makeItalic($message['body']);
 
             // Prepare Message Link
-            $messageLink = 'tg://resolve?domain='.$message['peer'].'&post='.$message['external_id'].'';
+            //$messageLink = 'tg://resolve?domain='.$message['peer'].'&post='.$message['external_id'].'';
+            $messageLink = 'https://t.me/'.$message['peer'].'/'.$message['external_id'];
 
             // Prepare Message Post
             $postBody .= HtmlFormat::makeBold($i.'. '.$message['name'])."\n";

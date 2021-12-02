@@ -15,7 +15,7 @@ class Top extends Cron
 
         $telegram = new Api(BOT_KEY);
         $response = $telegram->sendMessage([
-            'chat_id'   => CHANNEL_TEST,
+            'chat_id'   => CHANNEL_TOP_AZERI_POST,
             'text'      => $channelPost,
             'parse_mode'=> 'HTML'
         ]);
@@ -33,7 +33,7 @@ class Top extends Cron
 
         $telegram = new Api(BOT_KEY);
         $response = $telegram->sendMessage([
-            'chat_id'   => CHANNEL_TEST,
+            'chat_id'   => CHANNEL_TOP_AZERI_POST,
             'text'      => $channelPost,
             'parse_mode'=> 'HTML'
         ]);

@@ -46,15 +46,17 @@ abstract class AbstractWeatherPostByDay
         $weatherData = [];
         if($result && isset($result["daily"]) && isset($result["daily"][$this->weatherDataKey]))
         {
-            $resultTomorrow = $result["daily"][$this->weatherDataKey];
+            $resultWeather = $result["daily"][$this->weatherDataKey];
 
-            $weatherData['day'] = date('d/m/Y', $resultTomorrow["dt"]);
-            $weatherData['sunrise'] = date('Y-m-d H:i:s', $resultTomorrow["sunrise"]);
-            $weatherData['sunset']  = date('Y-m-d H:i:s', $resultTomorrow["sunset"]);
+            $weatherData['day'] = date('d/m/Y', $resultWeather["dt"]);
+            $weatherData['sunrise'] = date('Y-m-d H:i:s', $resultWeather["sunrise"]);
+            $weatherData['sunset']  = date('Y-m-d H:i:s', $resultWeather["sunset"]);
 
-            $weatherData['temp']        = $resultTomorrow["temp"];
-            $weatherData['feels_like']  = $resultTomorrow["feels_like"];
-            $weatherData['description'] = $resultTomorrow["weather"][0]["description"];
+            $weatherData['temp']        = $resultWeather["temp"];
+            $weatherData['feels_like']  = $resultWeather["feels_like"];
+            $weatherData['description'] = $resultWeather["weather"][0]["description"];
+
+            $weatherData['wind_speed']  = $resultWeather["wind_speed"];
         }
 
         $this->weatherData = $weatherData;
@@ -62,6 +64,7 @@ abstract class AbstractWeatherPostByDay
 
     /**
      * @return string
+     * @throws Exception
      */
     private function getPostBody(): string
     {
@@ -79,6 +82,8 @@ abstract class AbstractWeatherPostByDay
         $post .= 'Вечером: '.HtmlFormat::makeBold(round(($this->weatherData['feels_like']['eve']))).HtmlFormat::makeCode('°');
         $post .= "\n";
         $post .= 'Ночью: '.HtmlFormat::makeBold(round(($this->weatherData['feels_like']['night']))).HtmlFormat::makeCode('°');
+        $post .= "\n"."\n";
+        $post .= 'Скорость ветра: '.HtmlFormat::makeBold($this->weatherData['wind_speed'].' м/с');
         $post .= "\n"."\n";
         $post .= 'Рассвет: '.HtmlFormat::makeBold(Helper::timezoneConverter($this->weatherData['sunrise'], 'UTC', 'Asia/Baku', 'H:i'));
         $post .= "\n";
