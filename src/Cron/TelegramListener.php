@@ -6,12 +6,6 @@ use danog\MadelineProto\RPCErrorException;
 use Exception;
 use Model\Channel\ChannelFound;
 use Utilities\Cron;
-
-if (!file_exists( MADELINE_PATH)) {
-    copy('https://phar.madelineproto.xyz/madeline.php', MADELINE_PATH);
-}
-include MADELINE_PATH;
-
 use danog\MadelineProto\API;
 use Utilities\CronExceptionTreatment;
 use Utilities\Helper;
