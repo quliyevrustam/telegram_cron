@@ -15,12 +15,13 @@ class Channel extends MainModel
     const TYPE_NOT_NEWS = 1;
 
     /**
+     * @param string|null $type
      * @return array
      * @throws Exception
      */
     public function getChannelPeers(?string $type = null): array
     {
-        $sqlPart = '';
+        $sqlPart = ' AND (c.sleep_at < NOW() OR c.sleep_at IS NULL) ';
         if($type == 'check_message')
             $sqlPart = ' AND c.external_id IS NOT NULL';
 
@@ -52,9 +53,9 @@ class Channel extends MainModel
     /**
      * @param array $data
      */
-    public function update(array $data)
+    public function update(int $channelId, array $data)
     {
-        $this->edit($data['id'], $data);
+        $this->edit($channelId, $data);
     }
 
     /**
@@ -63,7 +64,7 @@ class Channel extends MainModel
      */
     private function edit(int $id, array $data)
     {
-        $updatedFields = ['external_id', 'name', 'follower_count', 'description'];
+        $updatedFields = ['external_id', 'name', 'follower_count', 'description', 'sleep_at'];
         $updatedFields = array_fill_keys($updatedFields, 0);
 
         foreach ($data as $key=>$value)
@@ -302,5 +303,18 @@ class Channel extends MainModel
             SET status = -1, deleted_at = :deleted_at, delete_comment = :delete_comment
             WHERE id=:id;";
         $this->db()->prepare($sql)->execute(['id' => $id, 'deleted_at' => $deleteDate, 'delete_comment' => $comment]);
+    }
+
+    /**
+     * @param int $id
+     * @param int $seconds
+     * @throws Exception
+     */
+    public function sleep(int $id, int $seconds): void
+    {
+        $sleepDatetime = new \DateTime('now');
+        $sleepDatetime->add(new \DateInterval('PT'.$seconds.'S'));
+
+        $this->edit($id, ['sleep_at' => $sleepDatetime->format('Y-m-d H:i:s')]);
     }
 }

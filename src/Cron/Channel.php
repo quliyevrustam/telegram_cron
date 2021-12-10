@@ -4,98 +4,117 @@ namespace Cron;
 
 use Model\Channel\ChannelFound;
 use Utilities\Cron;
+use Utilities\CronExceptionTreatment;
 use Utilities\Helper;
+use danog\MadelineProto\API;
 
 class Channel extends Cron
 {
     public function actionUpdateInfo(): void
     {
+        $settings['app_info']['api_id'] = APP_API_ID;
+        $settings['app_info']['api_hash'] = APP_API_HASH;
+        $madelineProto = new API(MADELINE_SESSION_PATH, $settings);
+
         $channelHandler = new \Model\Channel\Channel();
         $channels = $channelHandler->getChannelPeers();
-        
+
+//      $channels = [4 => 'nataosmanli'];
         foreach ($channels as $channelId=>$peer)
         {
-            echo $peer."\n";
+            echo $channelId.' => '.$peer."\n";
 
-            $channelBody = ['id' => $channelId];
-
-            // Get Channel Info
-            $result = Helper::curlTelegramBotRequest('getChat', 'get', ['chat_id' => '@'.$peer]);
-
-            if($result['ok'] == 1)
-            {
-                $channelBody['external_id'] = $result['result']['id'];
-                $channelBody['name']        = $result['result']['title'];
-
-                if(isset($result['result']['description']))
-                    $channelBody['description'] = $result['result']['description'];
-
-                // Get Channel Follower count
-                $result = Helper::curlTelegramBotRequest('getChatMembersCount', 'get', ['chat_id' => '@'.$peer]);
-
-                if($result['ok'] == 1)
+            try {
+                $channelInfo = $madelineProto->channels->getFullChannel(['channel' => $peer]);
+                if($channelInfo && count($channelInfo) > 0)
                 {
-                    $channelBody['follower_count'] = $result['result'];
-                }
+                    $channelBody = [];
+                    if(isset($channelInfo['full_chat']['id'])) $channelBody['external_id'] = '-100'.$channelInfo['full_chat']['id'];
+                    if(isset($channelInfo['chats'][0]['title']))
+                    {
+                        $channelBody['name'] = Helper::removeEmoji($channelInfo['chats'][0]['title']);
+                        if(empty($channelBody['name'])) $channelBody['name'] = $peer;
+                    }
+                    if(isset($channelInfo['full_chat']['about'])) $channelBody['description'] = $channelInfo['full_chat']['about'];
+                    if(isset($channelInfo['full_chat']['participants_count']))
+                        $channelBody['follower_count'] = $channelInfo['full_chat']['participants_count'];
 
-                $channelHandler->update($channelBody);
-            }
-            elseif($result['ok'] == Helper::API_RESULT_CHAT_NOT_FOUND)
+                    if(count($channelBody) > 0) $channelHandler->update($channelId, $channelBody);
+                }
+            } catch (\Throwable $e)
             {
-                $channelHandler->delete($channelId);
+                echo $channelId.' => '.$peer."\n";
+                (new CronExceptionTreatment($e))->execution($channelId);
             }
         }
     }
 
     public function actionAnalyzeFoundNewChannel(): void
     {
-        $foundChannels = new ChannelFound();
-        $peers = $foundChannels->getFoundChannels();
+        $settings['app_info']['api_id'] = APP_API_ID;
+        $settings['app_info']['api_hash'] = APP_API_HASH;
+        $madelineProto = new API(MADELINE_SESSION_PATH, $settings);
 
+        $foundChannel = new ChannelFound();
+        $peers = $foundChannel->getFoundChannels();
+
+        //$peers = [2163 => 'metbexqroup'];
+        //$peers = [256 => 'orelswar'];
         foreach ($peers as $channelId=>$peer)
         {
-            $channelInfo = [];
-            echo $peer."\n";
+            echo $channelId.' => '.$peer."\n";
+            $channelBody = [];
 
-            try
-            {
-                $result = Helper::curlTelegramBotRequest('getChat', 'get', ['chat_id' => '@'.$peer]);
+            try {
+                $channelInfo = $madelineProto->channels->getFullChannel(['channel' => $peer]);
+                Helper::prePrint($channelInfo);
 
-                if($result['ok'] == 1)
+                if($channelInfo && count($channelInfo) > 0)
                 {
-                    if(isset($result['result']['type']) && $result['result']['type'] == 'channel')
+                    if (
+                        (isset($channelInfo['chats'][0]['megagroup']) && $channelInfo['chats'][0]['megagroup'] == 1) ||
+                        (isset($channelInfo['chats'][0]['gigagroup']) && $channelInfo['chats'][0]['gigagroup'] == 1)
+                    )
                     {
-                        $channelInfo['checked_at'] = date('Y-m-d H:i:s');
-                        if(isset($result['result']['id'])) $channelInfo['external_id'] = $result['result']['id'];
-                        if(isset($result['result']['title'])) $channelInfo['name'] = $result['result']['title'];
-                        if(isset($result['result']['description'])) $channelInfo['description'] = $result['result']['description'];
+                        $channelBody['checked_at'] = date('Y-m-d H:i:s');
+                        $channelBody['condition'] = ChannelFound::CONDITION_NOT_CHANNEL;
 
-                        $foundChannels->edit($channelId, $channelInfo);
-
-                        $result = Helper::curlTelegramBotRequest('getChatMembersCount', 'get', ['chat_id' => '@'.$peer]);
-
-                        if($result['ok'] == 1)
+                        $foundChannel->edit($channelId, $channelBody);
+                    } else
+                    {
+                        if (isset($channelInfo['full_chat']['id']))
                         {
-                            $channelInfo = ['follower_count' => $result['result']];
+                            $channelBody['external_id'] = '-100' . $channelInfo['full_chat']['id'];
+                        }
+                        if (isset($channelInfo['chats'][0]['title']))
+                        {
+                            $channelBody['name'] = Helper::removeEmoji($channelInfo['chats'][0]['title']);
+                            if (empty($channelBody['name']))
+                            {
+                                $channelBody['name'] = $peer;
+                            }
+                        }
+                        if (isset($channelInfo['full_chat']['about']))
+                        {
+                            $channelBody['description'] = $channelInfo['full_chat']['about'];
+                        }
+                        if (isset($channelInfo['full_chat']['participants_count']))
+                        {
+                            $channelBody['follower_count'] = $channelInfo['full_chat']['participants_count'];
+                        }
 
-                            $foundChannels->edit($channelId, $channelInfo);
+                        if (count($channelBody) > 0)
+                        {
+                            $channelBody['checked_at'] = date('Y-m-d H:i:s');
+                            Helper::prePrint($channelBody);
+                            $foundChannel->edit($channelId, $channelBody);
                         }
                     }
-
                 }
-            }
-            catch (\Throwable $exception)
+            } catch (\Throwable $e)
             {
-                Helper::logError($exception->getMessage());
-
-                if($exception->getMessage() == 'Bad Request: chat not found')
-                {
-                    $channelInfo['checked_at'] = date('Y-m-d H:i:s');
-                    $channelInfo['condition'] = ChannelFound::CONDITION_NOT_CHANNEL;
-
-                    $foundChannels->edit($channelId, $channelInfo);
-                }
-                continue;
+                echo $channelId.' => '.$peer."\n";
+                (new CronExceptionTreatment($e))->executionChannelFound($channelId);
             }
         }
     }

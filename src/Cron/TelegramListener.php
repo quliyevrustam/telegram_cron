@@ -9,6 +9,7 @@ use Utilities\Cron;
 use danog\MadelineProto\API;
 use Utilities\CronExceptionTreatment;
 use Utilities\Helper;
+use danog\MadelineProto\Logger;
 
 class TelegramListener extends Cron
 {
@@ -26,10 +27,10 @@ class TelegramListener extends Cron
 
         $limit = 5;
 
-        //$channels = [4 => 'nataosmanli'];
+//      $channels = [4 => 'nataosmanli'];
         foreach ($channels as $channelId => $peer)
         {
-            echo $channelId.' => '.$peer."\n";
+            //echo $channelId.' => '.$peer."\n";
             try {
                 $request = $madelineProto->messages->getHistory([
                         'peer'        => $peer,
@@ -47,7 +48,8 @@ class TelegramListener extends Cron
                 }
             } catch (\Throwable $e)
             {
-                (new CronExceptionTreatment($e))->execution(['channel_id' => $channelId]);
+                echo $channelId.' => '.$peer."\n";
+                (new CronExceptionTreatment($e))->execution($channelId);
             }
         }
     }
@@ -124,7 +126,7 @@ class TelegramListener extends Cron
                 }
             } catch (\Throwable $e)
             {
-                (new CronExceptionTreatment($e))->execution(['channel_id' => $channelId]);
+                (new CronExceptionTreatment($e))->execution($channelId);
             }
         }
 

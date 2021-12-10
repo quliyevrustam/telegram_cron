@@ -58,8 +58,7 @@ class ChannelFound extends MainModel
                 id
             FROM 
                 ".self::TABLE_NAME." 
-            WHERE peer = :peer
-            LIMIT 10;");
+            WHERE peer = :peer;");
             $sqlRequest->execute(['peer' => $peer]);
             $row = $sqlRequest->fetch(\PDO::FETCH_OBJ);
             if(!$row)
@@ -103,7 +102,7 @@ class ChannelFound extends MainModel
           ".self::TABLE_NAME." 
         WHERE 
           `condition` = ".self::CONDITION_NOT_CHECKED." AND `status` > 0
-          AND checked_at IS NULL 
+          AND checked_at IS NULL AND (sleep_at < NOW() OR sleep_at IS NULL)
         ORDER BY id DESC 
         LIMIT 100;";
         $sqlRequest = $this->db()->prepare($sql);
@@ -130,7 +129,7 @@ class ChannelFound extends MainModel
      */
     public function edit(int $id, array $data): int
     {
-        $updatedFields = ['external_id', 'name', 'follower_count', 'description', 'checked_at', 'condition', 'status'];
+        $updatedFields = ['external_id', 'name', 'follower_count', 'description', 'checked_at', 'condition', 'status', 'sleep_at'];
         $updatedFields = array_fill_keys($updatedFields, 0);
 
         foreach ($data as $key=>$value)
@@ -293,5 +292,34 @@ class ChannelFound extends MainModel
             throw new Exception('Error!');
 
         return $channel;
+    }
+
+    /**
+     * @param int $id
+     * @param int $seconds
+     * @throws Exception
+     */
+    public function sleep(int $id, int $seconds): void
+    {
+        $sleepDatetime = new \DateTime('now');
+        $sleepDatetime->add(new \DateInterval('PT'.$seconds.'S'));
+
+        $this->edit($id, ['sleep_at' => $sleepDatetime->format('Y-m-d H:i:s')]);
+    }
+
+    /**
+     * @param int $id
+     * @param string $comment
+     */
+    public function delete(int $id, string $comment = ''): void
+    {
+        $deleteDate = date('Y-m-d H:i:s');
+        $comment    = Helper::removeEmoji($comment);
+
+        $sql = "
+            UPDATE ".self::TABLE_NAME." 
+            SET status = -1, deleted_at = :deleted_at, delete_comment = :delete_comment
+            WHERE id=:id;";
+        $this->db()->prepare($sql)->execute(['id' => $id, 'deleted_at' => $deleteDate, 'delete_comment' => $comment]);
     }
 }

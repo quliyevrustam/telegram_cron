@@ -8,7 +8,6 @@ class Message extends Cron
 {
     public function actionUpdateErr(): void
     {
-        $message = $this->model(\Model\Channel\Message::class);
-        $message->updateErr();
+        (new \Model\Channel\Message())->updateErr();
     }
 }
