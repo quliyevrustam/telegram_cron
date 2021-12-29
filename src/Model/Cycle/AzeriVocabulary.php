@@ -7,7 +7,6 @@ use Utilities\TextFormat;
 
 class AzeriVocabulary extends MainModel
 {
-    public  $id;
     private $word;
     private $description;
     public  $post;

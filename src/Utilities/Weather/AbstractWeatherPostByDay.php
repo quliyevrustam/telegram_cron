@@ -5,7 +5,7 @@ namespace Utilities\Weather;
 use Exception;
 use Utilities\Helper;
 use Utilities\HtmlFormat;
-use Telegram\Bot\Api;
+use danog\MadelineProto\API;
 
 abstract class AbstractWeatherPostByDay
 {
@@ -94,11 +94,24 @@ abstract class AbstractWeatherPostByDay
 
     public function sendPost()
     {
-        $telegram = new Api(BOT_KEY);
-        $telegram->sendMessage([
-            'chat_id'   => $this->getChanel(),
-            'text'      => $this->post,
-            'parse_mode'=> 'HTML'
-        ]);
+        try {
+            $settings['app_info']['api_id'] = APP_API_ID;
+            $settings['app_info']['api_hash'] = APP_API_HASH;
+            $madelineProto = new API(MADELINE_SESSION_PATH, $settings);
+            $madelineProto->start();
+
+            $madelineProto->messages->sendMessage(
+                [
+                    'peer'       => $this->getChanel(),
+                    'message'    => $this->post,
+                    'parse_mode' => 'HTML',
+                ]
+            );
+        }
+        catch (\Throwable $exception)
+        {
+            echo $exception->getCode()."\n";
+            echo $exception->getMessage()."\n";
+        }
     }
 }

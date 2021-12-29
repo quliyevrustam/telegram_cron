@@ -9,8 +9,6 @@ class Cron extends MainModel
 {
     public const TABLE_NAME = 'cron';
 
-    private $id;
-
     public function beginWork(array $data)
     {
         $sqlRequest = $this->db()->prepare("

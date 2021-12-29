@@ -291,30 +291,14 @@ class Channel extends MainModel
 
     /**
      * @param int $id
-     * @param string $comment
-     */
-    public function delete(int $id, string $comment = ''): void
-    {
-        $deleteDate = date('Y-m-d H:i:s');
-        $comment    = Helper::removeEmoji($comment);
-
-        $sql = "
-            UPDATE ".self::TABLE_NAME." 
-            SET status = -1, deleted_at = :deleted_at, delete_comment = :delete_comment
-            WHERE id=:id;";
-        $this->db()->prepare($sql)->execute(['id' => $id, 'deleted_at' => $deleteDate, 'delete_comment' => $comment]);
-    }
-
-    /**
-     * @param int $id
      * @param int $seconds
      * @throws Exception
      */
-    public function sleep(int $id, int $seconds): void
+    public function sleep(int $seconds): void
     {
         $sleepDatetime = new \DateTime('now');
         $sleepDatetime->add(new \DateInterval('PT'.$seconds.'S'));
 
-        $this->edit($id, ['sleep_at' => $sleepDatetime->format('Y-m-d H:i:s')]);
+        $this->edit($this->id, ['sleep_at' => $sleepDatetime->format('Y-m-d H:i:s')]);
     }
 }

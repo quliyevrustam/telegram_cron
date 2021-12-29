@@ -4,15 +4,14 @@ namespace Model\Cycle;
 
 use Exception;
 use Model\MainModel;
-use Utilities\Helper;
-use Utilities\TextFormat;
+use Utilities\HtmlFormat;
 
 class Quran extends MainModel
 {
-    const MIN_AYAH_LENGTH = 81;
+    private const MIN_AYAH_LENGTH = 81;
 
-    public $id = [];
-    public $quoteText = '';
+    public array $ids = [];
+    public string $quoteText = '';
 
     private $surahNumber;
     private $surahName;
@@ -38,7 +37,7 @@ class Quran extends MainModel
         LIMIT 1;")->fetch(\PDO::FETCH_OBJ);
         if($row)
         {
-            $this->id[$row->id] = $row->id;
+            $this->ids[$row->id] = $row->id;
             $this->surahNumber  = $row->surah_number;
             $this->surahName    = $row->surah_name;
             $this->quoteText    = $row->text;
@@ -59,7 +58,7 @@ class Quran extends MainModel
     {
         $quote = '';
 
-        $inPlaceholder  = str_repeat('?,', count($this->id) - 1) . '?';
+        $inPlaceholder  = str_repeat('?,', count($this->ids) - 1) . '?';
         $sqlRequest = $this->db()->prepare("
         SELECT 
             a.`number`,
@@ -67,19 +66,19 @@ class Quran extends MainModel
         FROM 
             `quran_ayah` a
         WHERE id IN ($inPlaceholder) AND surah_number = ?");
-        $sqlRequest->execute(array_merge($this->id, [$this->surahNumber]));
+        $sqlRequest->execute(array_merge($this->ids, [$this->surahNumber]));
         $rows = $sqlRequest->fetchAll();
         if($rows)
         {
             foreach ($rows as $row)
             {
-                $quote = $quote.(TextFormat::makeItalic($row['number'] . '. ' . $row['text'] . "\n"));
+                $quote = $quote.(HtmlFormat::makeItalic($row['number'] . '. ' . $row['text'] . "\n"));
             }
         }
         else
             throw new Exception('Error!');
 
-        $quote = $quote.TextFormat::makeBold('Сура '.$this->surahNumber.', '.$this->surahName);
+        $quote = $quote.HtmlFormat::makeBold('Сура '.$this->surahNumber.', '.$this->surahName);
 
         return $quote;
     }
@@ -89,13 +88,11 @@ class Quran extends MainModel
      */
     private function checkQuoteComplete(): void
     {
-        //Helper::prePrint($this->id);
-
         // Check Ayah Text Begin
         if (preg_match('/^[а-я]/u', $this->quoteText))
         {
             //echo "\n".'Not TEXT begin'."\n";
-            $prevId             = min($this->id) - 1;
+            $prevId             = min($this->ids) - 1;
             $ayah               = $this->getAyahById($prevId);
             $this->quoteText    = $ayah['text']  . $this->quoteText;
             $this->checkQuoteComplete();
@@ -105,17 +102,17 @@ class Quran extends MainModel
         if (!in_array(substr($this->quoteText, -1, 1), ['.', '!', '?']))
         {
             //echo "\n".'Not TEXT end'."\n";
-            $nextId             = max($this->id) + 1;
+            $nextId             = max($this->ids) + 1;
             $ayah               = $this->getAyahById($nextId);
             $this->quoteText    = $this->quoteText . $ayah['text'];
             $this->checkQuoteComplete();
         }
 
         // Check Ayah Text Length
-        if(min($this->id) != 1 && mb_strlen($this->quoteText) <= self::MIN_AYAH_LENGTH)
+        if(min($this->ids) != 1 && mb_strlen($this->quoteText) <= self::MIN_AYAH_LENGTH)
         {
             //echo "\n".'TEXT too short'."\n";
-            $prevId             = min($this->id) - 1;
+            $prevId             = min($this->ids) - 1;
             $ayah               = $this->getAyahById($prevId);
             $this->quoteText    = $ayah['text']  . $this->quoteText;
             $this->checkQuoteComplete();
@@ -127,7 +124,7 @@ class Quran extends MainModel
      */
     public function setShowed(): void
     {
-        foreach ($this->id as $ayahId)
+        foreach ($this->ids as $ayahId)
         {
             $request= $this->db()->prepare("UPDATE quran_ayah SET showed_at =? WHERE id =?");
             $request->execute([date('Y-m-d H:i:s'), $ayahId]);
@@ -155,8 +152,8 @@ class Quran extends MainModel
         $row = $sqlRequest->fetch(\PDO::FETCH_OBJ);
         if ($row)
         {
-            $this->id[$row->id] = $row->id;
-            ksort($this->id);
+            $this->ids[$row->id] = $row->id;
+            ksort($this->ids);
 
             $ayah = [
                 'id'     => $row->id,

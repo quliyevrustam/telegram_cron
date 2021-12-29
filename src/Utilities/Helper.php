@@ -3,6 +3,7 @@
 namespace Utilities;
 
 use Exception;
+use JetBrains\PhpStorm\Pure;
 
 class Helper
 {
@@ -202,11 +203,12 @@ class Helper
     }
 
     /**
-     * @param string $text
+     * @param string|null $text
      * @param int $limit
-     * @return string
+     * @return string|null
      */
-    public static function textPublicFormat(string $text, $limit = self::TABLE_FIELD_SYMBOL_LIMIT): string
+    #[Pure]
+    public static function textPublicFormat(?string $text, $limit = self::TABLE_FIELD_SYMBOL_LIMIT): ?string
     {
         if(mb_strlen($text) > $limit)
         {

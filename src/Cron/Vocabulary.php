@@ -4,26 +4,39 @@ namespace Cron;
 
 use Model\Cycle\AzeriVocabulary;
 use Utilities\Cron;
-use Telegram\Bot\Api;
+use danog\MadelineProto\API;
 
 class Vocabulary extends Cron
 {
     public function actionPostWord(): void
     {
-        $vocabulary = $this->model(AzeriVocabulary::class);
-        $channelPost = $vocabulary->getRandomPost();
+        try {
+            $vocabulary = new AzeriVocabulary();
+            $channelPost = $vocabulary->getRandomPost();
 
-        $telegram = new Api(BOT_KEY);
-        $response = $telegram->sendMessage([
-            'chat_id'   => CHANNEL_KEY_AZERI_WORD,
-            'text'      => $channelPost,
-            'parse_mode'=> 'Markdown'
-        ]);
+            $settings['app_info']['api_id'] = APP_API_ID;
+            $settings['app_info']['api_hash'] = APP_API_HASH;
+            $madelineProto = new API(MADELINE_SESSION_PATH, $settings);
+            $madelineProto->start();
 
-        if($messageId = $response->getMessageId())
+            $result = $madelineProto->messages->sendMessage(
+                [
+                    'peer'       => CHANNEL_KEY_AZERI_WORD,
+                    'message'    => $channelPost,
+                    'parse_mode' => 'Markdown'
+                ]
+            );
+
+            if(isset($result['updates'][0]['id']))
+            {
+                echo "New Post ID: ".$result['updates'][0]['id']."\n";
+                $vocabulary->setShowed($vocabulary->ids);
+            }
+        }
+        catch (\Throwable $exception)
         {
-            echo "New Post ID: ".$messageId."\n";
-            $vocabulary->setShowed($vocabulary->id);
+            echo $exception->getCode()."\n";
+            echo $exception->getMessage()."\n";
         }
     }
 }

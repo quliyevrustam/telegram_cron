@@ -27,10 +27,11 @@ class TelegramListener extends Cron
 
         $limit = 5;
 
-//      $channels = [4 => 'nataosmanli'];
+        //$channels = [4 => 'nataosmanli'];
+        //$channels = [233 => 'Azerbaycan_dili25'];
         foreach ($channels as $channelId => $peer)
         {
-            //echo $channelId.' => '.$peer."\n";
+            echo $channelId.' => '.$peer."\n";
             try {
                 $request = $madelineProto->messages->getHistory([
                         'peer'        => $peer,
@@ -49,7 +50,8 @@ class TelegramListener extends Cron
             } catch (\Throwable $e)
             {
                 echo $channelId.' => '.$peer."\n";
-                (new CronExceptionTreatment($e))->execution($channelId);
+                $channel = \Model\Channel\Channel::getById($channelId);
+                (new CronExceptionTreatment($e))->execution($channel);
             }
         }
     }
@@ -97,6 +99,7 @@ class TelegramListener extends Cron
 
         $limit = 1;
 
+        //$randomChannelIds = [62]; // Caliber
         foreach ($randomChannelIds as $channelId)
         {
             $peer = $channels[$channelId];
@@ -126,7 +129,8 @@ class TelegramListener extends Cron
                 }
             } catch (\Throwable $e)
             {
-                (new CronExceptionTreatment($e))->execution($channelId);
+                $channel = \Model\Channel\Channel::getById($channelId);
+                (new CronExceptionTreatment($e))->execution($channel);
             }
         }
 

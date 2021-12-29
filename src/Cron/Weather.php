@@ -4,8 +4,6 @@ namespace Cron;
 
 use Exception;
 use Utilities\Cron;
-use Telegram\Bot\Api;
-use Utilities\Weather\WeatherPost;
 use Utilities\Weather\WeatherPostToday;
 use Utilities\Weather\WeatherPostTomorrow;
 

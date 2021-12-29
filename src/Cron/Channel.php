@@ -2,6 +2,7 @@
 
 namespace Cron;
 
+use Exception;
 use Model\Channel\ChannelFound;
 use Utilities\Cron;
 use Utilities\CronExceptionTreatment;
@@ -10,6 +11,10 @@ use danog\MadelineProto\API;
 
 class Channel extends Cron
 {
+
+    /**
+     * @throws Exception
+     */
     public function actionUpdateInfo(): void
     {
         $settings['app_info']['api_id'] = APP_API_ID;
@@ -19,7 +24,6 @@ class Channel extends Cron
         $channelHandler = new \Model\Channel\Channel();
         $channels = $channelHandler->getChannelPeers();
 
-//      $channels = [4 => 'nataosmanli'];
         foreach ($channels as $channelId=>$peer)
         {
             echo $channelId.' => '.$peer."\n";
@@ -44,11 +48,15 @@ class Channel extends Cron
             } catch (\Throwable $e)
             {
                 echo $channelId.' => '.$peer."\n";
-                (new CronExceptionTreatment($e))->execution($channelId);
+                $channel = \Model\Channel\Channel::getById($channelId);
+                (new CronExceptionTreatment($e))->execution($channel);
             }
         }
     }
 
+    /**
+     * @throws Exception
+     */
     public function actionAnalyzeFoundNewChannel(): void
     {
         $settings['app_info']['api_id'] = APP_API_ID;
@@ -58,8 +66,7 @@ class Channel extends Cron
         $foundChannel = new ChannelFound();
         $peers = $foundChannel->getFoundChannels();
 
-        //$peers = [2163 => 'metbexqroup'];
-        //$peers = [256 => 'orelswar'];
+        //$peers = [1550 => 'kolorit_21'];
         foreach ($peers as $channelId=>$peer)
         {
             echo $channelId.' => '.$peer."\n";
@@ -73,14 +80,16 @@ class Channel extends Cron
                 {
                     if (
                         (isset($channelInfo['chats'][0]['megagroup']) && $channelInfo['chats'][0]['megagroup'] == 1) ||
-                        (isset($channelInfo['chats'][0]['gigagroup']) && $channelInfo['chats'][0]['gigagroup'] == 1)
+                        (isset($channelInfo['chats'][0]['gigagroup']) && $channelInfo['chats'][0]['gigagroup'] == 1) ||
+                        (isset($channelInfo['chats'][0]['restricted']) && $channelInfo['chats'][0]['restricted'] == 1)
                     )
                     {
                         $channelBody['checked_at'] = date('Y-m-d H:i:s');
                         $channelBody['condition'] = ChannelFound::CONDITION_NOT_CHANNEL;
 
                         $foundChannel->edit($channelId, $channelBody);
-                    } else
+                    }
+                    else
                     {
                         if (isset($channelInfo['full_chat']['id']))
                         {
@@ -114,7 +123,8 @@ class Channel extends Cron
             } catch (\Throwable $e)
             {
                 echo $channelId.' => '.$peer."\n";
-                (new CronExceptionTreatment($e))->executionChannelFound($channelId);
+                $channel = ChannelFound::getById($channelId);
+                (new CronExceptionTreatment($e))->execution($channel);
             }
         }
     }

@@ -4,43 +4,63 @@ namespace Cron;
 
 use Model\Channel\TopMessage;
 use Utilities\Cron;
-use Telegram\Bot\Api;
+use danog\MadelineProto\API;
 
 class Top extends Cron
 {
     public function actionPostDailyMessage(): void
     {
-        $topPost = new TopMessage();
-        $channelPost = $topPost->getMessagePost(TopMessage::TYPE_ALL_DAILY);
+        try {
+            $channelPost = (new TopMessage())->getMessagePost(TopMessage::TYPE_ALL_DAILY);
 
-        $telegram = new Api(BOT_KEY);
-        $response = $telegram->sendMessage([
-            'chat_id'   => CHANNEL_TOP_AZERI_POST,
-            'text'      => $channelPost,
-            'parse_mode'=> 'HTML'
-        ]);
+            $settings['app_info']['api_id'] = APP_API_ID;
+            $settings['app_info']['api_hash'] = APP_API_HASH;
+            $madelineProto = new API(MADELINE_SESSION_PATH, $settings);
+            $madelineProto->start();
 
-        if($messageId = $response->getMessageId())
+            $result = $madelineProto->messages->sendMessage(
+                [
+                    'peer'       => CHANNEL_TOP_AZERI_POST,
+                    'message'    => $channelPost,
+                    'parse_mode' => 'HTML',
+                ]
+            );
+
+            if(isset($result['updates'][0]['id']))
+                echo "New Post ID: ".$result['updates'][0]['id']."\n";
+        }
+        catch (\Throwable $exception)
         {
-            echo "New Post ID: ".$messageId."\n";
+            echo $exception->getCode()."\n";
+            echo $exception->getMessage()."\n";
         }
     }
 
     public function actionPostNotNewsWeeklyMessage(): void
     {
-        $topPost = new TopMessage();
-        $channelPost = $topPost->getMessagePost(TopMessage::TYPE_NOT_NEWS_WEEKLY);
+        try {
+            $channelPost = (new TopMessage())->getMessagePost(TopMessage::TYPE_NOT_NEWS_WEEKLY);
 
-        $telegram = new Api(BOT_KEY);
-        $response = $telegram->sendMessage([
-            'chat_id'   => CHANNEL_TOP_AZERI_POST,
-            'text'      => $channelPost,
-            'parse_mode'=> 'HTML'
-        ]);
+            $settings['app_info']['api_id'] = APP_API_ID;
+            $settings['app_info']['api_hash'] = APP_API_HASH;
+            $madelineProto = new API(MADELINE_SESSION_PATH, $settings);
+            $madelineProto->start();
 
-        if($messageId = $response->getMessageId())
+            $result = $madelineProto->messages->sendMessage(
+                [
+                    'peer'       => CHANNEL_TOP_AZERI_POST,
+                    'message'    => $channelPost,
+                    'parse_mode' => 'HTML',
+                ]
+            );
+
+            if(isset($result['updates'][0]['id']))
+                echo "New Post ID: ".$result['updates'][0]['id']."\n";
+        }
+        catch (\Throwable $exception)
         {
-            echo "New Post ID: ".$messageId."\n";
+            echo $exception->getCode()."\n";
+            echo $exception->getMessage()."\n";
         }
     }
 }

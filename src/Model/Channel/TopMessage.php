@@ -88,7 +88,7 @@ class TopMessage extends MainModel
         foreach ($topMessages as $message)
         {
             // Prepare Message Name
-            $message['name'] = str_replace(".", HtmlFormat::makeCode('.'), $message['name']);
+            $message['name'] = str_replace(".", '&#x2024;', $message['name']);
 
             // Prepare Message Body
             $message['body'] = str_replace("\n", '.', $message['body']);
@@ -96,7 +96,9 @@ class TopMessage extends MainModel
 
             // Prepare Message Link
             //$messageLink = 'tg://resolve?domain='.$message['peer'].'&post='.$message['external_id'].'';
+            //$messageLink = 'https://t.me/'.$message['peer'].'/'.$message['external_id'];
             $messageLink = 'https://t.me/'.$message['peer'].'/'.$message['external_id'];
+
 
             // Prepare Message Post
             $postBody .= HtmlFormat::makeBold($i.'. '.$message['name'])."\n";
