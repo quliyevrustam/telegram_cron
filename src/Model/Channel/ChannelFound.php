@@ -104,7 +104,7 @@ class ChannelFound extends MainModel
           `condition` = ".self::CONDITION_NOT_CHECKED." AND `status` > 0
           AND checked_at IS NULL AND (sleep_at < NOW() OR sleep_at IS NULL)
         ORDER BY id DESC 
-        LIMIT 100;";
+        LIMIT 1;";
         $sqlRequest = $this->db()->prepare($sql);
         $sqlRequest->execute();
         $rows = $sqlRequest->fetchAll(\PDO::FETCH_OBJ);

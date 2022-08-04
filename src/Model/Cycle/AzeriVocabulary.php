@@ -3,10 +3,12 @@
 namespace Model\Cycle;
 
 use Model\MainModel;
-use Utilities\TextFormat;
+use Utilities\HtmlFormat;
 
 class AzeriVocabulary extends MainModel
 {
+    const TABLE_NAME = 'azeri_vocabulary';
+
     private $word;
     private $description;
     public  $post;
@@ -40,7 +42,7 @@ class AzeriVocabulary extends MainModel
     public function getRandomPost(): string
     {
         $this->setRandomWord();
-        $this->post = TextFormat::makeBold($this->word).' - '.TextFormat::makeItalic($this->description);
+        $this->post = HtmlFormat::makeBold($this->word).' - '.HtmlFormat::makeItalic($this->description);
 
         return $this->post;
     }

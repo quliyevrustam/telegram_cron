@@ -5,7 +5,9 @@
         "twig/twig": "^3.0",
         "php-di/php-di": "^6.2",
         "danog/madelineproto": "^7.0",
-        "illuminate/collections": "^8.76"
+        "illuminate/collections": "^8.76",
+        "guzzlehttp/psr7": "^1.6",
+        "guzzlehttp/guzzle": "^7.4"
     },
     "autoload": {
         "psr-4": {
